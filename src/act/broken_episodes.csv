@@ -1,0 +1,4 @@
+episode_name,issue_summary,endo_psm1_count,endo_psm2_count,left_img_count,right_img_count
+20260109-130815-817334,endo_psm1 has only 1 images (likely incomplete recording); endo_psm1: Images end 154.9s BEFORE CSV starts (recording desync); endo_psm2 has only 1 images (likely incomplete recording) (+1 more),1,1,15037,15021
+20260109-154302-635158,endo_psm1 has only 1 images (likely incomplete recording); endo_psm1: Images end 9441.8s BEFORE CSV starts (recording desync); endo_psm2 has only 1 images (likely incomplete recording) (+1 more),1,1,12462,12476
+20260109-155447-468480,endo_psm1 has only 1 images (likely incomplete recording); endo_psm1: Images end 10146.6s BEFORE CSV starts (recording desync); endo_psm2 has only 1 images (likely incomplete recording) (+1 more),1,1,13103,13153

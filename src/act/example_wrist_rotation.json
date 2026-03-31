@@ -1,0 +1,22 @@
+{
+  "psm2": {
+    "rotation": -4.0,
+    "brightness": -24.0,
+    "contrast": 0.99,
+    "saturation": 0.95,
+    "gamma": 0.94,
+    "r_mul": 1.06,
+    "g_mul": 0.89,
+    "b_mul": 0.88
+  },
+  "psm1": {
+    "rotation": 166.0,
+    "brightness": -16.0,
+    "contrast": 0.93,
+    "saturation": 0.98,
+    "gamma": 0.94,
+    "r_mul": 1.06,
+    "g_mul": 0.89,
+    "b_mul": 0.89
+  }
+}

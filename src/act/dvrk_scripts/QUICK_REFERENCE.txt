@@ -1,0 +1,131 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    QUICK REFERENCE: JSON CONFIG LOADER                       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+⚠️  IMPORTANT: WHERE ARE CONFIGS STORED?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    The utility functions create configs IN MEMORY - they don't automatically 
+    modify constants_dvrk.py permanently.
+
+    TO USE YOUR CONFIG:
+    
+    Option 1 (Recommended): Call add_task_config_from_json() in your script
+    Option 2: Use add_config_permanently.py to modify constants_dvrk.py
+    Option 3: Manually copy the generated code into constants_dvrk.py
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 1. GENERATE STATISTICS JSON                                                  │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+    cd /home/iulian/chole_ws/src/skay_jhu_private_new/src/act
+    python calculate_std_mean.py
+
+    Output: std_mean_invivo.json, std_mean_invivo_summary.txt
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 2. LOAD STATISTICS (Python)                                                  │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+    from dvrk_scripts.constants_dvrk import load_statistics_from_json
+    
+    stats = load_statistics_from_json('./std_mean_invivo.json')
+    print(stats['mean'])  # numpy array
+    print(stats['std'])   # numpy array
+    print(stats['min'])   # numpy array
+    print(stats['max'])   # numpy array
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 3A. CREATE CONFIG IN YOUR SCRIPT (Recommended)                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+    # In your training/inference script:
+    from dvrk_scripts.constants_dvrk import add_task_config_from_json, TASK_CONFIGS
+    
+    # This runs each time your script starts
+    add_task_config_from_json(
+        'my_task',
+        './std_mean_invivo.json',
+        dataset_dir="/path/to/data",
+        tissue_ids=[1, 2, 3],
+        num_episodes=1000
+    )
+    
+    # Now use it
+    config = TASK_CONFIGS['my_task']
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 3B. ADD CONFIG PERMANENTLY TO constants_dvrk.py                             │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+    python dvrk_scripts/add_config_permanently.py my_task ./std_mean_invivo.json \
+        --dataset-dir /path/to/data \
+        --tissue-ids 1 2 3 \
+        --num-episodes 1000
+    
+    # This MODIFIES constants_dvrk.py file directly (creates backup)
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ USEFUL COMMANDS                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+    # List all existing task configs
+    python dvrk_scripts/quick_add_config.py --list-configs
+
+    # Show statistics from JSON
+    python dvrk_scripts/quick_add_config.py --show-stats ./stats.json
+
+    # Run examples
+    python dvrk_scripts/example_load_json_config.py
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ COMMON OPTIONS                                                               │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+    Required:
+      task_name              Name for the task config
+      json_path              Path to JSON statistics file
+      --dataset-dir          Path to dataset directory
+      --tissue-ids           Tissue IDs for training (e.g., 1 2 3)
+
+    Optional:
+      --tissue-ids-val       Tissue IDs for validation
+      --num-episodes         Number of training episodes
+      --num-episodes-val     Number of validation episodes
+      --goal-condition-style Goal style: map, mask, or dot
+      --camera-names         Camera names (default: left left_wrist right_wrist)
+      --phantom              Use phantom data
+      --use-auto-label       Use auto labeling
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ FILES REFERENCE                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+    calculate_std_mean.py              Generate statistics (optimized)
+    dvrk_scripts/constants_dvrk.py     Main constants file (with JSON support)
+    dvrk_scripts/quick_add_config.py   CLI tool for adding configs
+    dvrk_scripts/example_load_json_config.py  Usage examples
+    dvrk_scripts/README_JSON_CONFIG.md Full documentation
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ EXAMPLE WORKFLOW                                                             │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+    # Step 1: Generate stats (run once per dataset)
+    python calculate_std_mean.py
+
+    # Step 2: Create configs as needed (can create many from same JSON)
+    python dvrk_scripts/quick_add_config.py task1 ./std_mean_invivo.json \
+        --dataset-dir /data/set1 --tissue-ids 1 2 3 --num-episodes 1000
+    
+    python dvrk_scripts/quick_add_config.py task2 ./std_mean_invivo.json \
+        --dataset-dir /data/set2 --tissue-ids 4 5 6 --num-episodes 500
+
+    # Step 3: Use in your code
+    from dvrk_scripts.constants_dvrk import TASK_CONFIGS
+    config1 = TASK_CONFIGS['task1']
+    config2 = TASK_CONFIGS['task2']
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  For full documentation, see: dvrk_scripts/README_JSON_CONFIG.md             ║
+╚══════════════════════════════════════════════════════════════════════════════╝

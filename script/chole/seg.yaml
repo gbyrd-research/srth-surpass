@@ -1,0 +1,12 @@
+path: ./datasets/clips_tubes_flaps_segmentations # dataset root dir
+# train: [img/batch_1, img/batch_2, img/batch_3, img/batch_4, img/batch_5, img/batch_6, img/batch_7, img/batch_8, img/batch_9, img/batch_10] # train images (relative to 'path') 128 images
+train: [tissue_1/, tissue_4/, tissue_8/, tissue_18/, tissue_30/, tissue_35/, tissue_40/, tissue_47/, tissue_53/, tissue_55/]
+val: [tissue_62/] # val images (relative to 'path') 128 images
+test: # test images (optional)
+
+# Classes 
+names:
+    0: clip
+    1: cystic duct
+    2: cystic artery
+    3: grasping point

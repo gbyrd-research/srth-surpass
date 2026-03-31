@@ -1,0 +1,207 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║               WHERE IS MY CONFIG? - UNDERSTANDING CONFIG STORAGE             ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+QUESTION: After I run quick_add_config.py, where is the created task config?
+
+ANSWER: The config is created IN MEMORY only and is NOT automatically saved to 
+        the constants_dvrk.py file.
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           WHY THIS DESIGN?                                   ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Automatically modifying source code files can be dangerous and lead to:
+  • Syntax errors if not done carefully
+  • Loss of comments or formatting
+  • Merge conflicts in version control
+  • Accidental overwriting of existing configs
+
+Instead, we provide SAFE, FLEXIBLE options for you to choose from.
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    3 WAYS TO USE YOUR TASK CONFIG                            ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ OPTION 1: Load Dynamically in Your Script (RECOMMENDED)                     │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Add this to the TOP of your training/inference script:
+
+    from dvrk_scripts.constants_dvrk import add_task_config_from_json, TASK_CONFIGS
+    
+    # Load config from JSON each time script runs
+    add_task_config_from_json(
+        'my_task',
+        './std_mean_invivo.json',
+        dataset_dir="/home/iulian/chole_ws/data/cnh_exvivo_chole",
+        tissue_ids=[1, 2, 3],
+        num_episodes=1000
+    )
+    
+    # Now use it normally
+    config = TASK_CONFIGS['my_task']
+    # ... rest of your code ...
+
+✓ PROS:
+  • Safe - no modification to source files
+  • Flexible - easy to change parameters
+  • Version controlled - JSON file tracks changes
+  • Fast - minimal overhead
+
+✗ CONS:
+  • Needs to be called each time script runs
+  • Slight startup overhead (negligible)
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ OPTION 2: Add Permanently Using Script                                      │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Use the add_config_permanently.py script to modify constants_dvrk.py:
+
+    python dvrk_scripts/add_config_permanently.py my_task ./std_mean_invivo.json \
+        --dataset-dir /home/iulian/chole_ws/data/cnh_exvivo_chole \
+        --tissue-ids 1 2 3 \
+        --num-episodes 1000
+
+What it does:
+  1. Creates a backup: constants_dvrk.py.backup
+  2. Generates properly formatted Python code
+  3. Inserts it into the TASK_CONFIGS dictionary
+  4. Saves the modified file
+
+Then use normally:
+    from dvrk_scripts.constants_dvrk import TASK_CONFIGS
+    config = TASK_CONFIGS['my_task']
+
+✓ PROS:
+  • Config available immediately on import
+  • No need to call add_task_config_from_json()
+  • Same as manually defined configs
+
+✗ CONS:
+  • Modifies source file (though with backup)
+  • Need to manage version control
+  • Changes require re-running the script
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ OPTION 3: Manual Copy-Paste                                                 │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+1. Run quick_add_config.py to generate the code:
+   
+   python dvrk_scripts/quick_add_config.py my_task ./std_mean_invivo.json \
+       --dataset-dir /path --tissue-ids 1 2 3 --num-episodes 1000
+
+2. Copy the generated configuration code from the output
+
+3. Open constants_dvrk.py and paste it into the TASK_CONFIGS dictionary
+
+✓ PROS:
+  • Full control over placement
+  • Can review before adding
+  • Can modify as needed
+
+✗ CONS:
+  • Manual process
+  • Error-prone
+  • Time consuming
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                      WHICH OPTION SHOULD I USE?                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+USE OPTION 1 IF:
+  ✓ You're experimenting with different configurations
+  ✓ You want to keep your code clean and version controlled
+  ✓ You want flexibility to change parameters easily
+  ✓ You don't mind adding a few lines to your script
+  → RECOMMENDED FOR MOST USERS
+
+USE OPTION 2 IF:
+  ✓ You want the config permanently available
+  ✓ You use the same config across many scripts
+  ✓ You have version control (git) for safety
+  ✓ You don't plan to change the config often
+  → GOOD FOR STABLE, PRODUCTION CONFIGS
+
+USE OPTION 3 IF:
+  ✓ You want maximum control
+  ✓ You need to add comments or customizations
+  ✓ You prefer manual editing
+  → GOOD FOR ONE-TIME ADDITIONS
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         EXAMPLE WORKFLOWS                                    ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+WORKFLOW FOR OPTION 1 (Recommended):
+────────────────────────────────────
+# my_training_script.py
+
+from dvrk_scripts.constants_dvrk import add_task_config_from_json, TASK_CONFIGS
+
+# Add config at script startup
+add_task_config_from_json(
+    'my_experiment',
+    './std_mean_invivo.json',
+    dataset_dir="/data/chole",
+    tissue_ids=[1, 2, 3],
+    num_episodes=1000
+)
+
+# Use it
+config = TASK_CONFIGS['my_experiment']
+
+# Your training code here...
+train_model(config)
+
+
+WORKFLOW FOR OPTION 2:
+──────────────────────
+$ python dvrk_scripts/add_config_permanently.py my_task ./std_mean_invivo.json \
+    --dataset-dir /data --tissue-ids 1 2 3 --num-episodes 1000
+
+$ # Now it's in constants_dvrk.py permanently
+$ # Use in any script:
+
+# any_script.py
+from dvrk_scripts.constants_dvrk import TASK_CONFIGS
+config = TASK_CONFIGS['my_task']
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                          TOOL COMPARISON                                     ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Tool                        │ Purpose                      │ Modifies File?
+────────────────────────────┼──────────────────────────────┼───────────────
+quick_add_config.py         │ Demo/validation tool         │ NO
+add_task_config_from_json() │ Dynamic loading in scripts   │ NO
+add_config_permanently.py   │ Permanent file modification  │ YES (with backup)
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                            SUMMARY                                           ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+The task config utilities are designed for FLEXIBILITY and SAFETY:
+
+  • quick_add_config.py: Shows you what the config looks like
+  • add_task_config_from_json(): Loads config dynamically (recommended)
+  • add_config_permanently.py: Modifies constants_dvrk.py (if needed)
+
+Most users should use OPTION 1 (dynamic loading) because it's:
+  ✓ Safe
+  ✓ Flexible
+  ✓ Easy to version control
+  ✓ Simple to modify
+
+═══════════════════════════════════════════════════════════════════════════════
+
+For more details, see: dvrk_scripts/README_JSON_CONFIG.md

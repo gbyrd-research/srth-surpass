@@ -1,0 +1,926 @@
+{"episode_index": 1, "start_frame": 0, "end_frame": 233, "start_timestamp": 0.0, "end_timestamp": 7.7667, "label": "Pick up long suture end with the left gripper."}
+{"episode_index": 1, "start_frame": 233, "end_frame": 604, "start_timestamp": 7.7667, "end_timestamp": 20.1333, "label": "Double-wrap the suture around the right gripper."}
+{"episode_index": 1, "start_frame": 604, "end_frame": 905, "start_timestamp": 20.1333, "end_timestamp": 30.1667, "label": "Grab the short suture end with the right gripper."}
+{"episode_index": 1, "start_frame": 905, "end_frame": 1207, "start_timestamp": 30.1667, "end_timestamp": 40.2333, "label": "Tighten the knot by pulling the right gripper down and the left gripper up."}
+{"episode_index": 1, "start_frame": 1207, "end_frame": 1418, "start_timestamp": 40.2333, "end_timestamp": 47.2667, "label": "re-grasp the long end of the suture."}
+{"episode_index": 1, "start_frame": 1418, "end_frame": 1607, "start_timestamp": 47.2667, "end_timestamp": 53.5667, "label": "Tighten the knot by pulling the left gripper up."}
+{"episode_index": 1, "start_frame": 1607, "end_frame": 1811, "start_timestamp": 53.5667, "end_timestamp": 60.3667, "label": "Wrap the long end of the suture around the right gripper once."}
+{"episode_index": 1, "start_frame": 1811, "end_frame": 1991, "start_timestamp": 60.3667, "end_timestamp": 66.3667, "label": "Grab the short end with the right gripper."}
+{"episode_index": 1, "start_frame": 1991, "end_frame": 2163, "start_timestamp": 66.3667, "end_timestamp": 72.1, "label": "Pull the right gripper up and the left gripper down."}
+{"episode_index": 1, "start_frame": 2163, "end_frame": 2446, "start_timestamp": 72.1, "end_timestamp": 81.5333, "label": "mistakenly failed to cut the long end of the suture."}
+{"episode_index": 1, "episode_done": true}
+{"episode_index": 2, "start_frame": 0, "end_frame": 188, "start_timestamp": 0.0, "end_timestamp": 6.2667, "label": "Use the left gripper to pick up the needle near the tip."}
+{"episode_index": 2, "start_frame": 188, "end_frame": 452, "start_timestamp": 6.2667, "end_timestamp": 15.0667, "label": "hand the needle over to the right gripper."}
+{"episode_index": 2, "start_frame": 452, "end_frame": 1064, "start_timestamp": 15.0667, "end_timestamp": 35.4667, "label": "Pass the needle through the target point on the top of the incision."}
+{"episode_index": 2, "start_frame": 1064, "end_frame": 1280, "start_timestamp": 35.4667, "end_timestamp": 42.6667, "label": "Pull the needle through with the left gripper."}
+{"episode_index": 2, "start_frame": 1280, "end_frame": 1490, "start_timestamp": 42.6667, "end_timestamp": 49.6667, "label": "Pass the needle back to the right gripper."}
+{"episode_index": 2, "start_frame": 1490, "end_frame": 2300, "start_timestamp": 49.6667, "end_timestamp": 76.6667, "label": "through the needle through the bottom of the incision."}
+{"episode_index": 2, "start_frame": 2300, "end_frame": 2478, "start_timestamp": 76.6667, "end_timestamp": 82.6, "label": "Pull the needle through with the left gripper."}
+{"episode_index": 2, "start_frame": 2478, "end_frame": 3192, "start_timestamp": 82.6, "end_timestamp": 106.4, "label": "With the right gripper pull the suture through until only the tail remains."}
+{"episode_index": 2, "start_frame": 3192, "end_frame": 3287, "start_timestamp": 106.4, "end_timestamp": 109.5667, "label": "Set down the needle."}
+{"episode_index": 2, "start_frame": 3287, "end_frame": 3432, "start_timestamp": 109.5667, "end_timestamp": 114.4, "label": "Grab the long suture end with the left gripper."}
+{"episode_index": 2, "start_frame": 3432, "end_frame": 3728, "start_timestamp": 114.4, "end_timestamp": 124.2667, "label": "Wrap the suture twice around the right gripper."}
+{"episode_index": 2, "start_frame": 3728, "end_frame": 3804, "start_timestamp": 124.2667, "end_timestamp": 126.8, "label": "Use the right gripper to grab the short suture end."}
+{"episode_index": 2, "start_frame": 3804, "end_frame": 3956, "start_timestamp": 126.8, "end_timestamp": 131.8667, "label": "Pull the right gripper down and the left gripper up to tighten the knot."}
+{"episode_index": 2, "start_frame": 3956, "end_frame": 4173, "start_timestamp": 131.8667, "end_timestamp": 139.1, "label": "Re-grasp the long suture end with the left gripper for a closer grip."}
+{"episode_index": 2, "start_frame": 4173, "end_frame": 4236, "start_timestamp": 139.1, "end_timestamp": 141.2, "label": "Tighten the knot."}
+{"episode_index": 2, "start_frame": 4236, "end_frame": 4898, "start_timestamp": 141.2, "end_timestamp": 163.2667, "label": "Wrap the long suture end around the right gripper once."}
+{"episode_index": 2, "start_frame": 4898, "end_frame": 5034, "start_timestamp": 163.2667, "end_timestamp": 167.8, "label": "Use the right gripper to grab the short suture end."}
+{"episode_index": 2, "start_frame": 5034, "end_frame": 5486, "start_timestamp": 167.8, "end_timestamp": 182.8667, "label": "Pull the right grip up and the left grip down to tighten the knot."}
+{"episode_index": 2, "episode_done": true}
+{"episode_index": 0, "start_frame": 0, "end_frame": 322, "start_timestamp": 0.0, "end_timestamp": 10.7333, "label": "Use the left gripper to pick up the needle near the tip."}
+{"episode_index": 0, "start_frame": 322, "end_frame": 621, "start_timestamp": 10.7333, "end_timestamp": 20.7, "label": "Hand the needle from the left gripper to the right gripper."}
+{"episode_index": 0, "start_frame": 621, "end_frame": 1502, "start_timestamp": 20.7, "end_timestamp": 50.0667, "label": "Use the right gripper to throw the needle through the top of the incision."}
+{"episode_index": 0, "start_frame": 1502, "end_frame": 1770, "start_timestamp": 50.0667, "end_timestamp": 59.0, "label": "Use the left gripper to pull the needle through."}
+{"episode_index": 0, "start_frame": 1770, "end_frame": 1995, "start_timestamp": 59.0, "end_timestamp": 66.5, "label": "Pass the needle from the left gripper to the right gripper."}
+{"episode_index": 0, "start_frame": 1995, "end_frame": 2416, "start_timestamp": 66.5, "end_timestamp": 80.5333, "label": "Throw the needle through the bottom of the incision."}
+{"episode_index": 0, "start_frame": 2416, "end_frame": 2607, "start_timestamp": 80.5333, "end_timestamp": 86.9, "label": "hand the needle back to the left gripper to reposition."}
+{"episode_index": 0, "start_frame": 2607, "end_frame": 2654, "start_timestamp": 86.9, "end_timestamp": 88.4667, "label": "Set the needle down and try again."}
+{"episode_index": 0, "start_frame": 2654, "end_frame": 2741, "start_timestamp": 88.4667, "end_timestamp": 91.3667, "label": "Pick up the needle with the right gripper."}
+{"episode_index": 0, "start_frame": 2741, "end_frame": 2915, "start_timestamp": 91.3667, "end_timestamp": 97.1667, "label": "Pass the needle to the left gripper to reposition."}
+{"episode_index": 0, "start_frame": 2915, "end_frame": 3017, "start_timestamp": 97.1667, "end_timestamp": 100.5667, "label": "hand the needle over to the right gripper."}
+{"episode_index": 0, "start_frame": 3017, "end_frame": 3183, "start_timestamp": 100.5667, "end_timestamp": 106.1, "label": "hand the needle back to the left gripper to reposition."}
+{"episode_index": 0, "start_frame": 3183, "end_frame": 3232, "start_timestamp": 106.1, "end_timestamp": 107.7333, "label": "Set the needle down with the left gripper to try again."}
+{"episode_index": 0, "start_frame": 3232, "end_frame": 3316, "start_timestamp": 107.7333, "end_timestamp": 110.5333, "label": "pick up the needle with the left gripper."}
+{"episode_index": 0, "start_frame": 3316, "end_frame": 3396, "start_timestamp": 110.5333, "end_timestamp": 113.2, "label": "Hand the needle over to the right gripper."}
+{"episode_index": 0, "start_frame": 3396, "end_frame": 3635, "start_timestamp": 113.2, "end_timestamp": 121.1667, "label": "Pass the needle back to the left gripper to reposition."}
+{"episode_index": 0, "start_frame": 3635, "end_frame": 3801, "start_timestamp": 121.1667, "end_timestamp": 126.7, "label": "Hand the needle over to the right gripper."}
+{"episode_index": 0, "start_frame": 3801, "end_frame": 4142, "start_timestamp": 126.7, "end_timestamp": 138.0667, "label": "Use the right gripper to throw the needle through the bottom of the incision."}
+{"episode_index": 0, "start_frame": 4142, "end_frame": 4287, "start_timestamp": 138.0667, "end_timestamp": 142.9, "label": "Pass the needle back to the left gripper to reposition."}
+{"episode_index": 0, "start_frame": 4287, "end_frame": 4390, "start_timestamp": 142.9, "end_timestamp": 146.3333, "label": "Pass the needle to the right gripper."}
+{"episode_index": 0, "start_frame": 4390, "end_frame": 4706, "start_timestamp": 146.3333, "end_timestamp": 156.8667, "label": "throw the needle through the bottom side of the cut."}
+{"episode_index": 0, "start_frame": 4706, "end_frame": 4852, "start_timestamp": 156.8667, "end_timestamp": 161.7333, "label": "Re-grasp with the right gripper to pass the needle further."}
+{"episode_index": 0, "start_frame": 4852, "end_frame": 4892, "start_timestamp": 161.7333, "end_timestamp": 163.0667, "label": "Let go of the needle with the right gripper."}
+{"episode_index": 0, "start_frame": 4892, "end_frame": 5181, "start_timestamp": 163.0667, "end_timestamp": 172.7, "label": "Pull the needle through with the left gripper."}
+{"episode_index": 0, "start_frame": 5181, "end_frame": 6701, "start_timestamp": 172.7, "end_timestamp": 223.3667, "label": "Use the right gripper to pull the suture through."}
+{"episode_index": 0, "start_frame": 6701, "end_frame": 6871, "start_timestamp": 223.3667, "end_timestamp": 229.0333, "label": "Use the right gripper to adjust the short suture end."}
+{"episode_index": 0, "start_frame": 6871, "end_frame": 6916, "start_timestamp": 229.0333, "end_timestamp": 230.5333, "label": "Set the needle down."}
+{"episode_index": 0, "start_frame": 6916, "end_frame": 7032, "start_timestamp": 230.5333, "end_timestamp": 234.4, "label": "Grab the long suture and with the right gripper."}
+{"episode_index": 0, "start_frame": 7032, "end_frame": 7166, "start_timestamp": 234.4, "end_timestamp": 238.8667, "label": "Regrasp with the left gripper to get a longer length of suture."}
+{"episode_index": 0, "start_frame": 7166, "end_frame": 7570, "start_timestamp": 238.8667, "end_timestamp": 252.3333, "label": "Use the left gripper to loop the suture twice around the right gripper."}
+{"episode_index": 0, "start_frame": 7570, "end_frame": 7735, "start_timestamp": 252.3333, "end_timestamp": 257.8333, "label": "Grab the short suture end with the right gripper."}
+{"episode_index": 0, "start_frame": 7735, "end_frame": 7887, "start_timestamp": 257.8333, "end_timestamp": 262.9, "label": "Pull the right gripper down and the left gripper up to tighten the knot."}
+{"episode_index": 0, "start_frame": 7887, "end_frame": 7994, "start_timestamp": 262.9, "end_timestamp": 266.4667, "label": "Wait for next command."}
+{"episode_index": 0, "episode_done": true}
+{"episode_index": 3, "start_frame": 0, "end_frame": 190, "start_timestamp": 0.0, "end_timestamp": 6.3333, "label": "Use the left gripper to pick out the needle near the tip."}
+{"episode_index": 3, "start_frame": 190, "end_frame": 381, "start_timestamp": 6.3333, "end_timestamp": 12.7, "label": "Hand the needle over to the right gripper."}
+{"episode_index": 3, "start_frame": 381, "end_frame": 562, "start_timestamp": 12.7, "end_timestamp": 18.7333, "label": "Hand the needle back to the left gripper to readjust."}
+{"episode_index": 3, "start_frame": 562, "end_frame": 662, "start_timestamp": 18.7333, "end_timestamp": 22.0667, "label": "Hand the needle to the right gripper."}
+{"episode_index": 3, "start_frame": 662, "end_frame": 1281, "start_timestamp": 22.0667, "end_timestamp": 42.7, "label": "Use the right gripper to pass the needle through the top of the cut."}
+{"episode_index": 3, "start_frame": 1281, "end_frame": 1356, "start_timestamp": 42.7, "end_timestamp": 45.2, "label": "Re-grasp the needle to push it further."}
+{"episode_index": 3, "start_frame": 1356, "end_frame": 1483, "start_timestamp": 45.2, "end_timestamp": 49.4333, "label": "Pull the needle through with the left gripper."}
+{"episode_index": 3, "start_frame": 1483, "end_frame": 1660, "start_timestamp": 49.4333, "end_timestamp": 55.3333, "label": "Hand the needle back to the right gripper."}
+{"episode_index": 3, "start_frame": 1660, "end_frame": 2262, "start_timestamp": 55.3333, "end_timestamp": 75.4, "label": "Left gripper opens the cut, right gripper passes the needle through."}
+{"episode_index": 3, "start_frame": 2262, "end_frame": 2442, "start_timestamp": 75.4, "end_timestamp": 81.4, "label": "Use the left gripper to pull the needle through."}
+{"episode_index": 3, "start_frame": 2442, "end_frame": 3534, "start_timestamp": 81.4, "end_timestamp": 117.8, "label": "Use the right gripper to pull the suture through."}
+{"episode_index": 3, "start_frame": 3534, "end_frame": 3795, "start_timestamp": 117.8, "end_timestamp": 126.5, "label": "Use the right gripper to pull up on the short suture end."}
+{"episode_index": 3, "start_frame": 3795, "end_frame": 4040, "start_timestamp": 126.5, "end_timestamp": 134.6667, "label": "short suture end cannot be grabbed. Pull suture through to try again."}
+{"episode_index": 3, "episode_done": true}
+{"episode_index": 4, "start_frame": 0, "end_frame": 220, "start_timestamp": 0.0, "end_timestamp": 7.3333, "label": "Pick up the needle near the tip using the left gripper."}
+{"episode_index": 4, "start_frame": 220, "end_frame": 371, "start_timestamp": 7.3333, "end_timestamp": 12.3667, "label": "Hand the needle from the left gripper to the right gripper."}
+{"episode_index": 4, "start_frame": 371, "end_frame": 696, "start_timestamp": 12.3667, "end_timestamp": 23.2, "label": "Use the right gripper to pass the needle through the top of the incision."}
+{"episode_index": 4, "start_frame": 696, "end_frame": 818, "start_timestamp": 23.2, "end_timestamp": 27.2667, "label": "rotate the needle through the incision using the right gripper."}
+{"episode_index": 4, "start_frame": 818, "end_frame": 921, "start_timestamp": 27.2667, "end_timestamp": 30.7, "label": "Open the right gripper and then use the left gripper to pull the needle through."}
+{"episode_index": 4, "start_frame": 921, "end_frame": 968, "start_timestamp": 30.7, "end_timestamp": 32.2667, "label": "Pull up on the needle with the left gripper to pull suture through."}
+{"episode_index": 4, "start_frame": 968, "end_frame": 1140, "start_timestamp": 32.2667, "end_timestamp": 38.0, "label": "Hand the needles from the left gripper to the right gripper."}
+{"episode_index": 4, "start_frame": 1140, "end_frame": 1678, "start_timestamp": 38.0, "end_timestamp": 55.9333, "label": "Use the right gripper to pass the needle through the bottom half of the cut."}
+{"episode_index": 4, "start_frame": 1678, "end_frame": 1800, "start_timestamp": 55.9333, "end_timestamp": 60.0, "label": "Use the left gripper to pull the needle through."}
+{"episode_index": 4, "start_frame": 1800, "end_frame": 1823, "start_timestamp": 60.0, "end_timestamp": 60.7667, "label": "Pull up on the needle to pull the suture through."}
+{"episode_index": 4, "start_frame": 1823, "end_frame": 2131, "start_timestamp": 60.7667, "end_timestamp": 71.0333, "label": "Use the ragripper to pull the suture through."}
+{"episode_index": 4, "start_frame": 2131, "end_frame": 2268, "start_timestamp": 71.0333, "end_timestamp": 75.6, "label": "Too much suture pulled through. Remove suture to reset."}
+{"episode_index": 4, "start_frame": 2268, "end_frame": 2588, "start_timestamp": 75.6, "end_timestamp": 86.2667, "label": "Hand needle back to the right gripper from the left gripper."}
+{"episode_index": 4, "start_frame": 2588, "end_frame": 2880, "start_timestamp": 86.2667, "end_timestamp": 96.0, "label": "Use the right gripper to pass the needle through the top of the cut."}
+{"episode_index": 4, "start_frame": 2880, "end_frame": 3282, "start_timestamp": 96.0, "end_timestamp": 109.4, "label": "Use the left gripper to pull the needle through the tissue."}
+{"episode_index": 4, "start_frame": 3282, "end_frame": 3529, "start_timestamp": 109.4, "end_timestamp": 117.6333, "label": "Pass the needle to the right gripper."}
+{"episode_index": 4, "start_frame": 3529, "end_frame": 3657, "start_timestamp": 117.6333, "end_timestamp": 121.9, "label": "Pass the needle back to the left gripper to re-adjust the grip."}
+{"episode_index": 4, "start_frame": 3657, "end_frame": 3668, "start_timestamp": 121.9, "end_timestamp": 122.2667, "label": "Hand over the needle to the right gripper."}
+{"episode_index": 4, "start_frame": 3668, "end_frame": 3890, "start_timestamp": 122.2667, "end_timestamp": 129.6667, "label": "Pick up the needle with the left gripper near the needle tip."}
+{"episode_index": 4, "start_frame": 3890, "end_frame": 4082, "start_timestamp": 129.6667, "end_timestamp": 136.0667, "label": "Hand the needle to the right gripper."}
+{"episode_index": 4, "start_frame": 4082, "end_frame": 4298, "start_timestamp": 136.0667, "end_timestamp": 143.2667, "label": "Use the left gripper to open the tissue."}
+{"episode_index": 4, "start_frame": 4298, "end_frame": 4732, "start_timestamp": 143.2667, "end_timestamp": 157.7333, "label": "Use the right gripper to pass the needle through the bottom half of the tissue."}
+{"episode_index": 4, "start_frame": 4732, "end_frame": 4904, "start_timestamp": 157.7333, "end_timestamp": 163.4667, "label": "Use the left gripper to rotate the needle through the skin."}
+{"episode_index": 4, "start_frame": 4904, "end_frame": 4961, "start_timestamp": 163.4667, "end_timestamp": 165.3667, "label": "Pull up on the needle to get slack in the suture."}
+{"episode_index": 4, "start_frame": 4961, "end_frame": 5420, "start_timestamp": 165.3667, "end_timestamp": 180.6667, "label": "Use the right gripper to pull the suture through until only a short end remains on the top."}
+{"episode_index": 4, "start_frame": 5420, "end_frame": 5510, "start_timestamp": 180.6667, "end_timestamp": 183.6667, "label": "Set down the needle with the left gripper."}
+{"episode_index": 4, "start_frame": 5510, "end_frame": 5652, "start_timestamp": 183.6667, "end_timestamp": 188.4, "label": "Use the left gripper to move the needle out of the way."}
+{"episode_index": 4, "start_frame": 5652, "end_frame": 5702, "start_timestamp": 188.4, "end_timestamp": 190.0667, "label": "Grab the long, suture end with the left gripper."}
+{"episode_index": 4, "start_frame": 5702, "end_frame": 5913, "start_timestamp": 190.0667, "end_timestamp": 197.1, "label": "Use the left gripper to wrap the suture twice around the right gripper."}
+{"episode_index": 4, "start_frame": 5913, "end_frame": 5982, "start_timestamp": 197.1, "end_timestamp": 199.4, "label": "Use the right gripper to grab the short suture end."}
+{"episode_index": 4, "start_frame": 5982, "end_frame": 6742, "start_timestamp": 199.4, "end_timestamp": 224.7333, "label": "Pull the right gripper down and the left gripper up to tension the knot."}
+{"episode_index": 4, "start_frame": 6742, "end_frame": 7568, "start_timestamp": 224.7333, "end_timestamp": 252.2667, "label": "Wrap the suture around the right gripper once."}
+{"episode_index": 4, "start_frame": 7568, "end_frame": 7678, "start_timestamp": 252.2667, "end_timestamp": 255.9333, "label": "Use the right gripper to grab the short suture end on the bottom."}
+{"episode_index": 4, "start_frame": 7678, "end_frame": 7832, "start_timestamp": 255.9333, "end_timestamp": 261.0667, "label": "Pull the right gripper up and the left gripper down to tension the knot."}
+{"episode_index": 4, "start_frame": 7832, "end_frame": 8091, "start_timestamp": 261.0667, "end_timestamp": 269.7, "label": "Use the left gripper to wrap the long suture end once around the right gripper."}
+{"episode_index": 4, "start_frame": 8091, "end_frame": 8174, "start_timestamp": 269.7, "end_timestamp": 272.4667, "label": "Use the right gripper to grab the short suture end on top."}
+{"episode_index": 4, "start_frame": 8174, "end_frame": 8566, "start_timestamp": 272.4667, "end_timestamp": 285.5333, "label": "Pull the right gripper down, and the left gripper up, to tension the knot."}
+{"episode_index": 4, "start_frame": 8566, "end_frame": 8814, "start_timestamp": 285.5333, "end_timestamp": 293.8, "label": "Use the right gripper to cut the long suture end."}
+{"episode_index": 4, "start_frame": 8814, "end_frame": 9051, "start_timestamp": 293.8, "end_timestamp": 301.7, "label": "Mistakenly waited in the home position."}
+{"episode_index": 4, "start_frame": 9051, "end_frame": 9249, "start_timestamp": 301.7, "end_timestamp": 308.3, "label": "Use the left gripper to pick up the needle near the tip."}
+{"episode_index": 4, "start_frame": 9249, "end_frame": 9369, "start_timestamp": 308.3, "end_timestamp": 312.3, "label": "Hand the needle from the left to the right gripper."}
+{"episode_index": 4, "start_frame": 9369, "end_frame": 9872, "start_timestamp": 312.3, "end_timestamp": 329.0667, "label": "Use the right gripper to pass the needle through the top of the cut."}
+{"episode_index": 4, "start_frame": 9872, "end_frame": 10080, "start_timestamp": 329.0667, "end_timestamp": 336.0, "label": "Use the left gripper to pull the needle through the skin."}
+{"episode_index": 4, "start_frame": 10080, "end_frame": 10188, "start_timestamp": 336.0, "end_timestamp": 339.6, "label": "pass the needle to the right gripper."}
+{"episode_index": 4, "start_frame": 10188, "end_frame": 10546, "start_timestamp": 339.6, "end_timestamp": 351.5333, "label": "Use the right gripper to push the needle through the bottom half of the cut."}
+{"episode_index": 4, "start_frame": 10546, "end_frame": 10726, "start_timestamp": 351.5333, "end_timestamp": 357.5333, "label": "Use the left gripper to grab near the tip of the needle and pull the needle through the skin."}
+{"episode_index": 4, "start_frame": 10726, "end_frame": 10849, "start_timestamp": 357.5333, "end_timestamp": 361.6333, "label": "Use the right gripper to pull the suture through until only a short tail remains."}
+{"episode_index": 4, "start_frame": 10849, "end_frame": 11179, "start_timestamp": 361.6333, "end_timestamp": 372.6333, "label": "Wrap the suture twice around the right gripper."}
+{"episode_index": 4, "start_frame": 11179, "end_frame": 12037, "start_timestamp": 372.6333, "end_timestamp": 401.2333, "label": "Mistakenly testing the left gripper"}
+{"episode_index": 4, "episode_done": true}
+{"episode_index": 5, "start_frame": 0, "end_frame": 164, "start_timestamp": 0.0, "end_timestamp": 5.4667, "label": "Use the left gripper to grab the long suture end."}
+{"episode_index": 5, "start_frame": 164, "end_frame": 378, "start_timestamp": 5.4667, "end_timestamp": 12.6, "label": "Wrap the long suture and twice around the right gripper."}
+{"episode_index": 5, "start_frame": 378, "end_frame": 530, "start_timestamp": 12.6, "end_timestamp": 17.6667, "label": "Use the right gripper to grab the short suture end."}
+{"episode_index": 5, "start_frame": 530, "end_frame": 627, "start_timestamp": 17.6667, "end_timestamp": 20.9, "label": "Pull the right gripper down and the left gripper up to tension the knot."}
+{"episode_index": 5, "start_frame": 627, "end_frame": 956, "start_timestamp": 20.9, "end_timestamp": 31.8667, "label": "Use the left gripper to wrap the suture around the right gripper once."}
+{"episode_index": 5, "start_frame": 956, "end_frame": 1044, "start_timestamp": 31.8667, "end_timestamp": 34.8, "label": "Use the right gripper to grab the short suture end."}
+{"episode_index": 5, "start_frame": 1044, "end_frame": 1150, "start_timestamp": 34.8, "end_timestamp": 38.3333, "label": "Pull the right gripper up and the left gripper down to tension the knot."}
+{"episode_index": 5, "start_frame": 1150, "end_frame": 1300, "start_timestamp": 38.3333, "end_timestamp": 43.3333, "label": "Wrap the long suture once around the right gripper."}
+{"episode_index": 5, "start_frame": 1300, "end_frame": 1373, "start_timestamp": 43.3333, "end_timestamp": 45.7667, "label": "Use the right gripper to grab the short suture end."}
+{"episode_index": 5, "start_frame": 1373, "end_frame": 1469, "start_timestamp": 45.7667, "end_timestamp": 48.9667, "label": "Pull the right gripper down and the left gripper up to tighten the knot."}
+{"episode_index": 5, "start_frame": 1469, "end_frame": 1878, "start_timestamp": 48.9667, "end_timestamp": 62.6, "label": "Use the right gripper to cut the short suture end."}
+{"episode_index": 5, "episode_done": true}
+{"episode_index": 15, "start_frame": 0, "end_frame": 594, "start_timestamp": 0.0, "end_timestamp": 19.8, "label": "Use the left gripper to pull the needle into frame."}
+{"episode_index": 15, "start_frame": 594, "end_frame": 668, "start_timestamp": 19.8, "end_timestamp": 22.2667, "label": "Use the left gripper to pick up the needle."}
+{"episode_index": 15, "start_frame": 668, "end_frame": 741, "start_timestamp": 22.2667, "end_timestamp": 24.7, "label": "Pass the needle to the right gripper."}
+{"episode_index": 15, "start_frame": 741, "end_frame": 1132, "start_timestamp": 24.7, "end_timestamp": 37.7333, "label": "Use the right gripper to push the needle through the top of the incision."}
+{"episode_index": 15, "start_frame": 1132, "end_frame": 1242, "start_timestamp": 37.7333, "end_timestamp": 41.4, "label": "Use the left gripper to pull the needle through the skin."}
+{"episode_index": 15, "start_frame": 1242, "end_frame": 1309, "start_timestamp": 41.4, "end_timestamp": 43.6333, "label": "Pass the needle to the right gripper."}
+{"episode_index": 15, "start_frame": 1309, "end_frame": 1420, "start_timestamp": 43.6333, "end_timestamp": 47.3333, "label": "Use the left gripper to open the cut."}
+{"episode_index": 15, "start_frame": 1420, "end_frame": 1592, "start_timestamp": 47.3333, "end_timestamp": 53.0667, "label": "Pass the needle through the bottom of the tissue."}
+{"episode_index": 15, "start_frame": 1592, "end_frame": 1689, "start_timestamp": 53.0667, "end_timestamp": 56.3, "label": "Use the left gripper to pull the needle through."}
+{"episode_index": 15, "start_frame": 1689, "end_frame": 1938, "start_timestamp": 56.3, "end_timestamp": 64.6, "label": "Use the right gripper to pull the suture through."}
+{"episode_index": 15, "start_frame": 1938, "end_frame": 2014, "start_timestamp": 64.6, "end_timestamp": 67.1333, "label": "mistakenly pulled the suture too much."}
+{"episode_index": 15, "start_frame": 2014, "end_frame": 2246, "start_timestamp": 67.1333, "end_timestamp": 74.8667, "label": "Pass the needle to the right gripper."}
+{"episode_index": 15, "start_frame": 2246, "end_frame": 2422, "start_timestamp": 74.8667, "end_timestamp": 80.7333, "label": "Pass the needle through the top of the incision."}
+{"episode_index": 15, "start_frame": 2422, "end_frame": 2524, "start_timestamp": 80.7333, "end_timestamp": 84.1333, "label": "Use the left gripper to pull the needle through."}
+{"episode_index": 15, "start_frame": 2524, "end_frame": 2579, "start_timestamp": 84.1333, "end_timestamp": 85.9667, "label": "Hand over the needle to the right gripper."}
+{"episode_index": 15, "start_frame": 2579, "end_frame": 2648, "start_timestamp": 85.9667, "end_timestamp": 88.2667, "label": "Use the left gripper to open the incision."}
+{"episode_index": 15, "start_frame": 2648, "end_frame": 2824, "start_timestamp": 88.2667, "end_timestamp": 94.1333, "label": "Pass the needle through the bottom half of the cut."}
+{"episode_index": 15, "start_frame": 2824, "end_frame": 2922, "start_timestamp": 94.1333, "end_timestamp": 97.4, "label": "Use the left gripper to pull the needle through."}
+{"episode_index": 15, "start_frame": 2922, "end_frame": 3212, "start_timestamp": 97.4, "end_timestamp": 107.0667, "label": "Use the right gripper to pull the suture until only a short tail remains."}
+{"episode_index": 15, "start_frame": 3212, "end_frame": 3274, "start_timestamp": 107.0667, "end_timestamp": 109.1333, "label": "Set down the needle."}
+{"episode_index": 15, "start_frame": 3274, "end_frame": 3333, "start_timestamp": 109.1333, "end_timestamp": 111.1, "label": "Grab the long suture end with the left gripper."}
+{"episode_index": 15, "start_frame": 3333, "end_frame": 3570, "start_timestamp": 111.1, "end_timestamp": 119.0, "label": "Wrap the suture twice around the right gripper."}
+{"episode_index": 15, "start_frame": 3570, "end_frame": 3652, "start_timestamp": 119.0, "end_timestamp": 121.7333, "label": "Grab the short suture tail end."}
+{"episode_index": 15, "start_frame": 3652, "end_frame": 3816, "start_timestamp": 121.7333, "end_timestamp": 127.2, "label": "Pull the right gripper down and the left gripper up to tension the knot."}
+{"episode_index": 15, "start_frame": 3816, "end_frame": 3859, "start_timestamp": 127.2, "end_timestamp": 128.6333, "label": "Wrap the long suture end once around the right gripper."}
+{"episode_index": 15, "start_frame": 3859, "end_frame": 3930, "start_timestamp": 128.6333, "end_timestamp": 131.0, "label": "Grab the short suture end."}
+{"episode_index": 15, "start_frame": 3930, "end_frame": 4007, "start_timestamp": 131.0, "end_timestamp": 133.5667, "label": "Pull the right gripper up and the left gripper down to tension the knot."}
+{"episode_index": 15, "start_frame": 4007, "end_frame": 4062, "start_timestamp": 133.5667, "end_timestamp": 135.4, "label": "Use the left gripper to wrap once around the right gripper."}
+{"episode_index": 15, "start_frame": 4062, "end_frame": 4129, "start_timestamp": 135.4, "end_timestamp": 137.6333, "label": "Grab the short suture end with the right gripper."}
+{"episode_index": 15, "start_frame": 4129, "end_frame": 4318, "start_timestamp": 137.6333, "end_timestamp": 143.9333, "label": "Pull the right gripper down and the left gripper up to tension the knot."}
+{"episode_index": 15, "start_frame": 4318, "end_frame": 4532, "start_timestamp": 143.9333, "end_timestamp": 151.0667, "label": "Use the right gripper to cut the long suture end."}
+{"episode_index": 15, "start_frame": 4532, "end_frame": 4628, "start_timestamp": 151.0667, "end_timestamp": 154.2667, "label": "Grab the short suture end with the left gripper."}
+{"episode_index": 15, "start_frame": 4628, "end_frame": 4956, "start_timestamp": 154.2667, "end_timestamp": 165.2, "label": "use the right gripper to cut the suture."}
+{"episode_index": 15, "start_frame": 4956, "end_frame": 5051, "start_timestamp": 165.2, "end_timestamp": 168.3667, "label": "Use the left gripper to pick up the needle."}
+{"episode_index": 15, "start_frame": 5051, "end_frame": 5135, "start_timestamp": 168.3667, "end_timestamp": 171.1667, "label": "Pass the needle to the right gripper."}
+{"episode_index": 15, "start_frame": 5135, "end_frame": 5260, "start_timestamp": 171.1667, "end_timestamp": 175.3333, "label": "Put the needle through the top of the skin."}
+{"episode_index": 15, "start_frame": 5260, "end_frame": 5302, "start_timestamp": 175.3333, "end_timestamp": 176.7333, "label": "pass the needle back to the left gripper to re-adjust."}
+{"episode_index": 15, "start_frame": 5302, "end_frame": 5341, "start_timestamp": 176.7333, "end_timestamp": 178.0333, "label": "Pass the needle to the right gripper."}
+{"episode_index": 15, "start_frame": 5341, "end_frame": 5531, "start_timestamp": 178.0333, "end_timestamp": 184.3667, "label": "Pass the needle through the top of the incision."}
+{"episode_index": 15, "start_frame": 5531, "end_frame": 5641, "start_timestamp": 184.3667, "end_timestamp": 188.0333, "label": "Pull the needle through with the left gripper."}
+{"episode_index": 15, "start_frame": 5641, "end_frame": 5706, "start_timestamp": 188.0333, "end_timestamp": 190.2, "label": "Hand the needle to the right gripper."}
+{"episode_index": 15, "start_frame": 5706, "end_frame": 5793, "start_timestamp": 190.2, "end_timestamp": 193.1, "label": "Use the left gripper to open the incision."}
+{"episode_index": 15, "start_frame": 5793, "end_frame": 6122, "start_timestamp": 193.1, "end_timestamp": 204.0667, "label": "Use the right gripper to rotate the suture through the bottom half of the cut."}
+{"episode_index": 15, "start_frame": 6122, "end_frame": 6190, "start_timestamp": 204.0667, "end_timestamp": 206.3333, "label": "Use the left gripper to pull the needle through."}
+{"episode_index": 15, "start_frame": 6190, "end_frame": 6304, "start_timestamp": 206.3333, "end_timestamp": 210.1333, "label": "Use the right gripper to pull the suture through the incision until a short tail remains."}
+{"episode_index": 15, "start_frame": 6304, "end_frame": 6607, "start_timestamp": 210.1333, "end_timestamp": 220.2333, "label": "wrap the suture twice around the right gripper."}
+{"episode_index": 15, "start_frame": 6607, "end_frame": 6653, "start_timestamp": 220.2333, "end_timestamp": 221.7667, "label": "Grab the short suture tail."}
+{"episode_index": 15, "start_frame": 6653, "end_frame": 6792, "start_timestamp": 221.7667, "end_timestamp": 226.4, "label": "Pull the right gripper down and the left gripper up to tighten the knot."}
+{"episode_index": 15, "start_frame": 6792, "end_frame": 6845, "start_timestamp": 226.4, "end_timestamp": 228.1667, "label": "Use the left gripper to wrap the suture once around the right gripper."}
+{"episode_index": 15, "start_frame": 6845, "end_frame": 6906, "start_timestamp": 228.1667, "end_timestamp": 230.2, "label": "Grab the short suture tail."}
+{"episode_index": 15, "start_frame": 6906, "end_frame": 7011, "start_timestamp": 230.2, "end_timestamp": 233.7, "label": "Pull the right gripper up and the left gripper down to tighten the knot."}
+{"episode_index": 15, "start_frame": 7011, "end_frame": 7089, "start_timestamp": 233.7, "end_timestamp": 236.3, "label": "Use the left gripper to wrap the suture once around the right gripper."}
+{"episode_index": 15, "start_frame": 7089, "end_frame": 7246, "start_timestamp": 236.3, "end_timestamp": 241.5333, "label": "Use the right gripper to grab the short suture tail."}
+{"episode_index": 15, "episode_done": true}
+{"episode_index": 32, "start_frame": 0, "end_frame": 112, "start_timestamp": 0.0, "end_timestamp": 3.7333, "label": "Pick up the needle with the left gripper."}
+{"episode_index": 32, "start_frame": 112, "end_frame": 187, "start_timestamp": 3.7333, "end_timestamp": 6.2333, "label": "Hand the needle over to the right gripper."}
+{"episode_index": 29, "start_frame": 0, "end_frame": 96, "start_timestamp": 0.0, "end_timestamp": 3.2, "label": "Use the left gripper to pick up the needle."}
+{"episode_index": 29, "start_frame": 96, "end_frame": 162, "start_timestamp": 3.2, "end_timestamp": 5.4, "label": "pass the needle from the left to the right gripper."}
+{"episode_index": 29, "start_frame": 162, "end_frame": 218, "start_timestamp": 5.4, "end_timestamp": 7.2667, "label": "Re-adjust by passing the needle back to the left gripper."}
+{"episode_index": 29, "start_frame": 218, "end_frame": 290, "start_timestamp": 7.2667, "end_timestamp": 9.6667, "label": "Pass the needle to the right gripper."}
+{"episode_index": 29, "start_frame": 290, "end_frame": 805, "start_timestamp": 9.6667, "end_timestamp": 26.8333, "label": "Pass the needle through the top of the incision."}
+{"episode_index": 29, "start_frame": 805, "end_frame": 895, "start_timestamp": 26.8333, "end_timestamp": 29.8333, "label": "Pull the needle through with the left gripper."}
+{"episode_index": 29, "start_frame": 895, "end_frame": 953, "start_timestamp": 29.8333, "end_timestamp": 31.7667, "label": "pass the needle back to the right gripper."}
+{"episode_index": 29, "start_frame": 953, "end_frame": 1047, "start_timestamp": 31.7667, "end_timestamp": 34.9, "label": "use the left gripper to open the incision."}
+{"episode_index": 29, "start_frame": 1047, "end_frame": 1236, "start_timestamp": 34.9, "end_timestamp": 41.2, "label": "Throw the needle through the bottom half of the cut."}
+{"episode_index": 29, "start_frame": 1236, "end_frame": 1306, "start_timestamp": 41.2, "end_timestamp": 43.5333, "label": "Use the left gripper to pull the needle through."}
+{"episode_index": 29, "start_frame": 1306, "end_frame": 1685, "start_timestamp": 43.5333, "end_timestamp": 56.1667, "label": "Use the right gripper to pull the suture through until a short tail is left."}
+{"episode_index": 29, "start_frame": 1685, "end_frame": 1802, "start_timestamp": 56.1667, "end_timestamp": 60.0667, "label": "Adjust the short tail."}
+{"episode_index": 29, "start_frame": 1802, "end_frame": 1868, "start_timestamp": 60.0667, "end_timestamp": 62.2667, "label": "Set down the needle with the left gripper."}
+{"episode_index": 29, "start_frame": 1868, "end_frame": 1902, "start_timestamp": 62.2667, "end_timestamp": 63.4, "label": "Grab the long suture end with the left gripper."}
+{"episode_index": 29, "start_frame": 1902, "end_frame": 1968, "start_timestamp": 63.4, "end_timestamp": 65.6, "label": "Use the right gripper to grab the long suture end."}
+{"episode_index": 29, "start_frame": 1968, "end_frame": 2050, "start_timestamp": 65.6, "end_timestamp": 68.3333, "label": "Move the left gripper to grab a longer section of suture."}
+{"episode_index": 29, "start_frame": 2050, "end_frame": 2251, "start_timestamp": 68.3333, "end_timestamp": 75.0333, "label": "Let go with the right gripper and wrap the suture twice around the right gripper."}
+{"episode_index": 29, "start_frame": 2251, "end_frame": 2327, "start_timestamp": 75.0333, "end_timestamp": 77.5667, "label": "Grab the short suture end with the right gripper."}
+{"episode_index": 29, "start_frame": 2327, "end_frame": 2453, "start_timestamp": 77.5667, "end_timestamp": 81.7667, "label": "Tighten the knot by pulling the right gripper down and the left gripper up."}
+{"episode_index": 29, "start_frame": 2453, "end_frame": 2550, "start_timestamp": 81.7667, "end_timestamp": 85.0, "label": "Wrap the long suture end once around the right gripper."}
+{"episode_index": 29, "start_frame": 2550, "end_frame": 2612, "start_timestamp": 85.0, "end_timestamp": 87.0667, "label": "Grab the short suture end with the right gripper."}
+{"episode_index": 29, "start_frame": 2612, "end_frame": 2700, "start_timestamp": 87.0667, "end_timestamp": 90.0, "label": "Pull the right gripper up and the left gripper down to tension the knot."}
+{"episode_index": 29, "start_frame": 2700, "end_frame": 2794, "start_timestamp": 90.0, "end_timestamp": 93.1333, "label": "Wrap the long suture end once around the right gripper."}
+{"episode_index": 29, "start_frame": 2794, "end_frame": 2844, "start_timestamp": 93.1333, "end_timestamp": 94.8, "label": "Use the right gripper to grab the short suture and."}
+{"episode_index": 29, "start_frame": 2844, "end_frame": 2969, "start_timestamp": 94.8, "end_timestamp": 98.9667, "label": "Pull the right to gripper down and the left gripper up to tie the knot."}
+{"episode_index": 29, "start_frame": 2969, "end_frame": 3099, "start_timestamp": 98.9667, "end_timestamp": 103.3, "label": "Use the right gripper to cut the long suture."}
+{"episode_index": 29, "start_frame": 3099, "end_frame": 3161, "start_timestamp": 103.3, "end_timestamp": 105.3667, "label": "Set down the suture with the left gripper."}
+{"episode_index": 29, "start_frame": 3161, "end_frame": 3297, "start_timestamp": 105.3667, "end_timestamp": 109.9, "label": "Grab the short suitor tail with the left gripper."}
+{"episode_index": 29, "start_frame": 3297, "end_frame": 3756, "start_timestamp": 109.9, "end_timestamp": 125.2, "label": "Use the right gripper to cut the short suture tail."}
+{"episode_index": 29, "episode_done": true}
+{"episode_index": 6, "start_frame": 0, "end_frame": 125, "start_timestamp": 0.0, "end_timestamp": 4.1667, "label": "Use the left gripper to pick up the needle."}
+{"episode_index": 6, "start_frame": 125, "end_frame": 244, "start_timestamp": 4.1667, "end_timestamp": 8.1333, "label": "Pass the needle to the right grasper."}
+{"episode_index": 6, "start_frame": 244, "end_frame": 635, "start_timestamp": 8.1333, "end_timestamp": 21.1667, "label": "Use the right grasp to throw the needle through the top of the tissue."}
+{"episode_index": 6, "start_frame": 635, "end_frame": 829, "start_timestamp": 21.1667, "end_timestamp": 27.6333, "label": "Pull the needle through the skin with the left gripper."}
+{"episode_index": 6, "start_frame": 829, "end_frame": 936, "start_timestamp": 27.6333, "end_timestamp": 31.2, "label": "Hand the needle back to the right grasper."}
+{"episode_index": 6, "start_frame": 936, "end_frame": 1276, "start_timestamp": 31.2, "end_timestamp": 42.5333, "label": "Throw the needle through the tissue with the right gripper."}
+{"episode_index": 6, "start_frame": 1276, "end_frame": 1462, "start_timestamp": 42.5333, "end_timestamp": 48.7333, "label": "Pull the needle through the skin with the left grasper."}
+{"episode_index": 6, "start_frame": 1462, "end_frame": 2853, "start_timestamp": 48.7333, "end_timestamp": 95.1, "label": "Pull the suture through the incision with the right gripper."}
+{"episode_index": 6, "start_frame": 2853, "end_frame": 2981, "start_timestamp": 95.1, "end_timestamp": 99.3667, "label": "Set down the needle."}
+{"episode_index": 6, "start_frame": 2981, "end_frame": 3142, "start_timestamp": 99.3667, "end_timestamp": 104.7333, "label": "Use the left gripper to pick up the long suture end."}
+{"episode_index": 6, "start_frame": 3142, "end_frame": 3623, "start_timestamp": 104.7333, "end_timestamp": 120.7667, "label": "Wrap the suture twice around the right gripper."}
+{"episode_index": 6, "start_frame": 3623, "end_frame": 3669, "start_timestamp": 120.7667, "end_timestamp": 122.3, "label": "Use the right grasper to grab the short suture end."}
+{"episode_index": 6, "start_frame": 3669, "end_frame": 3797, "start_timestamp": 122.3, "end_timestamp": 126.5667, "label": "Pull the right gripper down and the left gripper up to tighten the knot."}
+{"episode_index": 6, "start_frame": 3797, "end_frame": 3909, "start_timestamp": 126.5667, "end_timestamp": 130.3, "label": "Wrap the long suture and once around the right gripper."}
+{"episode_index": 6, "start_frame": 3909, "end_frame": 3969, "start_timestamp": 130.3, "end_timestamp": 132.3, "label": "Grab the short suture end with the right grasper."}
+{"episode_index": 6, "start_frame": 3969, "end_frame": 4060, "start_timestamp": 132.3, "end_timestamp": 135.3333, "label": "Pull the left grasper down and the right grasper up to tie the knot."}
+{"episode_index": 6, "start_frame": 4060, "end_frame": 4293, "start_timestamp": 135.3333, "end_timestamp": 143.1, "label": "Use the left grasper to wrap the suture once around the right gripper."}
+{"episode_index": 6, "start_frame": 4293, "end_frame": 4393, "start_timestamp": 143.1, "end_timestamp": 146.4333, "label": "Use the right grasper to grab the short suture end."}
+{"episode_index": 6, "start_frame": 4393, "end_frame": 4495, "start_timestamp": 146.4333, "end_timestamp": 149.8333, "label": "Pull the left hand up and the right hand down to tighten the knot."}
+{"episode_index": 6, "start_frame": 4495, "end_frame": 4611, "start_timestamp": 149.8333, "end_timestamp": 153.7, "label": "Grab the short suture end with the left grasper."}
+{"episode_index": 6, "start_frame": 4611, "end_frame": 4694, "start_timestamp": 153.7, "end_timestamp": 156.4667, "label": "Cut the short suture end with the right tool."}
+{"episode_index": 6, "start_frame": 4694, "end_frame": 4783, "start_timestamp": 156.4667, "end_timestamp": 159.4333, "label": "Drop the cut end."}
+{"episode_index": 6, "start_frame": 4783, "end_frame": 4841, "start_timestamp": 159.4333, "end_timestamp": 161.3667, "label": "Grab the long suture end with the left gripper."}
+{"episode_index": 6, "start_frame": 4841, "end_frame": 4977, "start_timestamp": 161.3667, "end_timestamp": 165.9, "label": "Use the right tool to cut the long suture end."}
+{"episode_index": 6, "start_frame": 4977, "end_frame": 5162, "start_timestamp": 165.9, "end_timestamp": 172.0667, "label": "Use the left tool to pick up the needle near the tip."}
+{"episode_index": 6, "start_frame": 5162, "end_frame": 5242, "start_timestamp": 172.0667, "end_timestamp": 174.7333, "label": "Hand the needle over to the right tool."}
+{"episode_index": 6, "start_frame": 5242, "end_frame": 5370, "start_timestamp": 174.7333, "end_timestamp": 179.0, "label": "Pass the needle back to the left tool to adjust the grip."}
+{"episode_index": 6, "start_frame": 5370, "end_frame": 5478, "start_timestamp": 179.0, "end_timestamp": 182.6, "label": "Hand the needle to the right tool."}
+{"episode_index": 6, "start_frame": 5478, "end_frame": 5839, "start_timestamp": 182.6, "end_timestamp": 194.6333, "label": "Pass the needle through the top side of the incision."}
+{"episode_index": 6, "start_frame": 5839, "end_frame": 5986, "start_timestamp": 194.6333, "end_timestamp": 199.5333, "label": "Use the left tool to pull the needle through."}
+{"episode_index": 6, "start_frame": 5986, "end_frame": 6082, "start_timestamp": 199.5333, "end_timestamp": 202.7333, "label": "Hand the needle back to the right gripper."}
+{"episode_index": 6, "start_frame": 6082, "end_frame": 6359, "start_timestamp": 202.7333, "end_timestamp": 211.9667, "label": "Use the left gripper to open the incision."}
+{"episode_index": 6, "start_frame": 6359, "end_frame": 6709, "start_timestamp": 211.9667, "end_timestamp": 223.6333, "label": "Pass the need through the bottom of the incision."}
+{"episode_index": 6, "start_frame": 6709, "end_frame": 6850, "start_timestamp": 223.6333, "end_timestamp": 228.3333, "label": "Pull the needle through using the left gripper."}
+{"episode_index": 6, "start_frame": 6850, "end_frame": 8142, "start_timestamp": 228.3333, "end_timestamp": 271.4, "label": "Pull the suture through using the right tool."}
+{"episode_index": 6, "start_frame": 8142, "end_frame": 8304, "start_timestamp": 271.4, "end_timestamp": 276.8, "label": "Set down the needle."}
+{"episode_index": 6, "start_frame": 8304, "end_frame": 8386, "start_timestamp": 276.8, "end_timestamp": 279.5333, "label": "Grab the long suture end with the left gripper."}
+{"episode_index": 6, "start_frame": 8386, "end_frame": 8632, "start_timestamp": 279.5333, "end_timestamp": 287.7333, "label": "Wrap the suture twice around the right tool."}
+{"episode_index": 6, "start_frame": 8632, "end_frame": 8695, "start_timestamp": 287.7333, "end_timestamp": 289.8333, "label": "Grab the short suture with the right tool."}
+{"episode_index": 6, "start_frame": 8695, "end_frame": 8805, "start_timestamp": 289.8333, "end_timestamp": 293.5, "label": "Tighten the knot."}
+{"episode_index": 6, "start_frame": 8805, "end_frame": 8981, "start_timestamp": 293.5, "end_timestamp": 299.3667, "label": "Wrap the long suture end once aroud the right tool."}
+{"episode_index": 6, "start_frame": 8981, "end_frame": 9045, "start_timestamp": 299.3667, "end_timestamp": 301.5, "label": "Grab the short suture end."}
+{"episode_index": 6, "start_frame": 9045, "end_frame": 9158, "start_timestamp": 301.5, "end_timestamp": 305.2667, "label": "Pull the right tool up to tighten the suture."}
+{"episode_index": 6, "start_frame": 9158, "end_frame": 9287, "start_timestamp": 305.2667, "end_timestamp": 309.5667, "label": "Use the left gripper to wrap once around the right tool."}
+{"episode_index": 6, "start_frame": 9287, "end_frame": 9342, "start_timestamp": 309.5667, "end_timestamp": 311.4, "label": "Grap the short suture end with the open tool."}
+{"episode_index": 6, "start_frame": 9342, "end_frame": 9430, "start_timestamp": 311.4, "end_timestamp": 314.3333, "label": "Move the left gripper up and the right gripper down to tighten the knot."}
+{"episode_index": 6, "start_frame": 9430, "end_frame": 9743, "start_timestamp": 314.3333, "end_timestamp": 324.7667, "label": "Cut the short suture end with the right tool."}
+{"episode_index": 6, "start_frame": 9743, "end_frame": 10058, "start_timestamp": 324.7667, "end_timestamp": 335.2667, "label": "Cut the long suture end with the right tool."}
+{"episode_index": 6, "start_frame": 10058, "end_frame": 10324, "start_timestamp": 335.2667, "end_timestamp": 344.1333, "label": "Use the left grasper to pick up the needle."}
+{"episode_index": 6, "start_frame": 10324, "end_frame": 10419, "start_timestamp": 344.1333, "end_timestamp": 347.3, "label": "Hand over the needle to the right."}
+{"episode_index": 6, "start_frame": 10419, "end_frame": 10915, "start_timestamp": 347.3, "end_timestamp": 363.8333, "label": "Throw the needle through the incision's top side."}
+{"episode_index": 6, "start_frame": 10915, "end_frame": 11099, "start_timestamp": 363.8333, "end_timestamp": 369.9667, "label": "Use the left gripper to pull the needle through."}
+{"episode_index": 6, "start_frame": 11099, "end_frame": 11212, "start_timestamp": 369.9667, "end_timestamp": 373.7333, "label": "Pass the needle back over to the right."}
+{"episode_index": 6, "start_frame": 11212, "end_frame": 11271, "start_timestamp": 373.7333, "end_timestamp": 375.7, "label": "Insert the left tool into the cut."}
+{"episode_index": 6, "start_frame": 11271, "end_frame": 11693, "start_timestamp": 375.7, "end_timestamp": 389.7667, "label": "Throw the needle through the bottom of the cut."}
+{"episode_index": 6, "start_frame": 11693, "end_frame": 11799, "start_timestamp": 389.7667, "end_timestamp": 393.3, "label": "Use the left tool to pull the needle through."}
+{"episode_index": 6, "start_frame": 11799, "end_frame": 12656, "start_timestamp": 393.3, "end_timestamp": 421.8667, "label": "Use the right tool to pull the suture through until only a short tail remains."}
+{"episode_index": 6, "start_frame": 12656, "end_frame": 12856, "start_timestamp": 421.8667, "end_timestamp": 428.5333, "label": "Set down the needle and then grab the long suture end with the left gripper."}
+{"episode_index": 6, "start_frame": 12856, "end_frame": 12947, "start_timestamp": 428.5333, "end_timestamp": 431.5667, "label": "Grab the suture with the right gripper and move the left gripper to grab a longer section of suture."}
+{"episode_index": 6, "start_frame": 12947, "end_frame": 13533, "start_timestamp": 431.5667, "end_timestamp": 451.1, "label": "Wrap the suture twice around the right gripper."}
+{"episode_index": 6, "start_frame": 13533, "end_frame": 13606, "start_timestamp": 451.1, "end_timestamp": 453.5333, "label": "Grab the short suture end"}
+{"episode_index": 6, "start_frame": 13606, "end_frame": 13721, "start_timestamp": 453.5333, "end_timestamp": 457.3667, "label": "Pull the left gripper up in the right gripper down."}
+{"episode_index": 6, "start_frame": 13721, "end_frame": 13824, "start_timestamp": 457.3667, "end_timestamp": 460.8, "label": "Wrap the long suture and once around the right gripper."}
+{"episode_index": 6, "start_frame": 13824, "end_frame": 13849, "start_timestamp": 460.8, "end_timestamp": 461.6333, "label": "Grab the short suture end."}
+{"episode_index": 6, "start_frame": 13849, "end_frame": 14238, "start_timestamp": 461.6333, "end_timestamp": 474.6, "label": "Mistakenly wrap the long suture counter-clockwise once around the right gripper."}
+{"episode_index": 6, "start_frame": 14238, "end_frame": 14316, "start_timestamp": 474.6, "end_timestamp": 477.2, "label": "Pull the right gripper up and the left gripper down to tighten the knot."}
+{"episode_index": 6, "start_frame": 14316, "end_frame": 14487, "start_timestamp": 477.2, "end_timestamp": 482.9, "label": "wrap the suture around the right gripper using the left gripper."}
+{"episode_index": 6, "start_frame": 14487, "end_frame": 14555, "start_timestamp": 482.9, "end_timestamp": 485.1667, "label": "Grab the short suture tail with the right gripper."}
+{"episode_index": 6, "start_frame": 14555, "end_frame": 14638, "start_timestamp": 485.1667, "end_timestamp": 487.9333, "label": "Pull the right tool down and left tool up to tighten the knot."}
+{"episode_index": 6, "start_frame": 14638, "end_frame": 14775, "start_timestamp": 487.9333, "end_timestamp": 492.5, "label": "Use the right tool to cut the long suture end."}
+{"episode_index": 6, "start_frame": 14775, "end_frame": 15037, "start_timestamp": 492.5, "end_timestamp": 501.2333, "label": "Use the right tool to cut the short suture and."}
+{"episode_index": 6, "episode_done": true}
+{"episode_index": 47, "start_frame": 0, "end_frame": 90, "start_timestamp": 0.0, "end_timestamp": 3.0, "label": "Use the left tool to grab the needle near the tip."}
+{"episode_index": 47, "start_frame": 90, "end_frame": 159, "start_timestamp": 3.0, "end_timestamp": 5.3, "label": "Hand over the needle to the right tool."}
+{"episode_index": 47, "start_frame": 159, "end_frame": 243, "start_timestamp": 5.3, "end_timestamp": 8.1, "label": "Pass the needle back to the left gripper to readjust."}
+{"episode_index": 47, "start_frame": 243, "end_frame": 345, "start_timestamp": 8.1, "end_timestamp": 11.5, "label": "Pass the needle to the right gripper."}
+{"episode_index": 47, "start_frame": 345, "end_frame": 452, "start_timestamp": 11.5, "end_timestamp": 15.0667, "label": "Pass the needle to the left gripper to readjust."}
+{"episode_index": 47, "start_frame": 452, "end_frame": 521, "start_timestamp": 15.0667, "end_timestamp": 17.3667, "label": "Hand the needle to the right gripper."}
+{"episode_index": 47, "start_frame": 521, "end_frame": 586, "start_timestamp": 17.3667, "end_timestamp": 19.5333, "label": "Adjust the right tool grip by passing to the left tool."}
+{"episode_index": 47, "start_frame": 586, "end_frame": 654, "start_timestamp": 19.5333, "end_timestamp": 21.8, "label": "Pass the needle back to the right gripper."}
+{"episode_index": 47, "start_frame": 654, "end_frame": 867, "start_timestamp": 21.8, "end_timestamp": 28.9, "label": "Throw the needle through the tissue with the right gripper."}
+{"episode_index": 47, "start_frame": 867, "end_frame": 947, "start_timestamp": 28.9, "end_timestamp": 31.5667, "label": "Use the left gripper to pull the needle through the tissue."}
+{"episode_index": 47, "start_frame": 947, "end_frame": 1035, "start_timestamp": 31.5667, "end_timestamp": 34.5, "label": "hand the needle back to the right tool."}
+{"episode_index": 47, "start_frame": 1035, "end_frame": 1130, "start_timestamp": 34.5, "end_timestamp": 37.6667, "label": "Use the left tool to open the incision."}
+{"episode_index": 47, "start_frame": 1130, "end_frame": 1372, "start_timestamp": 37.6667, "end_timestamp": 45.7333, "label": "Use the right tool to throw the needle through the bottom of the incision."}
+{"episode_index": 47, "start_frame": 1372, "end_frame": 1480, "start_timestamp": 45.7333, "end_timestamp": 49.3333, "label": "Use the left gripper to grab the needle tip and pull it through."}
+{"episode_index": 47, "start_frame": 1480, "end_frame": 2713, "start_timestamp": 49.3333, "end_timestamp": 90.4333, "label": "Use the right hand to pull the suture through the cut."}
+{"episode_index": 47, "start_frame": 2713, "end_frame": 2779, "start_timestamp": 90.4333, "end_timestamp": 92.6333, "label": "Set the needle down."}
+{"episode_index": 47, "start_frame": 2779, "end_frame": 2895, "start_timestamp": 92.6333, "end_timestamp": 96.5, "label": "Grab the long suture end with the left gripper."}
+{"episode_index": 47, "start_frame": 2895, "end_frame": 2992, "start_timestamp": 96.5, "end_timestamp": 99.7333, "label": "Grab the long suture and with the right gripper."}
+{"episode_index": 47, "start_frame": 2992, "end_frame": 3117, "start_timestamp": 99.7333, "end_timestamp": 103.9, "label": "Adjust the left gripper to grab a longer portion of suture."}
+{"episode_index": 47, "start_frame": 3117, "end_frame": 3369, "start_timestamp": 103.9, "end_timestamp": 112.3, "label": "Wrap the long suture and twice around the right gripper."}
+{"episode_index": 47, "start_frame": 3369, "end_frame": 3425, "start_timestamp": 112.3, "end_timestamp": 114.1667, "label": "Grab the short suture end."}
+{"episode_index": 47, "start_frame": 3425, "end_frame": 3551, "start_timestamp": 114.1667, "end_timestamp": 118.3667, "label": "Pull the right gripper down and left gripper up to tighten the knot."}
+{"episode_index": 47, "start_frame": 3551, "end_frame": 3645, "start_timestamp": 118.3667, "end_timestamp": 121.5, "label": "Wrap the long suture end once around the right gripper."}
+{"episode_index": 47, "start_frame": 3645, "end_frame": 3729, "start_timestamp": 121.5, "end_timestamp": 124.3, "label": "Grab the short suture end with the right tool."}
+{"episode_index": 47, "start_frame": 3729, "end_frame": 3862, "start_timestamp": 124.3, "end_timestamp": 128.7333, "label": "Pull the right tool up and the left tool down to tension the suture."}
+{"episode_index": 47, "start_frame": 3862, "end_frame": 4011, "start_timestamp": 128.7333, "end_timestamp": 133.7, "label": "Use the left tool to wrap once around the right gripper."}
+{"episode_index": 47, "start_frame": 4011, "end_frame": 4101, "start_timestamp": 133.7, "end_timestamp": 136.7, "label": "Grab the short suture end with the right hand."}
+{"episode_index": 47, "start_frame": 4101, "end_frame": 4213, "start_timestamp": 136.7, "end_timestamp": 140.4333, "label": "Pull the right tool down and the left gripper up."}
+{"episode_index": 47, "start_frame": 4213, "end_frame": 4363, "start_timestamp": 140.4333, "end_timestamp": 145.4333, "label": "Use the right tool to cut the long suture end."}
+{"episode_index": 47, "start_frame": 4363, "end_frame": 4442, "start_timestamp": 145.4333, "end_timestamp": 148.0667, "label": "Grab the short suture end with the left tool."}
+{"episode_index": 47, "start_frame": 4442, "end_frame": 4798, "start_timestamp": 148.0667, "end_timestamp": 159.9333, "label": "Use the right tool to cut the suture"}
+{"episode_index": 47, "episode_done": true}
+{"episode_index": 59, "start_frame": 0, "end_frame": 78, "start_timestamp": 0.0, "end_timestamp": 2.6, "label": "Pick up the needle near the tip using the left hand."}
+{"episode_index": 59, "start_frame": 78, "end_frame": 154, "start_timestamp": 2.6, "end_timestamp": 5.1333, "label": "Hand over the needle to the right gripper."}
+{"episode_index": 59, "start_frame": 154, "end_frame": 234, "start_timestamp": 5.1333, "end_timestamp": 7.8, "label": "Pass the needle back to the left tool to adjust the grip."}
+{"episode_index": 59, "start_frame": 234, "end_frame": 288, "start_timestamp": 7.8, "end_timestamp": 9.6, "label": "Give the needle to the right gripper."}
+{"episode_index": 59, "start_frame": 288, "end_frame": 530, "start_timestamp": 9.6, "end_timestamp": 17.6667, "label": "Throw the needle through the top of the incision."}
+{"episode_index": 59, "start_frame": 530, "end_frame": 609, "start_timestamp": 17.6667, "end_timestamp": 20.3, "label": "Use the left tool to pull the needle through."}
+{"episode_index": 59, "start_frame": 609, "end_frame": 674, "start_timestamp": 20.3, "end_timestamp": 22.4667, "label": "Pass the needle to the right tool."}
+{"episode_index": 59, "start_frame": 674, "end_frame": 985, "start_timestamp": 22.4667, "end_timestamp": 32.8333, "label": "Throw the needle through the bottom of the incision using the right tool."}
+{"episode_index": 59, "start_frame": 985, "end_frame": 1093, "start_timestamp": 32.8333, "end_timestamp": 36.4333, "label": "Pull the needle through the skin with the left tool."}
+{"episode_index": 59, "start_frame": 1093, "end_frame": 1526, "start_timestamp": 36.4333, "end_timestamp": 50.8667, "label": "Pull the suture through the cut with the right tool."}
+{"episode_index": 59, "start_frame": 1526, "end_frame": 1577, "start_timestamp": 50.8667, "end_timestamp": 52.5667, "label": "Set down the needle with the left gripper."}
+{"episode_index": 59, "start_frame": 1577, "end_frame": 1625, "start_timestamp": 52.5667, "end_timestamp": 54.1667, "label": "Grab the long suture end with the left grasper."}
+{"episode_index": 59, "start_frame": 1625, "end_frame": 1673, "start_timestamp": 54.1667, "end_timestamp": 55.7667, "label": "Long suture is too short, use the right grasper to grab the long suture end."}
+{"episode_index": 59, "start_frame": 1673, "end_frame": 1748, "start_timestamp": 55.7667, "end_timestamp": 58.2667, "label": "Use the left grasper to re-grab a longer length of suture."}
+{"episode_index": 59, "start_frame": 1748, "end_frame": 1876, "start_timestamp": 58.2667, "end_timestamp": 62.5333, "label": "Loop the long suture end twice around the right tool."}
+{"episode_index": 59, "start_frame": 1876, "end_frame": 1940, "start_timestamp": 62.5333, "end_timestamp": 64.6667, "label": "With the right tool grip the short suture tail."}
+{"episode_index": 59, "start_frame": 1940, "end_frame": 2025, "start_timestamp": 64.6667, "end_timestamp": 67.5, "label": "Move the left tool up and the right tool down to tension the suture."}
+{"episode_index": 59, "start_frame": 2025, "end_frame": 2103, "start_timestamp": 67.5, "end_timestamp": 70.1, "label": "Loop the long suture end once around the right gripper."}
+{"episode_index": 59, "start_frame": 2103, "end_frame": 2156, "start_timestamp": 70.1, "end_timestamp": 71.8667, "label": "Grab the suture tail with the right grasper."}
+{"episode_index": 59, "start_frame": 2156, "end_frame": 2239, "start_timestamp": 71.8667, "end_timestamp": 74.6333, "label": "Pull the left gripper down and move the right gripper up to tighten the knot."}
+{"episode_index": 59, "start_frame": 2239, "end_frame": 2392, "start_timestamp": 74.6333, "end_timestamp": 79.7333, "label": "Move the suture out of the way with the right tool."}
+{"episode_index": 59, "start_frame": 2392, "end_frame": 2434, "start_timestamp": 79.7333, "end_timestamp": 81.1333, "label": "Wrap the long end of the suture once around the right tool."}
+{"episode_index": 59, "start_frame": 2434, "end_frame": 2524, "start_timestamp": 81.1333, "end_timestamp": 84.1333, "label": "Grab the short suture end."}
+{"episode_index": 59, "start_frame": 2524, "end_frame": 2663, "start_timestamp": 84.1333, "end_timestamp": 88.7667, "label": "Pull the right tool down and the left tool up to tension the knot."}
+{"episode_index": 59, "start_frame": 2663, "end_frame": 2767, "start_timestamp": 88.7667, "end_timestamp": 92.2333, "label": "Cut the long suture end."}
+{"episode_index": 59, "start_frame": 2767, "end_frame": 3045, "start_timestamp": 92.2333, "end_timestamp": 101.5, "label": "Cut the short suture end."}
+{"episode_index": 59, "start_frame": 3045, "end_frame": 3175, "start_timestamp": 101.5, "end_timestamp": 105.8333, "label": "Use the left tool to grab the suture and pul lthe needle into frame."}
+{"episode_index": 59, "start_frame": 3175, "end_frame": 3236, "start_timestamp": 105.8333, "end_timestamp": 107.8667, "label": "Pick up the needle near the tip using the left tool."}
+{"episode_index": 59, "start_frame": 3236, "end_frame": 3316, "start_timestamp": 107.8667, "end_timestamp": 110.5333, "label": "Hand the needle over from the left hand to the right hand."}
+{"episode_index": 59, "start_frame": 3316, "end_frame": 3385, "start_timestamp": 110.5333, "end_timestamp": 112.8333, "label": "Pass the needle back to the left to regrasp."}
+{"episode_index": 59, "start_frame": 3385, "end_frame": 3455, "start_timestamp": 112.8333, "end_timestamp": 115.1667, "label": "Grip the needle with the right tool."}
+{"episode_index": 59, "start_frame": 3455, "end_frame": 3674, "start_timestamp": 115.1667, "end_timestamp": 122.4667, "label": "Throw the needle through the top portion of the cut."}
+{"episode_index": 59, "start_frame": 3674, "end_frame": 3799, "start_timestamp": 122.4667, "end_timestamp": 126.6333, "label": "Pull the needle through the tissue using the left grasper."}
+{"episode_index": 59, "start_frame": 3799, "end_frame": 3984, "start_timestamp": 126.6333, "end_timestamp": 132.8, "label": "Hand the needle to the right gripper."}
+{"episode_index": 59, "start_frame": 3984, "end_frame": 4379, "start_timestamp": 132.8, "end_timestamp": 145.9667, "label": "Insert the needle through the bottom half of the cut."}
+{"episode_index": 59, "start_frame": 4379, "end_frame": 4493, "start_timestamp": 145.9667, "end_timestamp": 149.7667, "label": "Use the left hand to grab the needle and pull it through."}
+{"episode_index": 59, "start_frame": 4493, "end_frame": 4854, "start_timestamp": 149.7667, "end_timestamp": 161.8, "label": "Pull the suture thread through using the right hand."}
+{"episode_index": 59, "start_frame": 4854, "end_frame": 4894, "start_timestamp": 161.8, "end_timestamp": 163.1333, "label": "Place the needle down on the tissue."}
+{"episode_index": 59, "start_frame": 4894, "end_frame": 4949, "start_timestamp": 163.1333, "end_timestamp": 164.9667, "label": "Grab the long suture end with the left gripper."}
+{"episode_index": 59, "start_frame": 4949, "end_frame": 5060, "start_timestamp": 164.9667, "end_timestamp": 168.6667, "label": "Use the right gripper to regrasp more suture with the left gripper."}
+{"episode_index": 59, "start_frame": 5060, "end_frame": 5561, "start_timestamp": 168.6667, "end_timestamp": 185.3667, "label": "Using the left gripper, wrap two times around the right gripper counter-clockwise."}
+{"episode_index": 59, "start_frame": 5561, "end_frame": 5636, "start_timestamp": 185.3667, "end_timestamp": 187.8667, "label": "Grab the short end of the suture with the right tool."}
+{"episode_index": 59, "start_frame": 5636, "end_frame": 5770, "start_timestamp": 187.8667, "end_timestamp": 192.3333, "label": "Tension the knot by pulling up with the left tool and down with the right tool."}
+{"episode_index": 59, "start_frame": 5770, "end_frame": 5893, "start_timestamp": 192.3333, "end_timestamp": 196.4333, "label": "Wrap once around the right tool clockwise."}
+{"episode_index": 59, "start_frame": 5893, "end_frame": 6011, "start_timestamp": 196.4333, "end_timestamp": 200.3667, "label": "Use the right hand to grab the suture end."}
+{"episode_index": 59, "start_frame": 6011, "end_frame": 6118, "start_timestamp": 200.3667, "end_timestamp": 203.9333, "label": "Tighten the knot by pulling up with the right gripper and down with the left gripper."}
+{"episode_index": 59, "start_frame": 6118, "end_frame": 6339, "start_timestamp": 203.9333, "end_timestamp": 211.3, "label": "Wrap the suture once around the right gripper counter-clockwise."}
+{"episode_index": 59, "start_frame": 6339, "end_frame": 6402, "start_timestamp": 211.3, "end_timestamp": 213.4, "label": "Grab the short end of the suture."}
+{"episode_index": 59, "start_frame": 6402, "end_frame": 6532, "start_timestamp": 213.4, "end_timestamp": 217.7333, "label": "Tension the suture by pulling down with the right tool and up with the left tool."}
+{"episode_index": 59, "start_frame": 6532, "end_frame": 6698, "start_timestamp": 217.7333, "end_timestamp": 223.2667, "label": "Use the right tool to cut the long suture end."}
+{"episode_index": 59, "start_frame": 6698, "end_frame": 6994, "start_timestamp": 223.2667, "end_timestamp": 233.1333, "label": "Use the left tool to grab the suture end and then cut with the right gripper."}
+{"episode_index": 59, "start_frame": 6994, "end_frame": 7154, "start_timestamp": 233.1333, "end_timestamp": 238.4667, "label": "Pick up the needle near the tip using the left gripper."}
+{"episode_index": 59, "start_frame": 7154, "end_frame": 7242, "start_timestamp": 238.4667, "end_timestamp": 241.4, "label": "Hand over the needle to the right tool."}
+{"episode_index": 59, "start_frame": 7242, "end_frame": 7335, "start_timestamp": 241.4, "end_timestamp": 244.5, "label": "Pass the needle back to the left for a better grasp."}
+{"episode_index": 59, "start_frame": 7335, "end_frame": 7384, "start_timestamp": 244.5, "end_timestamp": 246.1333, "label": "Grab the needle with the right tool."}
+{"episode_index": 59, "start_frame": 7384, "end_frame": 7735, "start_timestamp": 246.1333, "end_timestamp": 257.8333, "label": "Pass the needle through the top of the cut in the skin."}
+{"episode_index": 59, "start_frame": 7735, "end_frame": 7805, "start_timestamp": 257.8333, "end_timestamp": 260.1667, "label": "Use the left tool to pull the needle through."}
+{"episode_index": 59, "start_frame": 7805, "end_frame": 7869, "start_timestamp": 260.1667, "end_timestamp": 262.3, "label": "Pass the needle back to the right tool."}
+{"episode_index": 59, "start_frame": 7869, "end_frame": 7930, "start_timestamp": 262.3, "end_timestamp": 264.3333, "label": "Use the left gripper to open the incision."}
+{"episode_index": 59, "start_frame": 7930, "end_frame": 8201, "start_timestamp": 264.3333, "end_timestamp": 273.3667, "label": "Throw the need through the button half of the skin."}
+{"episode_index": 59, "start_frame": 8201, "end_frame": 8326, "start_timestamp": 273.3667, "end_timestamp": 277.5333, "label": "Pull the needle through the skin with the left tool."}
+{"episode_index": 59, "start_frame": 8326, "end_frame": 8589, "start_timestamp": 277.5333, "end_timestamp": 286.3, "label": "Pull the length of the suture through until only a short tail remains."}
+{"episode_index": 59, "start_frame": 8589, "end_frame": 8627, "start_timestamp": 286.3, "end_timestamp": 287.5667, "label": "Set down the needle onto the pad."}
+{"episode_index": 59, "start_frame": 8627, "end_frame": 8718, "start_timestamp": 287.5667, "end_timestamp": 290.6, "label": "Grab a long length of suture with the left tool."}
+{"episode_index": 59, "start_frame": 8718, "end_frame": 8926, "start_timestamp": 290.6, "end_timestamp": 297.5333, "label": "Wrap the suture counter-clockwise around the right gripper twice."}
+{"episode_index": 59, "start_frame": 8926, "end_frame": 8986, "start_timestamp": 297.5333, "end_timestamp": 299.5333, "label": "Grab the suture tail."}
+{"episode_index": 59, "start_frame": 8986, "end_frame": 9090, "start_timestamp": 299.5333, "end_timestamp": 303.0, "label": "Pull the left gripper up and the right gripper down to tension."}
+{"episode_index": 59, "start_frame": 9090, "end_frame": 9251, "start_timestamp": 303.0, "end_timestamp": 308.3667, "label": "Wrap the suture clockwise around the gripper."}
+{"episode_index": 59, "start_frame": 9251, "end_frame": 9308, "start_timestamp": 308.3667, "end_timestamp": 310.2667, "label": "Grab the suture end."}
+{"episode_index": 59, "start_frame": 9308, "end_frame": 9402, "start_timestamp": 310.2667, "end_timestamp": 313.4, "label": "Tension the knot."}
+{"episode_index": 59, "start_frame": 9402, "end_frame": 9517, "start_timestamp": 313.4, "end_timestamp": 317.2333, "label": "Wrap the long suture end counter-clockwise around the gripper once."}
+{"episode_index": 59, "start_frame": 9517, "end_frame": 9582, "start_timestamp": 317.2333, "end_timestamp": 319.4, "label": "Grab the tail of the suture."}
+{"episode_index": 59, "start_frame": 9582, "end_frame": 9665, "start_timestamp": 319.4, "end_timestamp": 322.1667, "label": "Pull the suture tail down and the long suture end up to tension."}
+{"episode_index": 59, "start_frame": 9665, "end_frame": 9758, "start_timestamp": 322.1667, "end_timestamp": 325.2667, "label": "Cut the long end."}
+{"episode_index": 59, "start_frame": 9758, "end_frame": 9799, "start_timestamp": 325.2667, "end_timestamp": 326.6333, "label": "Set down the needle."}
+{"episode_index": 59, "start_frame": 9799, "end_frame": 9871, "start_timestamp": 326.6333, "end_timestamp": 329.0333, "label": "Grab the remaining suture tail."}
+{"episode_index": 59, "start_frame": 9871, "end_frame": 10079, "start_timestamp": 329.0333, "end_timestamp": 335.9667, "label": "Cut the suture end."}
+{"episode_index": 59, "episode_done": true}
+{"episode_index": 143, "start_frame": 0, "end_frame": 101, "start_timestamp": 0.0, "end_timestamp": 3.3667, "label": "Using the left hand, pick up the needle."}
+{"episode_index": 143, "start_frame": 101, "end_frame": 180, "start_timestamp": 3.3667, "end_timestamp": 6.0, "label": "Pass the needle over to the right grasper."}
+{"episode_index": 143, "start_frame": 180, "end_frame": 1432, "start_timestamp": 6.0, "end_timestamp": 47.7333, "label": "Pass the needle through the top of the wound."}
+{"episode_index": 143, "start_frame": 1432, "end_frame": 1571, "start_timestamp": 47.7333, "end_timestamp": 52.3667, "label": "Use the left gripper to pull the needle through the wound."}
+{"episode_index": 143, "start_frame": 1571, "end_frame": 1696, "start_timestamp": 52.3667, "end_timestamp": 56.5333, "label": "Pass the needle back over to the right gripper."}
+{"episode_index": 143, "start_frame": 1696, "end_frame": 1810, "start_timestamp": 56.5333, "end_timestamp": 60.3333, "label": "Use the left gripper to open the wound."}
+{"episode_index": 143, "start_frame": 1810, "end_frame": 2109, "start_timestamp": 60.3333, "end_timestamp": 70.3, "label": "Throw the needle through the bottom of the wound with the right gripper."}
+{"episode_index": 143, "start_frame": 2109, "end_frame": 2245, "start_timestamp": 70.3, "end_timestamp": 74.8333, "label": "Use the left gripper to pull the needle through."}
+{"episode_index": 143, "start_frame": 2245, "end_frame": 2556, "start_timestamp": 74.8333, "end_timestamp": 85.2, "label": "Use the right tool to pull the suture length through."}
+{"episode_index": 143, "start_frame": 2556, "end_frame": 2614, "start_timestamp": 85.2, "end_timestamp": 87.1333, "label": "Set down the needle."}
+{"episode_index": 143, "start_frame": 2614, "end_frame": 2653, "start_timestamp": 87.1333, "end_timestamp": 88.4333, "label": "Grab a long length of suture with the left gripper."}
+{"episode_index": 143, "start_frame": 2653, "end_frame": 2813, "start_timestamp": 88.4333, "end_timestamp": 93.7667, "label": "Wrap the suture twice around the right gripper counter-clockwise."}
+{"episode_index": 143, "start_frame": 2813, "end_frame": 2897, "start_timestamp": 93.7667, "end_timestamp": 96.5667, "label": "Use the right tool to grasp the short suture end."}
+{"episode_index": 143, "start_frame": 2897, "end_frame": 3062, "start_timestamp": 96.5667, "end_timestamp": 102.0667, "label": "Pull the short suture end down and the long suture end up to tighten."}
+{"episode_index": 143, "start_frame": 3062, "end_frame": 3138, "start_timestamp": 102.0667, "end_timestamp": 104.6, "label": "Wrap the long suture end once clockwise around the gripper."}
+{"episode_index": 143, "start_frame": 3138, "end_frame": 3215, "start_timestamp": 104.6, "end_timestamp": 107.1667, "label": "Grasp the suture tail with the wrapped gripper."}
+{"episode_index": 143, "start_frame": 3215, "end_frame": 3502, "start_timestamp": 107.1667, "end_timestamp": 116.7333, "label": "Pull the left tool down and the right tool up to tie the knot."}
+{"episode_index": 143, "start_frame": 3502, "end_frame": 3590, "start_timestamp": 116.7333, "end_timestamp": 119.6667, "label": "Loop the suture once around the gripper counter-clockwise."}
+{"episode_index": 143, "start_frame": 3590, "end_frame": 3653, "start_timestamp": 119.6667, "end_timestamp": 121.7667, "label": "Grab the suture tail."}
+{"episode_index": 143, "start_frame": 3653, "end_frame": 3743, "start_timestamp": 121.7667, "end_timestamp": 124.7667, "label": "Pull the right tool down and the left tool up to tighten."}
+{"episode_index": 143, "start_frame": 3743, "end_frame": 3878, "start_timestamp": 124.7667, "end_timestamp": 129.2667, "label": "Cut the suture with the right tool."}
+{"episode_index": 143, "start_frame": 3878, "end_frame": 3952, "start_timestamp": 129.2667, "end_timestamp": 131.7333, "label": "Grab the remaining suture end."}
+{"episode_index": 143, "start_frame": 3952, "end_frame": 4135, "start_timestamp": 131.7333, "end_timestamp": 137.8333, "label": "Cut the suture."}
+{"episode_index": 143, "start_frame": 4135, "end_frame": 4195, "start_timestamp": 137.8333, "end_timestamp": 139.8333, "label": "Grasp the needle near the tip with the left tool."}
+{"episode_index": 143, "start_frame": 4195, "end_frame": 4333, "start_timestamp": 139.8333, "end_timestamp": 144.4333, "label": "Grab the needle from the left gripper with the right gripper."}
+{"episode_index": 143, "start_frame": 4333, "end_frame": 4892, "start_timestamp": 144.4333, "end_timestamp": 163.0667, "label": "Pass the needle through the top of the wound."}
+{"episode_index": 143, "start_frame": 4892, "end_frame": 4994, "start_timestamp": 163.0667, "end_timestamp": 166.4667, "label": "Pull the needle through the tissue with the left grasper."}
+{"episode_index": 143, "start_frame": 4994, "end_frame": 5089, "start_timestamp": 166.4667, "end_timestamp": 169.6333, "label": "Use the right tool to grab the needle from the left tool."}
+{"episode_index": 143, "start_frame": 5089, "end_frame": 5159, "start_timestamp": 169.6333, "end_timestamp": 171.9667, "label": "Use the left gripper to open the incision."}
+{"episode_index": 143, "start_frame": 5159, "end_frame": 5463, "start_timestamp": 171.9667, "end_timestamp": 182.1, "label": "With the right tool insert the needle through the bottom half of the incision."}
+{"episode_index": 143, "start_frame": 5463, "end_frame": 5558, "start_timestamp": 182.1, "end_timestamp": 185.2667, "label": "Pull the needle through the cut with the left grasper."}
+{"episode_index": 143, "start_frame": 5558, "end_frame": 5766, "start_timestamp": 185.2667, "end_timestamp": 192.2, "label": "Using the right tool, pull the suture though the wound."}
+{"episode_index": 143, "start_frame": 5766, "end_frame": 5784, "start_timestamp": 192.2, "end_timestamp": 192.8, "label": "Set down the needle."}
+{"episode_index": 143, "start_frame": 5784, "end_frame": 5837, "start_timestamp": 192.8, "end_timestamp": 194.5667, "label": "Grab a long length of suture with the left grasper."}
+{"episode_index": 143, "start_frame": 5837, "end_frame": 6015, "start_timestamp": 194.5667, "end_timestamp": 200.5, "label": "Using the left grasper, wrap the suture twice around the right gripper."}
+{"episode_index": 143, "start_frame": 6015, "end_frame": 6083, "start_timestamp": 200.5, "end_timestamp": 202.7667, "label": "With the right tool, grab the short suture end."}
+{"episode_index": 143, "start_frame": 6083, "end_frame": 6251, "start_timestamp": 202.7667, "end_timestamp": 208.3667, "label": "Pull the right tool down and the left tool up to tie the knot."}
+{"episode_index": 143, "start_frame": 6251, "end_frame": 6334, "start_timestamp": 208.3667, "end_timestamp": 211.1333, "label": "Wrap the suture once clockwise around the right tool."}
+{"episode_index": 143, "start_frame": 6334, "end_frame": 6390, "start_timestamp": 211.1333, "end_timestamp": 213.0, "label": "Grasp the suture tail."}
+{"episode_index": 143, "start_frame": 6390, "end_frame": 6471, "start_timestamp": 213.0, "end_timestamp": 215.7, "label": "Move the right tool up and the left tool down to tie the knot."}
+{"episode_index": 143, "start_frame": 6471, "end_frame": 6541, "start_timestamp": 215.7, "end_timestamp": 218.0333, "label": "Loop the suture once aroud the right tool."}
+{"episode_index": 143, "start_frame": 6541, "end_frame": 6590, "start_timestamp": 218.0333, "end_timestamp": 219.6667, "label": "Grasp the short tail end."}
+{"episode_index": 143, "start_frame": 6590, "end_frame": 6658, "start_timestamp": 219.6667, "end_timestamp": 221.9333, "label": "Pull the right tool down and the left tool up to tighten."}
+{"episode_index": 143, "start_frame": 6658, "end_frame": 6767, "start_timestamp": 221.9333, "end_timestamp": 225.5667, "label": "Cut the suture with the right tool."}
+{"episode_index": 143, "start_frame": 6767, "end_frame": 6844, "start_timestamp": 225.5667, "end_timestamp": 228.1333, "label": "Set down the needle and suture."}
+{"episode_index": 143, "start_frame": 6844, "end_frame": 6899, "start_timestamp": 228.1333, "end_timestamp": 229.9667, "label": "Grasp the short suture end."}
+{"episode_index": 143, "start_frame": 6899, "end_frame": 7115, "start_timestamp": 229.9667, "end_timestamp": 237.1667, "label": "Cut the suture."}
+{"episode_index": 143, "episode_done": true}
+{"episode_index": 52, "start_frame": 0, "end_frame": 110, "start_timestamp": 0.0, "end_timestamp": 3.6667, "label": "Pick up the needle with the left gripper."}
+{"episode_index": 52, "start_frame": 110, "end_frame": 184, "start_timestamp": 3.6667, "end_timestamp": 6.1333, "label": "Hand the needle over from the left to the right tool."}
+{"episode_index": 49, "start_frame": 0, "end_frame": 119, "start_timestamp": 0.0, "end_timestamp": 3.9667, "label": "using the left gripper pickup the needle."}
+{"episode_index": 22, "start_frame": 0, "end_frame": 116, "start_timestamp": 0.0, "end_timestamp": 3.8667, "label": "Pick up needle with left gripper"}
+{"episode_index": 22, "start_frame": 116, "end_frame": 190, "start_timestamp": 3.8667, "end_timestamp": 6.3333, "label": "Transfer needle to right gripper"}
+{"episode_index": 22, "start_frame": 190, "end_frame": 379, "start_timestamp": 6.3333, "end_timestamp": 12.6333, "label": "Push the needle into the skin using the right gripper"}
+{"episode_index": 22, "start_frame": 379, "end_frame": 755, "start_timestamp": 12.6333, "end_timestamp": 25.1667, "label": "Push the needle through the tissue"}
+{"episode_index": 22, "start_frame": 755, "end_frame": 841, "start_timestamp": 25.1667, "end_timestamp": 28.0333, "label": "Pull the needle through using the left gripper"}
+{"episode_index": 22, "start_frame": 841, "end_frame": 943, "start_timestamp": 28.0333, "end_timestamp": 31.4333, "label": "Transfer the needle back to the right gripper"}
+{"episode_index": 22, "start_frame": 943, "end_frame": 1237, "start_timestamp": 31.4333, "end_timestamp": 41.2333, "label": "Insert the needle through the other side of the tissue using the right gripper"}
+{"episode_index": 22, "start_frame": 1237, "end_frame": 1382, "start_timestamp": 41.2333, "end_timestamp": 46.0667, "label": "Pull the needle through the tissue using the left gripper"}
+{"episode_index": 22, "start_frame": 1382, "end_frame": 2396, "start_timestamp": 46.0667, "end_timestamp": 79.8667, "label": "Pull the thread all the way through the tissue using the right gripper, leaving a small piece on the end"}
+{"episode_index": 22, "start_frame": 2396, "end_frame": 2971, "start_timestamp": 79.8667, "end_timestamp": 99.0333, "label": "Wrap the thread counterclockwise twice around the right gripper using the left gripper"}
+{"episode_index": 22, "start_frame": 2971, "end_frame": 3066, "start_timestamp": 99.0333, "end_timestamp": 102.2, "label": "Grab the end of the thread using the right gripper"}
+{"episode_index": 22, "start_frame": 3066, "end_frame": 3205, "start_timestamp": 102.2, "end_timestamp": 106.8333, "label": "Pull the end through and tighten the knot by pulling down with the right gripper and up with the left gripper"}
+{"episode_index": 22, "start_frame": 3205, "end_frame": 3354, "start_timestamp": 106.8333, "end_timestamp": 111.8, "label": "Wrap the thread clockwise around the right gripper using the left gripper"}
+{"episode_index": 22, "start_frame": 3354, "end_frame": 3466, "start_timestamp": 111.8, "end_timestamp": 115.5333, "label": "Pull the short end of the thread up using the right gripper"}
+{"episode_index": 22, "start_frame": 3466, "end_frame": 3529, "start_timestamp": 115.5333, "end_timestamp": 117.6333, "label": "Tighten the knot by pulling down with the left gripper and up with the right gripper"}
+{"episode_index": 22, "start_frame": 3529, "end_frame": 3974, "start_timestamp": 117.6333, "end_timestamp": 132.4667, "label": "Wrap the thread around the right gripper counter-clockwise using the left gripper"}
+{"episode_index": 22, "start_frame": 3974, "end_frame": 4112, "start_timestamp": 132.4667, "end_timestamp": 137.0667, "label": "Pull the short end of the thread through using the right gripper"}
+{"episode_index": 22, "start_frame": 4112, "end_frame": 4173, "start_timestamp": 137.0667, "end_timestamp": 139.1, "label": "Tighten the knot by pulling down with the right gripper and up with the left gripper"}
+{"episode_index": 19, "start_frame": 0, "end_frame": 90, "start_timestamp": 0.0, "end_timestamp": 3.0, "label": "use the left gripper to pull the needle into view."}
+{"episode_index": 19, "start_frame": 90, "end_frame": 120, "start_timestamp": 3.0, "end_timestamp": 4.0, "label": "use the left gripper to pick up the needle and suture"}
+{"episode_index": 19, "start_frame": 120, "end_frame": 210, "start_timestamp": 4.0, "end_timestamp": 7.0, "label": "pick up the needle with the left gripper"}
+{"episode_index": 19, "start_frame": 210, "end_frame": 270, "start_timestamp": 7.0, "end_timestamp": 9.0, "label": "hand the needle over to the right gripper"}
+{"episode_index": 19, "start_frame": 270, "end_frame": 300, "start_timestamp": 9.0, "end_timestamp": 10.0, "label": "hand the needle from the left gripper to the right gripper"}
+{"episode_index": 19, "start_frame": 300, "end_frame": 330, "start_timestamp": 10.0, "end_timestamp": 11.0, "label": "hand the needle over to the right gripper"}
+{"episode_index": 19, "start_frame": 330, "end_frame": 360, "start_timestamp": 11.0, "end_timestamp": 12.0, "label": "use the right gripper to pass the needle through the top of the incision"}
+{"episode_index": 19, "start_frame": 360, "end_frame": 450, "start_timestamp": 12.0, "end_timestamp": 15.0, "label": "use the right grasper to pass the needle through the top of the incision"}
+{"episode_index": 19, "start_frame": 450, "end_frame": 480, "start_timestamp": 15.0, "end_timestamp": 16.0, "label": "push the needle through the top of the incision"}
+{"episode_index": 19, "start_frame": 480, "end_frame": 660, "start_timestamp": 16.0, "end_timestamp": 22.0, "label": "throw the needle through the top of the incision"}
+{"episode_index": 19, "start_frame": 660, "end_frame": 720, "start_timestamp": 22.0, "end_timestamp": 24.0, "label": "use the right gripper to pass the needle through the top of the incision"}
+{"episode_index": 19, "start_frame": 720, "end_frame": 810, "start_timestamp": 24.0, "end_timestamp": 27.0, "label": "throw the needle through the top of the incision"}
+{"episode_index": 19, "start_frame": 810, "end_frame": 840, "start_timestamp": 27.0, "end_timestamp": 28.0, "label": "pull the needle through the tissue with the left gripper"}
+{"episode_index": 19, "start_frame": 840, "end_frame": 930, "start_timestamp": 28.0, "end_timestamp": 31.0, "label": "use the left grasper to pull the needle through"}
+{"episode_index": 19, "start_frame": 930, "end_frame": 960, "start_timestamp": 31.0, "end_timestamp": 32.0, "label": "pull the needle through with the left gripper"}
+{"episode_index": 19, "start_frame": 960, "end_frame": 1020, "start_timestamp": 32.0, "end_timestamp": 34.0, "label": "open the incision with the left gripper"}
+{"episode_index": 19, "start_frame": 1020, "end_frame": 1080, "start_timestamp": 34.0, "end_timestamp": 36.0, "label": "pass the needle through the bottom of the incision"}
+{"episode_index": 19, "start_frame": 1080, "end_frame": 1230, "start_timestamp": 36.0, "end_timestamp": 41.0, "label": "pass the needle through the bottom half of the cut"}
+{"episode_index": 19, "start_frame": 1230, "end_frame": 1260, "start_timestamp": 41.0, "end_timestamp": 42.0, "label": "pull the needle through with the left gripper"}
+{"episode_index": 19, "start_frame": 1260, "end_frame": 1320, "start_timestamp": 42.0, "end_timestamp": 44.0, "label": "pull the needle through the tissue with the left gripper"}
+{"episode_index": 19, "start_frame": 1320, "end_frame": 1470, "start_timestamp": 44.0, "end_timestamp": 49.0, "label": "use the right gripper to pull the suture through the incision until a short tail remains"}
+{"episode_index": 19, "start_frame": 1470, "end_frame": 1530, "start_timestamp": 49.0, "end_timestamp": 51.0, "label": "use the left tool to set the needle down."}
+{"episode_index": 19, "start_frame": 1530, "end_frame": 1650, "start_timestamp": 51.0, "end_timestamp": 55.0, "label": "pick up the long suture end with the left gripper"}
+{"episode_index": 19, "start_frame": 1650, "end_frame": 1710, "start_timestamp": 55.0, "end_timestamp": 57.0, "label": "wrap the long suture tail twice around the right gripper"}
+{"episode_index": 19, "start_frame": 1710, "end_frame": 1830, "start_timestamp": 57.0, "end_timestamp": 61.0, "label": "use the left gripper to wrap the suture twice around the right gripper"}
+{"episode_index": 19, "start_frame": 1830, "end_frame": 1860, "start_timestamp": 61.0, "end_timestamp": 62.0, "label": "wrap the long suture tail twice around the right gripper"}
+{"episode_index": 19, "start_frame": 1860, "end_frame": 1920, "start_timestamp": 62.0, "end_timestamp": 64.0, "label": "wrap the long suture and twice around the right gripper"}
+{"episode_index": 19, "start_frame": 1920, "end_frame": 1980, "start_timestamp": 64.0, "end_timestamp": 66.0, "label": "use the left gripper to loop the suture twice around the right gripper"}
+{"episode_index": 19, "start_frame": 1980, "end_frame": 2010, "start_timestamp": 66.0, "end_timestamp": 67.0, "label": "wrap the long thread tail twice around the right gripper"}
+{"episode_index": 19, "start_frame": 2010, "end_frame": 2070, "start_timestamp": 67.0, "end_timestamp": 69.0, "label": "grasp the short suture tail"}
+{"episode_index": 19, "start_frame": 2070, "end_frame": 2100, "start_timestamp": 69.0, "end_timestamp": 70.0, "label": "pull the right gripper down and left gripper up to tighten the knot"}
+{"episode_index": 19, "start_frame": 2100, "end_frame": 2130, "start_timestamp": 70.0, "end_timestamp": 71.0, "label": "tie the knot by pulling the right gripper down and the left gripper up"}
+{"episode_index": 19, "start_frame": 2130, "end_frame": 2190, "start_timestamp": 71.0, "end_timestamp": 73.0, "label": "use the left gripper to wrap the suture around the right gripper once"}
+{"episode_index": 19, "start_frame": 2190, "end_frame": 2280, "start_timestamp": 73.0, "end_timestamp": 76.0, "label": "use the left gripper to wrap the suture once around the right gripper"}
+{"episode_index": 19, "start_frame": 2280, "end_frame": 2310, "start_timestamp": 76.0, "end_timestamp": 77.0, "label": "pick up the short suture tail"}
+{"episode_index": 19, "start_frame": 2310, "end_frame": 2340, "start_timestamp": 77.0, "end_timestamp": 78.0, "label": "use the right grasper to grasp the short suture tail"}
+{"episode_index": 19, "start_frame": 2340, "end_frame": 2370, "start_timestamp": 78.0, "end_timestamp": 79.0, "label": "pick up the short suture tail"}
+{"episode_index": 19, "start_frame": 2370, "end_frame": 2430, "start_timestamp": 79.0, "end_timestamp": 81.0, "label": "pull the right gripper up and the left tool down to tie the knot."}
+{"episode_index": 19, "start_frame": 2430, "end_frame": 2550, "start_timestamp": 81.0, "end_timestamp": 85.0, "label": "loop the suture once around the right gripper"}
+{"episode_index": 19, "start_frame": 2550, "end_frame": 2580, "start_timestamp": 85.0, "end_timestamp": 86.0, "label": "grab the suture tail"}
+{"episode_index": 19, "start_frame": 2580, "end_frame": 2610, "start_timestamp": 86.0, "end_timestamp": 87.0, "label": "grab the short tail of the suture with the right gripper"}
+{"episode_index": 19, "start_frame": 2610, "end_frame": 2670, "start_timestamp": 87.0, "end_timestamp": 89.0, "label": "pull the right gripper down and the left gripper up to tighten the knot"}
+{"episode_index": 19, "start_frame": 2670, "end_frame": 2700, "start_timestamp": 89.0, "end_timestamp": 90.0, "label": "pull the right gripper down and left gripper up to tighten the knot"}
+{"episode_index": 19, "start_frame": 2700, "end_frame": 2790, "start_timestamp": 90.0, "end_timestamp": 93.0, "label": "use the right gripper to cut the long suture tail"}
+{"episode_index": 19, "start_frame": 2790, "end_frame": 2820, "start_timestamp": 93.0, "end_timestamp": 94.0, "label": "use the right gripper to cut the long suture"}
+{"episode_index": 19, "start_frame": 2820, "end_frame": 2850, "start_timestamp": 94.0, "end_timestamp": 95.0, "label": "cut the long end of the suture"}
+{"episode_index": 19, "start_frame": 2850, "end_frame": 2880, "start_timestamp": 95.0, "end_timestamp": 96.0, "label": "use the left gripper to set down the needle"}
+{"episode_index": 19, "start_frame": 2880, "end_frame": 3030, "start_timestamp": 96.0, "end_timestamp": 101.0, "label": "pick up the remaining suture tail with the left gripper"}
+{"episode_index": 19, "start_frame": 3030, "end_frame": 3150, "start_timestamp": 101.0, "end_timestamp": 105.0, "label": "cut the end of the suture"}
+{"episode_index": 19, "start_frame": 3150, "end_frame": 3212, "start_timestamp": 105.0, "end_timestamp": 107.0667, "label": "Wound closure complete."}
+{"episode_index": 19, "episode_done": true}
+{"episode_index": 7, "start_frame": 0, "end_frame": 129, "start_timestamp": 0.0, "end_timestamp": 4.3, "label": "Hand on the left picks up needle"}
+{"episode_index": 7, "start_frame": 129, "end_frame": 266, "start_timestamp": 4.3, "end_timestamp": 8.8667, "label": "Hand on the left passes needle to the hand on the right"}
+{"episode_index": 7, "start_frame": 266, "end_frame": 691, "start_timestamp": 8.8667, "end_timestamp": 23.0333, "label": "The hand on the right inserts the needle into the skin above the incision"}
+{"episode_index": 7, "start_frame": 691, "end_frame": 893, "start_timestamp": 23.0333, "end_timestamp": 29.7667, "label": "The hand on the left pulls the needle the rest of the way through the skin."}
+{"episode_index": 7, "start_frame": 893, "end_frame": 1006, "start_timestamp": 29.7667, "end_timestamp": 33.5333, "label": "The hand on the left passes the needle to the hand on the right"}
+{"episode_index": 5, "start_frame": 1878, "end_frame": 2151, "start_timestamp": 62.6, "end_timestamp": 71.7, "label": "Grab the long suture with the left gripper and use the right gripper to cut it."}
+{"episode_index": 5, "start_frame": 2151, "end_frame": 2201, "start_timestamp": 71.7, "end_timestamp": 73.3667, "label": "stitch complete"}
+{"episode_index": 90, "start_frame": 0, "end_frame": 30, "start_timestamp": 0.0, "end_timestamp": 1.0, "label": "pick up the needle near the tip with the left gripper"}
+{"episode_index": 90, "start_frame": 30, "end_frame": 60, "start_timestamp": 1.0, "end_timestamp": 2.0, "label": "using the left hand grasp the needle"}
+{"episode_index": 90, "start_frame": 60, "end_frame": 120, "start_timestamp": 2.0, "end_timestamp": 4.0, "label": "pick up the needle near the tip with the left gripper"}
+{"episode_index": 90, "start_frame": 120, "end_frame": 240, "start_timestamp": 4.0, "end_timestamp": 8.0, "label": "pass the needle to the right gripper"}
+{"episode_index": 90, "start_frame": 240, "end_frame": 270, "start_timestamp": 8.0, "end_timestamp": 9.0, "label": "use the right gripper to pass the needle through the top of the cut"}
+{"episode_index": 90, "start_frame": 270, "end_frame": 480, "start_timestamp": 9.0, "end_timestamp": 16.0, "label": "use the right grasper to pass the needle through the top of the cut"}
+{"episode_index": 90, "start_frame": 480, "end_frame": 570, "start_timestamp": 16.0, "end_timestamp": 19.0, "label": "use the right gripper to pass the needle through the top of the cut"}
+{"episode_index": 90, "start_frame": 570, "end_frame": 600, "start_timestamp": 19.0, "end_timestamp": 20.0, "label": "use the left gripper to grasp the needle near the tip and pull it through"}
+{"episode_index": 90, "start_frame": 600, "end_frame": 660, "start_timestamp": 20.0, "end_timestamp": 22.0, "label": "hand the needle from the left tool to the right tool"}
+{"episode_index": 90, "start_frame": 660, "end_frame": 720, "start_timestamp": 22.0, "end_timestamp": 24.0, "label": "pass the needle to the right gripper"}
+{"episode_index": 90, "start_frame": 720, "end_frame": 780, "start_timestamp": 24.0, "end_timestamp": 26.0, "label": "open the incision with the left gripper"}
+{"episode_index": 90, "start_frame": 780, "end_frame": 930, "start_timestamp": 26.0, "end_timestamp": 31.0, "label": "use the right gripper to throw the needle through the bottom of the cut"}
+{"episode_index": 90, "start_frame": 930, "end_frame": 960, "start_timestamp": 31.0, "end_timestamp": 32.0, "label": "pass the needle through the bottom half of the incision"}
+{"episode_index": 90, "start_frame": 960, "end_frame": 1050, "start_timestamp": 32.0, "end_timestamp": 35.0, "label": "pass the needle through the bottom half of the cut"}
+{"episode_index": 90, "start_frame": 1050, "end_frame": 1200, "start_timestamp": 35.0, "end_timestamp": 40.0, "label": "grab the needle with the left grasper and pull it through."}
+{"episode_index": 90, "start_frame": 1200, "end_frame": 1230, "start_timestamp": 40.0, "end_timestamp": 41.0, "label": "pick up the needle with the left gripper and pull it through the skin"}
+{"episode_index": 90, "start_frame": 1230, "end_frame": 1530, "start_timestamp": 41.0, "end_timestamp": 51.0, "label": "use the right gripper to pull the suture through the skin"}
+{"episode_index": 90, "start_frame": 1530, "end_frame": 1560, "start_timestamp": 51.0, "end_timestamp": 52.0, "label": "use the right grasper to pull the suture through the skin"}
+{"episode_index": 90, "start_frame": 1560, "end_frame": 1620, "start_timestamp": 52.0, "end_timestamp": 54.0, "label": "use the right gripper to pull the suture through the skin"}
+{"episode_index": 90, "start_frame": 1620, "end_frame": 1650, "start_timestamp": 54.0, "end_timestamp": 55.0, "label": "use the right gripper to pull the suture through until a short end is left"}
+{"episode_index": 90, "start_frame": 1650, "end_frame": 1710, "start_timestamp": 55.0, "end_timestamp": 57.0, "label": "use the right gripper to pull the suture through the skin"}
+{"episode_index": 90, "start_frame": 1710, "end_frame": 1800, "start_timestamp": 57.0, "end_timestamp": 60.0, "label": "use the right grasper to pull the suture through the skin"}
+{"episode_index": 90, "start_frame": 1800, "end_frame": 1890, "start_timestamp": 60.0, "end_timestamp": 63.0, "label": "set the needle down with the left gripper"}
+{"episode_index": 90, "start_frame": 1890, "end_frame": 1980, "start_timestamp": 63.0, "end_timestamp": 66.0, "label": "mistakenly hesitate to adjust suture tail"}
+{"episode_index": 90, "start_frame": 1980, "end_frame": 2070, "start_timestamp": 66.0, "end_timestamp": 69.0, "label": "use the left tool to grab a long length of suture."}
+{"episode_index": 90, "start_frame": 2070, "end_frame": 2230, "start_timestamp": 69.0, "end_timestamp": 74.3333, "label": "Use the right gripper to regrasp the suture with the left gripper"}
+{"episode_index": 90, "start_frame": 2230, "end_frame": 2430, "start_timestamp": 74.3333, "end_timestamp": 81.0, "label": "With the left tool, wrap the suture twice around the right gripper counter-clockwise."}
+{"episode_index": 90, "start_frame": 2430, "end_frame": 2470, "start_timestamp": 81.0, "end_timestamp": 82.3333, "label": "Grab the short end of the suture with the right gripper."}
+{"episode_index": 90, "start_frame": 2470, "end_frame": 2620, "start_timestamp": 82.3333, "end_timestamp": 87.3333, "label": "Pull the right tool down and the left tool up to tie the knot."}
+{"episode_index": 90, "start_frame": 2620, "end_frame": 2770, "start_timestamp": 87.3333, "end_timestamp": 92.3333, "label": "wrap the long suture end once around the right gripper clockwise"}
+{"episode_index": 90, "start_frame": 2770, "end_frame": 2840, "start_timestamp": 92.3333, "end_timestamp": 94.6667, "label": "grab the suture tail with the right grasper."}
+{"episode_index": 90, "start_frame": 2840, "end_frame": 2910, "start_timestamp": 94.6667, "end_timestamp": 97.0, "label": "Move the right tool up and the left tool down to tighten the suture."}
+{"episode_index": 90, "start_frame": 2910, "end_frame": 2940, "start_timestamp": 97.0, "end_timestamp": 98.0, "label": "pull the right gripper up and the left gripper down to tighten the knot"}
+{"episode_index": 90, "start_frame": 2940, "end_frame": 3120, "start_timestamp": 98.0, "end_timestamp": 104.0, "label": "Use the right hand to move the suture out of the way."}
+{"episode_index": 90, "start_frame": 3120, "end_frame": 3240, "start_timestamp": 104.0, "end_timestamp": 108.0, "label": "With the left tool wrap the suture once counter-clockwise around the right."}
+{"episode_index": 90, "start_frame": 3240, "end_frame": 3390, "start_timestamp": 108.0, "end_timestamp": 113.0, "label": "Grab the short suture tail with the right gripper."}
+{"episode_index": 90, "start_frame": 3390, "end_frame": 3480, "start_timestamp": 113.0, "end_timestamp": 116.0, "label": "move the right gripper down and the left gripper up to tighten the knot"}
+{"episode_index": 90, "start_frame": 3480, "end_frame": 3490, "start_timestamp": 116.0, "end_timestamp": 116.3333, "label": "move the right grasper down and the left grasper up to tighten the knot"}
+{"episode_index": 90, "start_frame": 3490, "end_frame": 3660, "start_timestamp": 116.3333, "end_timestamp": 122.0, "label": "use the right gripper to snip the suture"}
+{"episode_index": 90, "start_frame": 3660, "end_frame": 3690, "start_timestamp": 122.0, "end_timestamp": 123.0, "label": "use the left gripper to grasp the remaining suture end"}
+{"episode_index": 90, "start_frame": 3690, "end_frame": 3720, "start_timestamp": 123.0, "end_timestamp": 124.0, "label": "use the right gripper to cut the suture"}
+{"episode_index": 90, "start_frame": 3720, "end_frame": 3840, "start_timestamp": 124.0, "end_timestamp": 128.0, "label": "with the right tool, cut the suture tail."}
+{"episode_index": 90, "start_frame": 3840, "end_frame": 4020, "start_timestamp": 128.0, "end_timestamp": 134.0, "label": "Remove the cut suture from the left tool."}
+{"episode_index": 90, "start_frame": 4020, "end_frame": 4080, "start_timestamp": 134.0, "end_timestamp": 136.0, "label": "Wipe the cut suture from the right gripper."}
+{"episode_index": 90, "start_frame": 4080, "end_frame": 4150, "start_timestamp": 136.0, "end_timestamp": 138.3333, "label": "Use the left tool to grab the suture and pull the needle into frame."}
+{"episode_index": 90, "start_frame": 4150, "end_frame": 4230, "start_timestamp": 138.3333, "end_timestamp": 141.0, "label": "pick up the needle with the left gripper"}
+{"episode_index": 90, "start_frame": 4230, "end_frame": 4370, "start_timestamp": 141.0, "end_timestamp": 145.6667, "label": "pass the needle to the right gripper"}
+{"episode_index": 90, "start_frame": 4370, "end_frame": 4410, "start_timestamp": 145.6667, "end_timestamp": 147.0, "label": "pass the needle back to the left gripper to regrip."}
+{"episode_index": 90, "start_frame": 4410, "end_frame": 4450, "start_timestamp": 147.0, "end_timestamp": 148.3333, "label": "pass the needle to the right gripper"}
+{"episode_index": 90, "start_frame": 4450, "end_frame": 4860, "start_timestamp": 148.3333, "end_timestamp": 162.0, "label": "With the right tool, throw the needle into the skin above the wound."}
+{"episode_index": 90, "start_frame": 4860, "end_frame": 4950, "start_timestamp": 162.0, "end_timestamp": 165.0, "label": "pick up the needle with the left gripper and pull it through the cut"}
+{"episode_index": 90, "start_frame": 4950, "end_frame": 4980, "start_timestamp": 165.0, "end_timestamp": 166.0, "label": "pull the needle through the skin with the left gripper"}
+{"episode_index": 90, "start_frame": 4980, "end_frame": 5070, "start_timestamp": 166.0, "end_timestamp": 169.0, "label": "pass the needle to the right gripper"}
+{"episode_index": 90, "start_frame": 5070, "end_frame": 5100, "start_timestamp": 169.0, "end_timestamp": 170.0, "label": "use the right gripper to pick up the needle from the left gripper"}
+{"episode_index": 7, "start_frame": 1006, "end_frame": 1070, "start_timestamp": 33.5333, "end_timestamp": 35.6667, "label": "The hand on the left opens the wound"}
+{"episode_index": 7, "start_frame": 1070, "end_frame": 1441, "start_timestamp": 35.6667, "end_timestamp": 48.0333, "label": "The hand on the right inserts the needle into the skin below the incision"}
+{"episode_index": 7, "start_frame": 1441, "end_frame": 1594, "start_timestamp": 48.0333, "end_timestamp": 53.1333, "label": "The hand on the left pulls the needle the rest of the way through the skin"}
+{"episode_index": 7, "start_frame": 1594, "end_frame": 2474, "start_timestamp": 53.1333, "end_timestamp": 82.4667, "label": "The hand on the right repeatedly grasps and pulls the suture through the wound until only a short tail remains"}
+{"episode_index": 7, "start_frame": 2474, "end_frame": 2556, "start_timestamp": 82.4667, "end_timestamp": 85.2, "label": "The hand on the right reaches behind tail end of the suture and separates it from the skin"}
+{"episode_index": 7, "start_frame": 2556, "end_frame": 2724, "start_timestamp": 85.2, "end_timestamp": 90.8, "label": "The hand on the left picks up the working end of the suture"}
+{"episode_index": 7, "start_frame": 2724, "end_frame": 3207, "start_timestamp": 90.8, "end_timestamp": 106.9, "label": "The hand on the left wraps the working end of the suture two times counter-clockwise around the hand on the right with its grippers in the open position"}
+{"episode_index": 7, "start_frame": 3207, "end_frame": 3338, "start_timestamp": 106.9, "end_timestamp": 111.2667, "label": "The hand on the right grasps the tail end of the suture and pulls it through the newly created knot"}
+{"episode_index": 7, "start_frame": 3338, "end_frame": 3621, "start_timestamp": 111.2667, "end_timestamp": 120.7, "label": "The hand on the left pulls up on the working end of the suture and the hand on the right pulls down on the tail end of the suture to tighten the knot"}
+{"episode_index": 7, "start_frame": 3621, "end_frame": 3798, "start_timestamp": 120.7, "end_timestamp": 126.6, "label": "The hand on the left picks up the working end of the suture and wraps it once clockwise around the hand on the right with its grippers in the open position"}
+{"episode_index": 7, "start_frame": 3798, "end_frame": 3921, "start_timestamp": 126.6, "end_timestamp": 130.7, "label": "The hand on the right picks up the tail end of the suture"}
+{"episode_index": 7, "start_frame": 3921, "end_frame": 3986, "start_timestamp": 130.7, "end_timestamp": 132.8667, "label": "The hand on the right pulls the tail back through the loop and creates a knot"}
+{"episode_index": 7, "start_frame": 3986, "end_frame": 4026, "start_timestamp": 132.8667, "end_timestamp": 134.2, "label": "The hand on the right pulls up on the tail end of the suture and the hand on the left pulls down on the working end of the suture to tighten the newly created knot"}
+{"episode_index": 7, "start_frame": 4026, "end_frame": 4334, "start_timestamp": 134.2, "end_timestamp": 144.4667, "label": "With the working end of the suture still in the left hand, the suture is wrapped counter-clockwise one time around the hand on the right with its grippers in the open position"}
+{"episode_index": 7, "start_frame": 4334, "end_frame": 4391, "start_timestamp": 144.4667, "end_timestamp": 146.3667, "label": "The hand on the right picks up the tail end of the suture"}
+{"episode_index": 7, "start_frame": 4391, "end_frame": 4455, "start_timestamp": 146.3667, "end_timestamp": 148.5, "label": "The hand on the right pulls the tail end of the suture through the loop and creates a knot"}
+{"episode_index": 7, "start_frame": 4455, "end_frame": 4500, "start_timestamp": 148.5, "end_timestamp": 150.0, "label": "The hand on the right pulls down on the tail end of the suture and the hand on the left pulls up on the working end of the suture to tighten the newly created knot"}
+{"episode_index": 7, "start_frame": 4500, "end_frame": 4599, "start_timestamp": 150.0, "end_timestamp": 153.3, "label": "The hand on the left pulls the working end of the suture taut while the hand on the right snips the suture with its built-in scissors"}
+{"episode_index": 7, "start_frame": 4599, "end_frame": 4909, "start_timestamp": 153.3, "end_timestamp": 163.6333, "label": "The hand on the left pulls the tail end of the suture taut while the hand on the right uses built-in scissors to snip it"}
+{"episode_index": 7, "start_frame": 4909, "end_frame": 4978, "start_timestamp": 163.6333, "end_timestamp": 165.9333, "label": "The hand on the left moves the snipped off-cut of the suture out of the way"}
+{"episode_index": 7, "start_frame": 4978, "end_frame": 5082, "start_timestamp": 165.9333, "end_timestamp": 169.4, "label": "The left end-effector picks up the needle"}
+{"episode_index": 7, "start_frame": 5082, "end_frame": 5170, "start_timestamp": 169.4, "end_timestamp": 172.3333, "label": "The left end-effector hands the needle to the right end-effector"}
+{"episode_index": 7, "start_frame": 5170, "end_frame": 5687, "start_timestamp": 172.3333, "end_timestamp": 189.5667, "label": "Right end-effector inserts needle into the skin above the incision"}
+{"episode_index": 7, "start_frame": 5687, "end_frame": 5872, "start_timestamp": 189.5667, "end_timestamp": 195.7333, "label": "Left end-effector pulls needle the rest of the way through the skin"}
+{"episode_index": 7, "start_frame": 5872, "end_frame": 6013, "start_timestamp": 195.7333, "end_timestamp": 200.4333, "label": "Left end-effector hands needle to right end-effector"}
+{"episode_index": 7, "start_frame": 6013, "end_frame": 6105, "start_timestamp": 200.4333, "end_timestamp": 203.5, "label": "Left end-effector is placed into wound with grippers in the closed position"}
+{"episode_index": 7, "start_frame": 6105, "end_frame": 6281, "start_timestamp": 203.5, "end_timestamp": 209.3667, "label": "Right end-effector places needle into skin beneath the incision"}
+{"episode_index": 7, "start_frame": 6281, "end_frame": 6446, "start_timestamp": 209.3667, "end_timestamp": 214.8667, "label": "Needle is pushed through surface of skin by the right end-effector"}
+{"episode_index": 7, "start_frame": 6446, "end_frame": 6534, "start_timestamp": 214.8667, "end_timestamp": 217.8, "label": "End-effector on the left picks up the needle"}
+{"episode_index": 7, "start_frame": 6534, "end_frame": 6655, "start_timestamp": 217.8, "end_timestamp": 221.8333, "label": "End-effector on the left pulls the needle the rest of the way through the skin"}
+{"episode_index": 7, "start_frame": 6655, "end_frame": 7388, "start_timestamp": 221.8333, "end_timestamp": 246.2667, "label": "The end-effector on the right grasps the suture and pulls a few times until only a short tail remains visible above the incision"}
+{"episode_index": 7, "start_frame": 7388, "end_frame": 7579, "start_timestamp": 246.2667, "end_timestamp": 252.6333, "label": "The left end-effector picks up the working end of the suture"}
+{"episode_index": 7, "start_frame": 7579, "end_frame": 7760, "start_timestamp": 252.6333, "end_timestamp": 258.6667, "label": "Right end-effector moves excess suture out of the way"}
+{"episode_index": 7, "start_frame": 7760, "end_frame": 7779, "start_timestamp": 258.6667, "end_timestamp": 259.3, "label": "Right end-effector picks up working end of the suture"}
+{"episode_index": 7, "start_frame": 7779, "end_frame": 7905, "start_timestamp": 259.3, "end_timestamp": 263.5, "label": "Right end-effector hands its grasp on suture to the end-effector on the left"}
+{"episode_index": 7, "start_frame": 7905, "end_frame": 8674, "start_timestamp": 263.5, "end_timestamp": 289.1333, "label": "Left end-effector wraps the suture two times counter-clockwise around the right end-effector with its grippers in the open position"}
+{"episode_index": 7, "start_frame": 8674, "end_frame": 8750, "start_timestamp": 289.1333, "end_timestamp": 291.6667, "label": "Right end-effector closes on the tail end of the suture"}
+{"episode_index": 7, "start_frame": 8750, "end_frame": 8800, "start_timestamp": 291.6667, "end_timestamp": 293.3333, "label": "Tail end of the suture is pulled back through the knot"}
+{"episode_index": 7, "start_frame": 8800, "end_frame": 8881, "start_timestamp": 293.3333, "end_timestamp": 296.0333, "label": "The right end-effector pulls down on the tail end of the suture and the left end-effector pulls up on the working end of the suture to tighten the newly created knot"}
+{"episode_index": 7, "start_frame": 8881, "end_frame": 8961, "start_timestamp": 296.0333, "end_timestamp": 298.7, "label": "The right end-effector picks up the needle"}
+{"episode_index": 7, "start_frame": 8961, "end_frame": 8998, "start_timestamp": 298.7, "end_timestamp": 299.9333, "label": "Right end-effector moves the needle out of the way"}
+{"episode_index": 7, "start_frame": 8998, "end_frame": 9064, "start_timestamp": 299.9333, "end_timestamp": 302.1333, "label": "The left end-effector picks up the working end of the thread"}
+{"episode_index": 7, "start_frame": 9064, "end_frame": 9164, "start_timestamp": 302.1333, "end_timestamp": 305.4667, "label": "The left end-effector wraps the thread one time clockwise around the right end-effector with its grippers in the open position"}
+{"episode_index": 7, "start_frame": 9164, "end_frame": 9244, "start_timestamp": 305.4667, "end_timestamp": 308.1333, "label": "The right end-effector reaches and picks up the tail end of the thread"}
+{"episode_index": 7, "start_frame": 9244, "end_frame": 9270, "start_timestamp": 308.1333, "end_timestamp": 309.0, "label": "The right end-effector pulls the tail through the loop"}
+{"episode_index": 7, "start_frame": 9270, "end_frame": 9361, "start_timestamp": 309.0, "end_timestamp": 312.0333, "label": "The right end-effector pulls up on the tail and the left end-effector pulls down on the working thread to tighten the newly created knot"}
+{"episode_index": 7, "start_frame": 9361, "end_frame": 9417, "start_timestamp": 312.0333, "end_timestamp": 313.9, "label": "Right end-effector is positioned directly over the incision with grippers in the open position"}
+{"episode_index": 7, "start_frame": 9417, "end_frame": 9529, "start_timestamp": 313.9, "end_timestamp": 317.6333, "label": "Left end-effector grasps the working end of the suture"}
+{"episode_index": 7, "start_frame": 9529, "end_frame": 9666, "start_timestamp": 317.6333, "end_timestamp": 322.2, "label": "Suture is wrapped one time counter-clockwise around the right-end effector with its grippers in the open position"}
+{"episode_index": 7, "start_frame": 9666, "end_frame": 9738, "start_timestamp": 322.2, "end_timestamp": 324.6, "label": "The right end-effector grabbed the tail end of the suture"}
+{"episode_index": 7, "start_frame": 9738, "end_frame": 9779, "start_timestamp": 324.6, "end_timestamp": 325.9667, "label": "The right end-effector pulled the tail back through the loop"}
+{"episode_index": 7, "start_frame": 9779, "end_frame": 9846, "start_timestamp": 325.9667, "end_timestamp": 328.2, "label": "The right end-effector pulled down and the left end-effector pulled up to tighten the newly created knot"}
+{"episode_index": 7, "start_frame": 9846, "end_frame": 9946, "start_timestamp": 328.2, "end_timestamp": 331.5333, "label": "The left end-effector picked up the tail end of the suture and pulled it taut"}
+{"episode_index": 7, "start_frame": 9946, "end_frame": 10012, "start_timestamp": 331.5333, "end_timestamp": 333.7333, "label": "Using the built-in scissors proximal to the grippers, the right end-effector snips excess suture on tail end of knot"}
+{"episode_index": 7, "start_frame": 10012, "end_frame": 10196, "start_timestamp": 333.7333, "end_timestamp": 339.8667, "label": "The left end-effector sets down the off-cut of suture beside the incision"}
+{"episode_index": 7, "start_frame": 10196, "end_frame": 10274, "start_timestamp": 339.8667, "end_timestamp": 342.4667, "label": "Left end-effector picks up the working end of the suture"}
+{"episode_index": 7, "start_frame": 10274, "end_frame": 10431, "start_timestamp": 342.4667, "end_timestamp": 347.7, "label": "The right end-effector snips excess length using the built-in scissors proximal to the grippers"}
+{"episode_index": 7, "start_frame": 10431, "end_frame": 10577, "start_timestamp": 347.7, "end_timestamp": 352.5667, "label": "Left end-effector places the off-cut of thread out of the way"}
+{"episode_index": 7, "start_frame": 10577, "end_frame": 10663, "start_timestamp": 352.5667, "end_timestamp": 355.4333, "label": "The left end-effector picks up the needle"}
+{"episode_index": 7, "start_frame": 10663, "end_frame": 10705, "start_timestamp": 355.4333, "end_timestamp": 356.8333, "label": "Left end-effector releases grip on needle"}
+{"episode_index": 7, "start_frame": 10705, "end_frame": 10769, "start_timestamp": 356.8333, "end_timestamp": 358.9667, "label": "Left end-effector regraps the needle on the distal end of the needle"}
+{"episode_index": 7, "start_frame": 10769, "end_frame": 10843, "start_timestamp": 358.9667, "end_timestamp": 361.4333, "label": "Left end-effector passes needle to right end-effector"}
+{"episode_index": 7, "start_frame": 10843, "end_frame": 11012, "start_timestamp": 361.4333, "end_timestamp": 367.0667, "label": "Right end-effector moves needle to penetrate the skin above the incision"}
+{"episode_index": 7, "start_frame": 11012, "end_frame": 11051, "start_timestamp": 367.0667, "end_timestamp": 368.3667, "label": "Left end-effector opens the wound"}
+{"episode_index": 7, "start_frame": 11051, "end_frame": 11264, "start_timestamp": 368.3667, "end_timestamp": 375.4667, "label": "Right end-effector pushes needle through skin"}
+{"episode_index": 7, "start_frame": 11264, "end_frame": 11396, "start_timestamp": 375.4667, "end_timestamp": 379.8667, "label": "Left end-effector pulls needle the rest of the way through the skin"}
+{"episode_index": 7, "start_frame": 11396, "end_frame": 11491, "start_timestamp": 379.8667, "end_timestamp": 383.0333, "label": "Left end-effector hands needle to the right end-effector"}
+{"episode_index": 7, "start_frame": 11491, "end_frame": 11568, "start_timestamp": 383.0333, "end_timestamp": 385.6, "label": "Left end-effector opens wound"}
+{"episode_index": 7, "start_frame": 11568, "end_frame": 11944, "start_timestamp": 385.6, "end_timestamp": 398.1333, "label": "Right end-effector pushes needle through the skin below the incision"}
+{"episode_index": 7, "start_frame": 11944, "end_frame": 12073, "start_timestamp": 398.1333, "end_timestamp": 402.4333, "label": "Left end-effector pulls the needle the rest of the way through the skin"}
+{"episode_index": 7, "start_frame": 12073, "end_frame": 12462, "start_timestamp": 402.4333, "end_timestamp": 415.4, "label": "Mistakenly broke the suture and then moved it out of the way"}
+{"episode_index": 7, "episode_done": true}
+{"episode_index": 22, "start_frame": 4173, "end_frame": 4278, "start_timestamp": 139.1, "end_timestamp": 142.6, "label": "Use the left grasper to pull the long end of the thread taut"}
+{"episode_index": 22, "start_frame": 4278, "end_frame": 4316, "start_timestamp": 142.6, "end_timestamp": 143.8667, "label": "Use the right gripper to cut the long end of the thread"}
+{"episode_index": 22, "start_frame": 4316, "end_frame": 4472, "start_timestamp": 143.8667, "end_timestamp": 149.0667, "label": "Use the left gripper to hold the other end of the thread"}
+{"episode_index": 22, "start_frame": 4472, "end_frame": 4502, "start_timestamp": 149.0667, "end_timestamp": 150.0667, "label": "Pull the end of the thread up until it is taut using the left gripper"}
+{"episode_index": 22, "start_frame": 4502, "end_frame": 4541, "start_timestamp": 150.0667, "end_timestamp": 151.3667, "label": "Cut the short end of the thread using the right gripper"}
+{"episode_index": 22, "start_frame": 4541, "end_frame": 4746, "start_timestamp": 151.3667, "end_timestamp": 158.2, "label": "Pick up the needle with the left gripper"}
+{"episode_index": 22, "start_frame": 4746, "end_frame": 4823, "start_timestamp": 158.2, "end_timestamp": 160.7667, "label": "Transfer the needle to the right gripper"}
+{"episode_index": 22, "start_frame": 4823, "end_frame": 4891, "start_timestamp": 160.7667, "end_timestamp": 163.0333, "label": "Readjust the position of the needle using the left gripper"}
+{"episode_index": 22, "start_frame": 4891, "end_frame": 4994, "start_timestamp": 163.0333, "end_timestamp": 166.4667, "label": "Grab the needle again with the right gripper"}
+{"episode_index": 22, "start_frame": 4994, "end_frame": 5137, "start_timestamp": 166.4667, "end_timestamp": 171.2333, "label": "Push the needle into the skin using the right gripper"}
+{"episode_index": 22, "start_frame": 5137, "end_frame": 5433, "start_timestamp": 171.2333, "end_timestamp": 181.1, "label": "Push the needle through the tissue using the right gripper"}
+{"episode_index": 22, "start_frame": 5433, "end_frame": 5548, "start_timestamp": 181.1, "end_timestamp": 184.9333, "label": "Pull the needle through the tissue using the left gripper"}
+{"episode_index": 22, "start_frame": 5548, "end_frame": 5616, "start_timestamp": 184.9333, "end_timestamp": 187.2, "label": "Transfer the needle back to the right gripper"}
+{"episode_index": 22, "start_frame": 5616, "end_frame": 5831, "start_timestamp": 187.2, "end_timestamp": 194.3667, "label": "Insert the needle into the other side of the tissue using the right gripper"}
+{"episode_index": 22, "start_frame": 5831, "end_frame": 5936, "start_timestamp": 194.3667, "end_timestamp": 197.8667, "label": "Push the needle through the tissue using the right gripper"}
+{"episode_index": 22, "start_frame": 5936, "end_frame": 6062, "start_timestamp": 197.8667, "end_timestamp": 202.0667, "label": "Pull the needle through the tissue using the left gripper"}
+{"episode_index": 22, "start_frame": 6062, "end_frame": 6586, "start_timestamp": 202.0667, "end_timestamp": 219.5333, "label": "Use the right gripper to pull the thread all the way through the tissue, leaving a small piece on the end"}
+{"episode_index": 22, "start_frame": 6586, "end_frame": 6647, "start_timestamp": 219.5333, "end_timestamp": 221.5667, "label": "Use the left gripper to set the needle down"}
+{"episode_index": 22, "start_frame": 6647, "end_frame": 6798, "start_timestamp": 221.5667, "end_timestamp": 226.6, "label": "Grab the long end of the thread using the left gripper"}
+{"episode_index": 22, "start_frame": 6798, "end_frame": 7305, "start_timestamp": 226.6, "end_timestamp": 243.5, "label": "Readjust and grab a longer section of the long end of the thread using the left gripper"}
+{"episode_index": 22, "start_frame": 7305, "end_frame": 7764, "start_timestamp": 243.5, "end_timestamp": 258.8, "label": "Untangle the thread and adjust the positioning of the thread to clear the space"}
+{"episode_index": 22, "start_frame": 7764, "end_frame": 7898, "start_timestamp": 258.8, "end_timestamp": 263.2667, "label": "Grab the long end of the thread using the left gripper"}
+{"episode_index": 22, "start_frame": 7898, "end_frame": 8002, "start_timestamp": 263.2667, "end_timestamp": 266.7333, "label": "Wrap the thread counterclockwise once around the right gripper using the left gripper"}
+{"episode_index": 22, "start_frame": 8002, "end_frame": 8052, "start_timestamp": 266.7333, "end_timestamp": 268.4, "label": "Adjust the grip on the thread using the left gripper to get a longer section"}
+{"episode_index": 22, "start_frame": 8052, "end_frame": 8345, "start_timestamp": 268.4, "end_timestamp": 278.1667, "label": "Wrap the thread counterclockwise again around the right gripper using the left gripper"}
+{"episode_index": 22, "start_frame": 8345, "end_frame": 8374, "start_timestamp": 278.1667, "end_timestamp": 279.1333, "label": "Grip the short end of the thread using the right gripper"}
+{"episode_index": 22, "start_frame": 8374, "end_frame": 8449, "start_timestamp": 279.1333, "end_timestamp": 281.6333, "label": "Tighten the knot by pulling down with the right gripper and up with the left gripper"}
+{"episode_index": 22, "start_frame": 8449, "end_frame": 8682, "start_timestamp": 281.6333, "end_timestamp": 289.4, "label": "Wrap the thread clockwise around the right gripper using the left gripper"}
+{"episode_index": 22, "start_frame": 8682, "end_frame": 8705, "start_timestamp": 289.4, "end_timestamp": 290.1667, "label": "Grip the short end of the thread using the right gripper"}
+{"episode_index": 22, "start_frame": 8705, "end_frame": 8830, "start_timestamp": 290.1667, "end_timestamp": 294.3333, "label": "Tighten the knot by pulling up with the right gripper and down with the left gripper"}
+{"episode_index": 22, "start_frame": 8830, "end_frame": 8979, "start_timestamp": 294.3333, "end_timestamp": 299.3, "label": "Wrap the thread counterclockwise around the right gripper using the left gripper"}
+{"episode_index": 22, "start_frame": 8979, "end_frame": 9021, "start_timestamp": 299.3, "end_timestamp": 300.7, "label": "Grip the short end of the thread using the right gripper"}
+{"episode_index": 22, "start_frame": 9021, "end_frame": 9154, "start_timestamp": 300.7, "end_timestamp": 305.1333, "label": "Tighten the knot by pulling down with the right gripper and pulling up with the left gripper"}
+{"episode_index": 22, "start_frame": 9154, "end_frame": 9235, "start_timestamp": 305.1333, "end_timestamp": 307.8333, "label": "Pull the long end of the thread taut by pulling up with the left gripper"}
+{"episode_index": 22, "start_frame": 9235, "end_frame": 9254, "start_timestamp": 307.8333, "end_timestamp": 308.4667, "label": "Cut the long end of the thread using the right gripper"}
+{"episode_index": 22, "start_frame": 9254, "end_frame": 9404, "start_timestamp": 308.4667, "end_timestamp": 313.4667, "label": "Pull the other end of the thread taut using the left gripper"}
+{"episode_index": 22, "start_frame": 9404, "end_frame": 9456, "start_timestamp": 313.4667, "end_timestamp": 315.2, "label": "Cut the thread using the right gripper"}
+{"episode_index": 22, "start_frame": 9456, "end_frame": 9650, "start_timestamp": 315.2, "end_timestamp": 321.6667, "label": "Pick up the needle using the left gripper"}
+{"episode_index": 22, "start_frame": 9650, "end_frame": 9828, "start_timestamp": 321.6667, "end_timestamp": 327.6, "label": "Transfer the needle to the right gripper"}
+{"episode_index": 22, "start_frame": 9828, "end_frame": 9863, "start_timestamp": 327.6, "end_timestamp": 328.7667, "label": "Readjust the position of the needle using the left gripper"}
+{"episode_index": 22, "start_frame": 9863, "end_frame": 9934, "start_timestamp": 328.7667, "end_timestamp": 331.1333, "label": "Transfer the needle back to the right gripper"}
+{"episode_index": 22, "start_frame": 9934, "end_frame": 10067, "start_timestamp": 331.1333, "end_timestamp": 335.5667, "label": "Insert the needle into the skin of the tissue using the right gripper"}
+{"episode_index": 22, "start_frame": 10067, "end_frame": 10198, "start_timestamp": 335.5667, "end_timestamp": 339.9333, "label": "Push the needle through the tissue using the right gripper"}
+{"episode_index": 22, "start_frame": 10198, "end_frame": 10371, "start_timestamp": 339.9333, "end_timestamp": 345.7, "label": "Pull the needle through the top side of the tissue using the left gripper"}
+{"episode_index": 22, "start_frame": 10371, "end_frame": 10432, "start_timestamp": 345.7, "end_timestamp": 347.7333, "label": "Transfer the needle back to the right gripper"}
+{"episode_index": 22, "start_frame": 10432, "end_frame": 10633, "start_timestamp": 347.7333, "end_timestamp": 354.4333, "label": "Insert the needle into the bottom side of the tissue using the right gripper"}
+{"episode_index": 22, "start_frame": 10633, "end_frame": 10832, "start_timestamp": 354.4333, "end_timestamp": 361.0667, "label": "Push the needle through the skin of the bottom side of the tissue using the right gripper"}
+{"episode_index": 22, "start_frame": 10832, "end_frame": 10935, "start_timestamp": 361.0667, "end_timestamp": 364.5, "label": "Pull the needle through the tissue using the left gripper"}
+{"episode_index": 22, "start_frame": 10935, "end_frame": 11278, "start_timestamp": 364.5, "end_timestamp": 375.9333, "label": "Pull the thread through the tissue using the right gripper, leaving only a short end of the thread"}
+{"episode_index": 22, "start_frame": 11278, "end_frame": 11608, "start_timestamp": 375.9333, "end_timestamp": 386.9333, "label": "Grab the long end of the thread using the left gripper"}
+{"episode_index": 22, "start_frame": 11608, "end_frame": 11961, "start_timestamp": 386.9333, "end_timestamp": 398.7, "label": "Wrap the thread counterclockwise twice around the right gripper using the left grippper"}
+{"episode_index": 22, "start_frame": 11961, "end_frame": 12026, "start_timestamp": 398.7, "end_timestamp": 400.8667, "label": "Grab the short end of the thread using the right gripper"}
+{"episode_index": 22, "start_frame": 12026, "end_frame": 12097, "start_timestamp": 400.8667, "end_timestamp": 403.2333, "label": "Tighten the knot by pulling down with the right gripper and up with the left gripper"}
+{"episode_index": 22, "start_frame": 12097, "end_frame": 12431, "start_timestamp": 403.2333, "end_timestamp": 414.3667, "label": "Wrap the thread clockwise around the right gripper using the left gripper"}
+{"episode_index": 22, "start_frame": 12431, "end_frame": 12548, "start_timestamp": 414.3667, "end_timestamp": 418.2667, "label": "Grab the short end of the thread using the right gripper"}
+{"episode_index": 22, "start_frame": 12548, "end_frame": 12601, "start_timestamp": 418.2667, "end_timestamp": 420.0333, "label": "Tighten the knot by pulling up with the right gripper and down with the left gripper"}
+{"episode_index": 22, "start_frame": 12601, "end_frame": 12852, "start_timestamp": 420.0333, "end_timestamp": 428.4, "label": "Wrap the thread counterclockwise around the right gripper using the left gripper"}
+{"episode_index": 22, "start_frame": 12852, "end_frame": 12893, "start_timestamp": 428.4, "end_timestamp": 429.7667, "label": "Grip the short end of the thread using the right gripper"}
+{"episode_index": 22, "start_frame": 12893, "end_frame": 12937, "start_timestamp": 429.7667, "end_timestamp": 431.2333, "label": "Pull the knot tight by pulling down with the right gripper and up with the left gripper"}
+{"episode_index": 22, "start_frame": 12937, "end_frame": 13061, "start_timestamp": 431.2333, "end_timestamp": 435.3667, "label": "Pull the long end of the thread taut with the left gripper by pulling it up"}
+{"episode_index": 22, "start_frame": 13061, "end_frame": 13074, "start_timestamp": 435.3667, "end_timestamp": 435.8, "label": "Cut the thread using the right gripper"}
+{"episode_index": 22, "start_frame": 13074, "end_frame": 13218, "start_timestamp": 435.8, "end_timestamp": 440.6, "label": "Grab the thread on the bottom side of the tissue"}
+{"episode_index": 22, "start_frame": 13218, "end_frame": 13328, "start_timestamp": 440.6, "end_timestamp": 444.2667, "label": "Cut the thread using the right gripper"}
+{"episode_index": 22, "start_frame": 13328, "end_frame": 13466, "start_timestamp": 444.2667, "end_timestamp": 448.8667, "label": "Wound closure completed"}
+{"episode_index": 22, "episode_done": true}
+{"episode_index": 8, "start_frame": 0, "end_frame": 109, "start_timestamp": 0.0, "end_timestamp": 3.6333, "label": "Pick up the needle with the left gripper"}
+{"episode_index": 8, "start_frame": 109, "end_frame": 198, "start_timestamp": 3.6333, "end_timestamp": 6.6, "label": "Transfer the needle to the right grasper"}
+{"episode_index": 8, "start_frame": 198, "end_frame": 260, "start_timestamp": 6.6, "end_timestamp": 8.6667, "label": "adjust the position of the needle using the left grasper"}
+{"episode_index": 8, "start_frame": 260, "end_frame": 340, "start_timestamp": 8.6667, "end_timestamp": 11.3333, "label": "Transfer the needle back to the right gripper"}
+{"episode_index": 8, "start_frame": 340, "end_frame": 456, "start_timestamp": 11.3333, "end_timestamp": 15.2, "label": "Move the excess thread from the area using the left gripper"}
+{"episode_index": 8, "start_frame": 456, "end_frame": 568, "start_timestamp": 15.2, "end_timestamp": 18.9333, "label": "Readjust the needle using the left gripper"}
+{"episode_index": 8, "start_frame": 568, "end_frame": 692, "start_timestamp": 18.9333, "end_timestamp": 23.0667, "label": "Transfer the needle back to the right gripper"}
+{"episode_index": 8, "start_frame": 692, "end_frame": 786, "start_timestamp": 23.0667, "end_timestamp": 26.2, "label": "Insert the needle into the skin of the tissue"}
+{"episode_index": 8, "start_frame": 786, "end_frame": 1204, "start_timestamp": 26.2, "end_timestamp": 40.1333, "label": "Drive the needle through the tissue using the right hand"}
+{"episode_index": 8, "start_frame": 1204, "end_frame": 1318, "start_timestamp": 40.1333, "end_timestamp": 43.9333, "label": "Pull the needle through the tissue using the left gripper"}
+{"episode_index": 8, "start_frame": 1318, "end_frame": 1409, "start_timestamp": 43.9333, "end_timestamp": 46.9667, "label": "Transfer the needle back to the right gripper"}
+{"episode_index": 8, "start_frame": 1409, "end_frame": 1550, "start_timestamp": 46.9667, "end_timestamp": 51.6667, "label": "Lift the top side of the tissue using the left gripper"}
+{"episode_index": 8, "start_frame": 1550, "end_frame": 1658, "start_timestamp": 51.6667, "end_timestamp": 55.2667, "label": "Insert the needle into the bottom side of the tissue using the right gripper"}
+{"episode_index": 8, "start_frame": 1658, "end_frame": 1758, "start_timestamp": 55.2667, "end_timestamp": 58.6, "label": "Push the needle through the skin of the tissue"}
+{"episode_index": 8, "start_frame": 1758, "end_frame": 1847, "start_timestamp": 58.6, "end_timestamp": 61.5667, "label": "Mistakenly grab the needle using the right gripper"}
+{"episode_index": 8, "start_frame": 1847, "end_frame": 1963, "start_timestamp": 61.5667, "end_timestamp": 65.4333, "label": "Pull the needle through the tissue using the left gripper"}
+{"episode_index": 8, "start_frame": 1963, "end_frame": 2354, "start_timestamp": 65.4333, "end_timestamp": 78.4667, "label": "Pull the thread through the tissue using the right hand, leaving a short tail at the top side of the tissue"}
+{"episode_index": 8, "start_frame": 2354, "end_frame": 2474, "start_timestamp": 78.4667, "end_timestamp": 82.4667, "label": "Grab the long end of the thread using the left tool"}
+{"episode_index": 8, "start_frame": 2474, "end_frame": 2802, "start_timestamp": 82.4667, "end_timestamp": 93.4, "label": "Wrap the long end of the thread twice counter-clockwise around the right gripper using the left gripper"}
+{"episode_index": 8, "start_frame": 2802, "end_frame": 2846, "start_timestamp": 93.4, "end_timestamp": 94.8667, "label": "Grab the short tail of the thread using the right hand"}
+{"episode_index": 8, "start_frame": 2846, "end_frame": 2963, "start_timestamp": 94.8667, "end_timestamp": 98.7667, "label": "Tighten the knot by pulling downwards with the right hand and upwards with the left hand"}
+{"episode_index": 8, "start_frame": 2963, "end_frame": 3133, "start_timestamp": 98.7667, "end_timestamp": 104.4333, "label": "Wrap the long end of the thread clockwise around the right tool using the left tool"}
+{"episode_index": 8, "start_frame": 3133, "end_frame": 3192, "start_timestamp": 104.4333, "end_timestamp": 106.4, "label": "Grab the short tail of the thread using the right gripper"}
+{"episode_index": 8, "start_frame": 3192, "end_frame": 3262, "start_timestamp": 106.4, "end_timestamp": 108.7333, "label": "Pull upwards on the short tail using the right gripper and downwards on the long tail using the left gripper"}
+{"episode_index": 8, "start_frame": 3262, "end_frame": 3423, "start_timestamp": 108.7333, "end_timestamp": 114.1, "label": "Wrap the long end of the thread counterclockwise around the right tool using the left tool"}
+{"episode_index": 8, "start_frame": 3423, "end_frame": 3454, "start_timestamp": 114.1, "end_timestamp": 115.1333, "label": "Grab the short tail of the thread using the right tool"}
+{"episode_index": 8, "start_frame": 4406, "end_frame": 4568, "start_timestamp": 146.8667, "end_timestamp": 152.2667, "label": "Grab the needle with the right gripper and release the needle with the left gripper"}
+{"episode_index": 8, "start_frame": 4568, "end_frame": 4722, "start_timestamp": 152.2667, "end_timestamp": 157.4, "label": "Readjust the postition of the needle using the left gripper"}
+{"episode_index": 8, "start_frame": 4722, "end_frame": 4754, "start_timestamp": 157.4, "end_timestamp": 158.4667, "label": "transfer the needle back to the right gripper"}
+{"episode_index": 8, "start_frame": 4754, "end_frame": 4847, "start_timestamp": 158.4667, "end_timestamp": 161.5667, "label": "insert the needle into the skin of the tissue using the right gripper"}
+{"episode_index": 8, "start_frame": 4847, "end_frame": 5104, "start_timestamp": 161.5667, "end_timestamp": 170.1333, "label": "push the needle through the tissue using the right gripper"}
+{"episode_index": 8, "start_frame": 5104, "end_frame": 5334, "start_timestamp": 170.1333, "end_timestamp": 177.8, "label": "Pull the needle through the tissue using the left gripper"}
+{"episode_index": 8, "start_frame": 5334, "end_frame": 5439, "start_timestamp": 177.8, "end_timestamp": 181.3, "label": "Pass the needle back to the right gripper"}
+{"episode_index": 8, "start_frame": 5439, "end_frame": 6014, "start_timestamp": 181.3, "end_timestamp": 200.4667, "label": "Use the left gripper to readjust the needle after it has been moved out of place by the tissue"}
+{"episode_index": 8, "start_frame": 6014, "end_frame": 6051, "start_timestamp": 200.4667, "end_timestamp": 201.7, "label": "Transfer the needle back to the right gripper"}
+{"episode_index": 8, "start_frame": 6051, "end_frame": 6535, "start_timestamp": 201.7, "end_timestamp": 217.8333, "label": "Readjust the needle again after it has been knocked out of place by the tissue"}
+{"episode_index": 8, "start_frame": 6535, "end_frame": 6734, "start_timestamp": 217.8333, "end_timestamp": 224.4667, "label": "Insert the needle through the bottom half of the tissue using the right gripper"}
+{"episode_index": 8, "start_frame": 6734, "end_frame": 6868, "start_timestamp": 224.4667, "end_timestamp": 228.9333, "label": "Pull the needle through the bottom side of the tissue using the left gripper"}
+{"episode_index": 8, "start_frame": 6868, "end_frame": 7117, "start_timestamp": 228.9333, "end_timestamp": 237.2333, "label": "Pull the thread through the tissue using the right gripper, leaving a short tail at the end of the thread at the top half of the wound"}
+{"episode_index": 8, "start_frame": 7117, "end_frame": 7409, "start_timestamp": 237.2333, "end_timestamp": 246.9667, "label": "Grab the long end of the thread using the left gripper"}
+{"episode_index": 8, "start_frame": 7409, "end_frame": 7682, "start_timestamp": 246.9667, "end_timestamp": 256.0667, "label": "Loop the thread twice counterclockwise around the right gripper using the left gripper"}
+{"episode_index": 8, "start_frame": 7682, "end_frame": 7722, "start_timestamp": 256.0667, "end_timestamp": 257.4, "label": "Grab the short tail of the thread using the right gripper"}
+{"episode_index": 8, "start_frame": 7722, "end_frame": 7758, "start_timestamp": 257.4, "end_timestamp": 258.6, "label": "Pull the tail end of the thread downwards with the right tool and pull the long end of the thread upwards with the left tool"}
+{"episode_index": 8, "start_frame": 7758, "end_frame": 7762, "start_timestamp": 258.6, "end_timestamp": 258.7333, "label": "Mistakenly pull too hard on the thread, causing it to snap"}
+{"episode_index": 8, "start_frame": 7762, "end_frame": 7950, "start_timestamp": 258.7333, "end_timestamp": 265.0, "label": "Tighten the knot by pulling upwards on the longer end of the thread with the left tool, and pulling downwards on the shorter tail using the right tool"}
+{"episode_index": 8, "start_frame": 7950, "end_frame": 8089, "start_timestamp": 265.0, "end_timestamp": 269.6333, "label": "Wrap the long end of the thread around the right tool clockwise using the left tool"}
+{"episode_index": 8, "start_frame": 8089, "end_frame": 8170, "start_timestamp": 269.6333, "end_timestamp": 272.3333, "label": "Grab the other tail end of the thread using the right tool"}
+{"episode_index": 8, "start_frame": 8170, "end_frame": 8272, "start_timestamp": 272.3333, "end_timestamp": 275.7333, "label": "Tighten the knot by pulling the tools in opposite directions while holding on to the two tail ends"}
+{"episode_index": 8, "start_frame": 8272, "end_frame": 8443, "start_timestamp": 275.7333, "end_timestamp": 281.4333, "label": "Loop the thread counterclockwise around the right hand using the left hand"}
+{"episode_index": 8, "start_frame": 8443, "end_frame": 8479, "start_timestamp": 281.4333, "end_timestamp": 282.6333, "label": "Grab the tail end of the thread using the right tool"}
+{"episode_index": 8, "start_frame": 8479, "end_frame": 8536, "start_timestamp": 282.6333, "end_timestamp": 284.5333, "label": "Tighten the knot by pulling the two ends of the thread in opposite directions"}
+{"episode_index": 8, "start_frame": 8536, "end_frame": 8555, "start_timestamp": 284.5333, "end_timestamp": 285.1667, "label": "Rotate the right tool to pull the tail end of the thread all the way through the knot"}
+{"episode_index": 8, "start_frame": 8555, "end_frame": 8651, "start_timestamp": 285.1667, "end_timestamp": 288.3667, "label": "Pull the thread in the left gripper up to hold it taut"}
+{"episode_index": 8, "start_frame": 8651, "end_frame": 8778, "start_timestamp": 288.3667, "end_timestamp": 292.6, "label": "Cut the thread using the right tool"}
+{"episode_index": 8, "start_frame": 8778, "end_frame": 8999, "start_timestamp": 292.6, "end_timestamp": 299.9667, "label": "Grab the other end of the thread using the left gripper"}
+{"episode_index": 8, "start_frame": 8999, "end_frame": 9030, "start_timestamp": 299.9667, "end_timestamp": 301.0, "label": "Pull the thread upwards with the left gripper to hold it taut"}
+{"episode_index": 8, "start_frame": 9030, "end_frame": 9069, "start_timestamp": 301.0, "end_timestamp": 302.3, "label": "Cut the thread using the right gripper"}
+{"episode_index": 8, "start_frame": 9069, "end_frame": 9258, "start_timestamp": 302.3, "end_timestamp": 308.6, "label": "Deposit remainder thread on the side, away from the working area"}
+{"episode_index": 8, "start_frame": 9258, "end_frame": 9464, "start_timestamp": 308.6, "end_timestamp": 315.4667, "label": "Pull the thread using the left gripper until the needle is visible in the working area"}
+{"episode_index": 8, "start_frame": 9464, "end_frame": 9676, "start_timestamp": 315.4667, "end_timestamp": 322.5333, "label": "Pick up the needle using the left gripper"}
+{"episode_index": 8, "start_frame": 9676, "end_frame": 9752, "start_timestamp": 322.5333, "end_timestamp": 325.0667, "label": "Transfer needle to right gripper"}
+{"episode_index": 8, "start_frame": 9752, "end_frame": 9931, "start_timestamp": 325.0667, "end_timestamp": 331.0333, "label": "Insert needle into skin of tissue using right gripper"}
+{"episode_index": 8, "start_frame": 9931, "end_frame": 10296, "start_timestamp": 331.0333, "end_timestamp": 343.2, "label": "Push needle through tissue using right gripper"}
+{"episode_index": 8, "start_frame": 10296, "end_frame": 10380, "start_timestamp": 343.2, "end_timestamp": 346.0, "label": "Pull needle through tissue using left gripper"}
+{"episode_index": 8, "start_frame": 10380, "end_frame": 10424, "start_timestamp": 346.0, "end_timestamp": 347.4667, "label": "Transfer needle to right gripper"}
+{"episode_index": 8, "start_frame": 10424, "end_frame": 10565, "start_timestamp": 347.4667, "end_timestamp": 352.1667, "label": "Use left gripper to open the wound"}
+{"episode_index": 8, "start_frame": 10565, "end_frame": 10717, "start_timestamp": 352.1667, "end_timestamp": 357.2333, "label": "Insert needle into bottom half of tissue using right gripper"}
+{"episode_index": 8, "start_frame": 10717, "end_frame": 10955, "start_timestamp": 357.2333, "end_timestamp": 365.1667, "label": "Use left gripper to readjust needle after failed insertion"}
+{"episode_index": 8, "start_frame": 10955, "end_frame": 11028, "start_timestamp": 365.1667, "end_timestamp": 367.6, "label": "Grab needle with right gripper"}
+{"episode_index": 8, "start_frame": 11028, "end_frame": 11215, "start_timestamp": 367.6, "end_timestamp": 373.8333, "label": "Push needle through bottom half of tissue using the right gripper"}
+{"episode_index": 8, "start_frame": 11215, "end_frame": 11460, "start_timestamp": 373.8333, "end_timestamp": 382.0, "label": "Pull needle through tissue using left gripper, leaving a short tail on the top half of the tissue"}
+{"episode_index": 8, "start_frame": 11460, "end_frame": 11806, "start_timestamp": 382.0, "end_timestamp": 393.5333, "label": "Wrap thread counterclockwise around right gripper twice using the left tool"}
+{"episode_index": 8, "start_frame": 11806, "end_frame": 11860, "start_timestamp": 393.5333, "end_timestamp": 395.3333, "label": "Grip short tail end of the thread with the right tool"}
+{"episode_index": 8, "start_frame": 11860, "end_frame": 12028, "start_timestamp": 395.3333, "end_timestamp": 400.9333, "label": "Tighten the knot by pulling down with the right tool and up with the left tool"}
+{"episode_index": 8, "start_frame": 12028, "end_frame": 12121, "start_timestamp": 400.9333, "end_timestamp": 404.0333, "label": "Wrap the thread around the right gripper clockwise using the left tool"}
+{"episode_index": 8, "start_frame": 12121, "end_frame": 12174, "start_timestamp": 404.0333, "end_timestamp": 405.8, "label": "Grab the short end of the thread using the right gripper"}
+{"episode_index": 8, "start_frame": 12174, "end_frame": 12287, "start_timestamp": 405.8, "end_timestamp": 409.5667, "label": "tighten the knot by pulling the ends of the threads in opposite directions"}
+{"episode_index": 8, "start_frame": 12287, "end_frame": 12403, "start_timestamp": 409.5667, "end_timestamp": 413.4333, "label": "loop the thread around the right gripper counterclockwise using the left gripper"}
+{"episode_index": 8, "start_frame": 12403, "end_frame": 12491, "start_timestamp": 413.4333, "end_timestamp": 416.3667, "label": "grab the short end of the thread using the right gripper"}
+{"episode_index": 8, "start_frame": 12491, "end_frame": 12628, "start_timestamp": 416.3667, "end_timestamp": 420.9333, "label": "tighten the knot by pulling the short end of the thread downwards with the right gripper and the long end of the thread upwards with the left tool"}
+{"episode_index": 8, "start_frame": 12628, "end_frame": 12700, "start_timestamp": 420.9333, "end_timestamp": 423.3333, "label": "pull the long end of the thread taut by pulling it upwards with the left gripper"}
+{"episode_index": 8, "start_frame": 12700, "end_frame": 12826, "start_timestamp": 423.3333, "end_timestamp": 427.5333, "label": "cut the thread using the right gripper"}
+{"episode_index": 8, "start_frame": 12826, "end_frame": 12969, "start_timestamp": 427.5333, "end_timestamp": 432.3, "label": "pull the thread tail on the opposite side of the wound taut using the left gripper"}
+{"episode_index": 8, "start_frame": 12969, "end_frame": 13013, "start_timestamp": 432.3, "end_timestamp": 433.7667, "label": "cut the thread using the right tool"}
+{"episode_index": 8, "start_frame": 13013, "end_frame": 13103, "start_timestamp": 433.7667, "end_timestamp": 436.7667, "label": "wound closure complete"}
+{"episode_index": 8, "episode_done": true}
+{"episode_index": 104, "start_frame": 0, "end_frame": 87, "start_timestamp": 0.0, "end_timestamp": 2.9, "label": "Left driver fetches needle"}
+{"episode_index": 104, "start_frame": 87, "end_frame": 141, "start_timestamp": 2.9, "end_timestamp": 4.7, "label": "Left hand switches needle to right hand"}
+{"episode_index": 104, "start_frame": 141, "end_frame": 213, "start_timestamp": 4.7, "end_timestamp": 7.1, "label": "Hand the needle back to the left to regrasp"}
+{"episode_index": 104, "start_frame": 213, "end_frame": 273, "start_timestamp": 7.1, "end_timestamp": 9.1, "label": "Left hand places needle in right hand"}
+{"episode_index": 104, "start_frame": 273, "end_frame": 559, "start_timestamp": 9.1, "end_timestamp": 18.6333, "label": "Right hand throws needle into the skin above the incision"}
+{"episode_index": 104, "start_frame": 559, "end_frame": 648, "start_timestamp": 18.6333, "end_timestamp": 21.6, "label": "Left gripper picks up needle and pulls it the rest of the way through skin"}
+{"episode_index": 104, "start_frame": 648, "end_frame": 710, "start_timestamp": 21.6, "end_timestamp": 23.6667, "label": "Left grip hands the needle to the right grip"}
+{"episode_index": 104, "start_frame": 710, "end_frame": 764, "start_timestamp": 23.6667, "end_timestamp": 25.4667, "label": "Left hand is placed in the incision to widen wound opening"}
+{"episode_index": 104, "start_frame": 764, "end_frame": 1069, "start_timestamp": 25.4667, "end_timestamp": 35.6333, "label": "Right gripper pushes needle through the skin beneath the incision"}
+{"episode_index": 104, "start_frame": 1069, "end_frame": 1189, "start_timestamp": 35.6333, "end_timestamp": 39.6333, "label": "Left end-effector pulls needle through skin and pulls suture taut"}
+{"episode_index": 104, "start_frame": 1189, "end_frame": 1807, "start_timestamp": 39.6333, "end_timestamp": 60.2333, "label": "Right end-effector grasps suture and pulls until only a short tail remains"}
+{"episode_index": 104, "start_frame": 1807, "end_frame": 2046, "start_timestamp": 60.2333, "end_timestamp": 68.2, "label": "Right gripper picks up the tail end and pulls to lengthen slightly"}
+{"episode_index": 104, "start_frame": 2046, "end_frame": 2123, "start_timestamp": 68.2, "end_timestamp": 70.7667, "label": "Left hand picks up suture"}
+{"episode_index": 104, "start_frame": 2123, "end_frame": 2155, "start_timestamp": 70.7667, "end_timestamp": 71.8333, "label": "Right end-effector grasps suture"}
+{"episode_index": 104, "start_frame": 2155, "end_frame": 2218, "start_timestamp": 71.8333, "end_timestamp": 73.9333, "label": "Left end-effector regrasps suture"}
+{"episode_index": 104, "start_frame": 2218, "end_frame": 2366, "start_timestamp": 73.9333, "end_timestamp": 78.8667, "label": "Left hand wraps suture counter-clockwise around right hand two times"}
+{"episode_index": 104, "start_frame": 2366, "end_frame": 2450, "start_timestamp": 78.8667, "end_timestamp": 81.6667, "label": "Right end-effector grabs tail end of suture"}
+{"episode_index": 104, "start_frame": 2450, "end_frame": 2495, "start_timestamp": 81.6667, "end_timestamp": 83.1667, "label": "Right hand pulls tail through the loop to create a knot"}
+{"episode_index": 104, "start_frame": 2495, "end_frame": 2550, "start_timestamp": 83.1667, "end_timestamp": 85.0, "label": "Right end-effector pulls down and left end-effector pulls up on suture to tighten"}
+{"episode_index": 104, "start_frame": 2550, "end_frame": 2641, "start_timestamp": 85.0, "end_timestamp": 88.0333, "label": "Left grasper wraps thread one time clockwise around right grasper"}
+{"episode_index": 104, "start_frame": 2641, "end_frame": 2736, "start_timestamp": 88.0333, "end_timestamp": 91.2, "label": "Right gripper grabs tail end of suture"}
+{"episode_index": 104, "start_frame": 2736, "end_frame": 2808, "start_timestamp": 91.2, "end_timestamp": 93.6, "label": "Right hand pulls tail through loop to create knot"}
+{"episode_index": 104, "start_frame": 2808, "end_frame": 3143, "start_timestamp": 93.6, "end_timestamp": 104.7667, "label": "Left gripper wraps thread counter-clockwise around right hand once"}
+{"episode_index": 104, "start_frame": 3143, "end_frame": 3323, "start_timestamp": 104.7667, "end_timestamp": 110.7667, "label": "Left hand grips working end of suture and pulls up while right hand pulls down on tail end of suture to tighten"}
+{"episode_index": 104, "start_frame": 3323, "end_frame": 3456, "start_timestamp": 110.7667, "end_timestamp": 115.2, "label": "Right grasper grabs working end of the suture"}
+{"episode_index": 104, "start_frame": 3456, "end_frame": 3519, "start_timestamp": 115.2, "end_timestamp": 117.3, "label": "Left end-effector regrasps suture"}
+{"episode_index": 104, "start_frame": 3519, "end_frame": 3589, "start_timestamp": 117.3, "end_timestamp": 119.6333, "label": "Left hand wraps thread once clockwise around right hand"}
+{"episode_index": 104, "start_frame": 3589, "end_frame": 3635, "start_timestamp": 119.6333, "end_timestamp": 121.1667, "label": "Right hand grabs tail end of suture"}
+{"episode_index": 104, "start_frame": 3635, "end_frame": 3743, "start_timestamp": 121.1667, "end_timestamp": 124.7667, "label": "Right hand pulls up on suture while left hand pulls down to tighten"}
+{"episode_index": 104, "start_frame": 3743, "end_frame": 3862, "start_timestamp": 124.7667, "end_timestamp": 128.7333, "label": "Left end-effector wraps right driver with suture one time counter-clockwise"}
+{"episode_index": 104, "start_frame": 3862, "end_frame": 3883, "start_timestamp": 128.7333, "end_timestamp": 129.4333, "label": "Right driver grabs tail end of suture"}
+{"episode_index": 104, "start_frame": 3883, "end_frame": 3976, "start_timestamp": 129.4333, "end_timestamp": 132.5333, "label": "Right hand pulls tail down through the loop and left hand pulls up on working end to tighten"}
+{"episode_index": 104, "start_frame": 3976, "end_frame": 4016, "start_timestamp": 132.5333, "end_timestamp": 133.8667, "label": "Left needle driver pulls suture taut"}
+{"episode_index": 104, "start_frame": 4016, "end_frame": 4101, "start_timestamp": 133.8667, "end_timestamp": 136.7, "label": "Right needle driver cuts excess suture using built-in scissors proximal to grips"}
+{"episode_index": 104, "start_frame": 4101, "end_frame": 4190, "start_timestamp": 136.7, "end_timestamp": 139.6667, "label": "Left hand picks up tail end of suture and pulls taut"}
+{"episode_index": 104, "start_frame": 4190, "end_frame": 4260, "start_timestamp": 139.6667, "end_timestamp": 142.0, "label": "Right grasper cuts excess thread using built-in snips proximal to grips"}
+{"episode_index": 104, "start_frame": 4260, "end_frame": 4287, "start_timestamp": 142.0, "end_timestamp": 142.9, "label": "Left needle driver moves off-cut of suture out of the way"}
+{"episode_index": 104, "start_frame": 4287, "end_frame": 4350, "start_timestamp": 142.9, "end_timestamp": 145.0, "label": "Wound closure complete"}
+{"episode_index": 104, "episode_done": true}
+{"episode_index": 117, "start_frame": 0, "end_frame": 100, "start_timestamp": 0.0, "end_timestamp": 3.3333, "label": "Pick up needle with left gripper"}
+{"episode_index": 117, "start_frame": 100, "end_frame": 196, "start_timestamp": 3.3333, "end_timestamp": 6.5333, "label": "Left hand passes needle to right hand"}
+{"episode_index": 117, "start_frame": 196, "end_frame": 289, "start_timestamp": 6.5333, "end_timestamp": 9.6333, "label": "Right hand passes needle to left hand to reposition grip"}
+{"episode_index": 117, "start_frame": 289, "end_frame": 389, "start_timestamp": 9.6333, "end_timestamp": 12.9667, "label": "Left hand passes needle to right hand"}
+{"episode_index": 117, "start_frame": 389, "end_frame": 679, "start_timestamp": 12.9667, "end_timestamp": 22.6333, "label": "Right hand throws needle through skin above incision"}
+{"episode_index": 117, "start_frame": 679, "end_frame": 791, "start_timestamp": 22.6333, "end_timestamp": 26.3667, "label": "Left hand pulls needle the rest of the way through skin"}
+{"episode_index": 117, "start_frame": 791, "end_frame": 899, "start_timestamp": 26.3667, "end_timestamp": 29.9667, "label": "Left hand passes needle to right hand"}
+{"episode_index": 117, "start_frame": 899, "end_frame": 974, "start_timestamp": 29.9667, "end_timestamp": 32.4667, "label": "Left hand opens wound"}
+{"episode_index": 117, "start_frame": 974, "end_frame": 1256, "start_timestamp": 32.4667, "end_timestamp": 41.8667, "label": "Right hand throws needle through skin below incision"}
+{"episode_index": 117, "start_frame": 1256, "end_frame": 1487, "start_timestamp": 41.8667, "end_timestamp": 49.5667, "label": "Left hand picks up needle and pulls the rest of the way through skin"}
+{"episode_index": 117, "start_frame": 1487, "end_frame": 2619, "start_timestamp": 49.5667, "end_timestamp": 87.3, "label": "Right hand pulls suture through skin until only a short tail remains"}
+{"episode_index": 117, "start_frame": 2619, "end_frame": 2740, "start_timestamp": 87.3, "end_timestamp": 91.3333, "label": "Right hand pulls tail end out to be longer"}
+{"episode_index": 117, "start_frame": 2740, "end_frame": 2896, "start_timestamp": 91.3333, "end_timestamp": 96.5333, "label": "Left gripper picks up working end of thread"}
+{"episode_index": 117, "start_frame": 2896, "end_frame": 2998, "start_timestamp": 96.5333, "end_timestamp": 99.9333, "label": "Left gripper hands suture to right gripper"}
+{"episode_index": 117, "start_frame": 2998, "end_frame": 3081, "start_timestamp": 99.9333, "end_timestamp": 102.7, "label": "Left gripper picks up thread"}
+{"episode_index": 117, "start_frame": 3081, "end_frame": 3347, "start_timestamp": 102.7, "end_timestamp": 111.5667, "label": "Right gripper grasps suture"}
+{"episode_index": 117, "start_frame": 3347, "end_frame": 3423, "start_timestamp": 111.5667, "end_timestamp": 114.1, "label": "Left gripper regrasps suture distally from previous grasp"}
+{"episode_index": 117, "start_frame": 3423, "end_frame": 3921, "start_timestamp": 114.1, "end_timestamp": 130.7, "label": "Left hand wraps suture counter-clockwise around the right hand two times"}
+{"episode_index": 117, "start_frame": 3921, "end_frame": 4017, "start_timestamp": 130.7, "end_timestamp": 133.9, "label": "Right gripper grabs tail end of suture"}
+{"episode_index": 117, "start_frame": 4017, "end_frame": 4119, "start_timestamp": 133.9, "end_timestamp": 137.3, "label": "Right gripper pulls tail through loops"}
+{"episode_index": 117, "start_frame": 4119, "end_frame": 4177, "start_timestamp": 137.3, "end_timestamp": 139.2333, "label": "Right gripper pulls down to tighten while left gripper pulls up on suture to tighten"}
+{"episode_index": 117, "start_frame": 4177, "end_frame": 4350, "start_timestamp": 139.2333, "end_timestamp": 145.0, "label": "Left gripper wraps suture once around right gripper clockwise"}
+{"episode_index": 117, "start_frame": 4350, "end_frame": 4416, "start_timestamp": 145.0, "end_timestamp": 147.2, "label": "Right end-effector picks up suture tail"}
+{"episode_index": 117, "start_frame": 4416, "end_frame": 4512, "start_timestamp": 147.2, "end_timestamp": 150.4, "label": "Right gripper pulls tail through loop and up to tighten while left end-effector pulls down to tighten"}
+{"episode_index": 117, "start_frame": 4512, "end_frame": 4649, "start_timestamp": 150.4, "end_timestamp": 154.9667, "label": "Left end-effector wraps suture once, counter-clockwise, around right end-effector"}
+{"episode_index": 117, "start_frame": 4649, "end_frame": 4869, "start_timestamp": 154.9667, "end_timestamp": 162.3, "label": "Right hand picks up suture tail and pulls back through and down to tighten while left hand pulls up"}
+{"episode_index": 117, "start_frame": 4869, "end_frame": 4997, "start_timestamp": 162.3, "end_timestamp": 166.5667, "label": "Left hand pulls suture taut and right end-effector snips excess suture"}
+{"episode_index": 117, "start_frame": 4997, "end_frame": 5220, "start_timestamp": 166.5667, "end_timestamp": 174.0, "label": "Left grasper pulls tail taut and right hand snips excess suture length"}
+{"episode_index": 117, "start_frame": 5220, "end_frame": 5269, "start_timestamp": 174.0, "end_timestamp": 175.6333, "label": "Left end-effector sets down suture off-cut"}
+{"episode_index": 117, "start_frame": 5269, "end_frame": 5363, "start_timestamp": 175.6333, "end_timestamp": 178.7667, "label": "Left hand picks up needle"}
+{"episode_index": 117, "start_frame": 5363, "end_frame": 5471, "start_timestamp": 178.7667, "end_timestamp": 182.3667, "label": "Left hand passes needle to right end-effector"}
+{"episode_index": 117, "start_frame": 5471, "end_frame": 5548, "start_timestamp": 182.3667, "end_timestamp": 184.9333, "label": "Left hand regrasps needle at distal end"}
+{"episode_index": 117, "start_frame": 5548, "end_frame": 5654, "start_timestamp": 184.9333, "end_timestamp": 188.4667, "label": "Right hand grabs needle at proximal end"}
+{"episode_index": 117, "start_frame": 5654, "end_frame": 5745, "start_timestamp": 188.4667, "end_timestamp": 191.5, "label": "Left end-effector widens wound opening"}
+{"episode_index": 117, "start_frame": 5745, "end_frame": 6244, "start_timestamp": 191.5, "end_timestamp": 208.1333, "label": "Right hand pushes needle through skin above cut"}
+{"episode_index": 117, "start_frame": 6244, "end_frame": 6372, "start_timestamp": 208.1333, "end_timestamp": 212.4, "label": "Left gripper pulls needle remainder through skin"}
+{"episode_index": 117, "start_frame": 6372, "end_frame": 6441, "start_timestamp": 212.4, "end_timestamp": 214.7, "label": "Left end-effector hands needle to right end-effector"}
+{"episode_index": 117, "start_frame": 6441, "end_frame": 6543, "start_timestamp": 214.7, "end_timestamp": 218.1, "label": "Left grasper widens wound opening"}
+{"episode_index": 117, "start_frame": 6543, "end_frame": 6810, "start_timestamp": 218.1, "end_timestamp": 227.0, "label": "Right end-effector pushes needle through skin below wound"}
+{"episode_index": 117, "start_frame": 6810, "end_frame": 6946, "start_timestamp": 227.0, "end_timestamp": 231.5333, "label": "Left end-effector pulls needle remainder of way through skin"}
+{"episode_index": 117, "start_frame": 6946, "end_frame": 7680, "start_timestamp": 231.5333, "end_timestamp": 256.0, "label": "Right end-effector grabs and pulls suture through until short tail remains on top side"}
+{"episode_index": 117, "start_frame": 7680, "end_frame": 7937, "start_timestamp": 256.0, "end_timestamp": 264.5667, "label": "Right hand pulls tail slightly longer"}
+{"episode_index": 117, "start_frame": 7937, "end_frame": 8004, "start_timestamp": 264.5667, "end_timestamp": 266.8, "label": "Left end-effector picks up working end of suture"}
+{"episode_index": 117, "start_frame": 8004, "end_frame": 8089, "start_timestamp": 266.8, "end_timestamp": 269.6333, "label": "Right hand grasps suture proximal to wound"}
+{"episode_index": 117, "start_frame": 8089, "end_frame": 8160, "start_timestamp": 269.6333, "end_timestamp": 272.0, "label": "Left hand regrasps suture"}
+{"episode_index": 117, "start_frame": 8160, "end_frame": 8536, "start_timestamp": 272.0, "end_timestamp": 284.5333, "label": "Left end-effector wraps suture two times counter-clockwise around right end-effector"}
+{"episode_index": 117, "start_frame": 8536, "end_frame": 8737, "start_timestamp": 284.5333, "end_timestamp": 291.2333, "label": "Right hand grips tail and pulls down through loop while left hand pulls up on working end to tighten knot"}
+{"episode_index": 117, "start_frame": 8737, "end_frame": 8851, "start_timestamp": 291.2333, "end_timestamp": 295.0333, "label": "Left needle driver wraps thread once clockwise around right driver"}
+{"episode_index": 117, "start_frame": 8851, "end_frame": 8914, "start_timestamp": 295.0333, "end_timestamp": 297.1333, "label": "Right driver picks up tail"}
+{"episode_index": 117, "start_frame": 8914, "end_frame": 9010, "start_timestamp": 297.1333, "end_timestamp": 300.3333, "label": "Right hand pulls tail upwards through loop and left gripper pulls downward on working end to tighten"}
+{"episode_index": 117, "start_frame": 9010, "end_frame": 9102, "start_timestamp": 300.3333, "end_timestamp": 303.4, "label": "Left grasper wraps thread once counter-clockwise around right needle driver"}
+{"episode_index": 117, "start_frame": 9102, "end_frame": 9144, "start_timestamp": 303.4, "end_timestamp": 304.8, "label": "Right hand picks up thread tail"}
+{"episode_index": 117, "start_frame": 9144, "end_frame": 9218, "start_timestamp": 304.8, "end_timestamp": 307.2667, "label": "Right hand pulls tail downward through loop and left hand pulls upward to tighten"}
+{"episode_index": 117, "start_frame": 9218, "end_frame": 9289, "start_timestamp": 307.2667, "end_timestamp": 309.6333, "label": "Left needle driver pulls thread taut"}
+{"episode_index": 117, "start_frame": 9289, "end_frame": 9334, "start_timestamp": 309.6333, "end_timestamp": 311.1333, "label": "Right driver snips suture with scissors proximal to grippers"}
+{"episode_index": 117, "start_frame": 9334, "end_frame": 9501, "start_timestamp": 311.1333, "end_timestamp": 316.7, "label": "Left end-effector pulls tail taut"}
+{"episode_index": 117, "start_frame": 9501, "end_frame": 9559, "start_timestamp": 316.7, "end_timestamp": 318.6333, "label": "Right driver clips excess suture length with built-in scissors"}
+{"episode_index": 151, "start_frame": 0, "end_frame": 88, "start_timestamp": 0.0, "end_timestamp": 2.9333, "label": "Pick up needle with left jaws"}
+{"episode_index": 151, "start_frame": 88, "end_frame": 165, "start_timestamp": 2.9333, "end_timestamp": 5.5, "label": "Transfer the needle from left jaws to right jaws"}
+{"episode_index": 151, "start_frame": 165, "end_frame": 254, "start_timestamp": 5.5, "end_timestamp": 8.4667, "label": "Push down with left jaws to widen wound opening"}
+{"episode_index": 151, "start_frame": 254, "end_frame": 502, "start_timestamp": 8.4667, "end_timestamp": 16.7333, "label": "Throw needle through skin on top of incision using right jaws"}
+{"episode_index": 151, "start_frame": 502, "end_frame": 648, "start_timestamp": 16.7333, "end_timestamp": 21.6, "label": "Pull needle the rest of the way through skin with left hand"}
+{"episode_index": 151, "start_frame": 648, "end_frame": 738, "start_timestamp": 21.6, "end_timestamp": 24.6, "label": "Pass needle from left hand to right gripper"}
+{"episode_index": 151, "start_frame": 738, "end_frame": 831, "start_timestamp": 24.6, "end_timestamp": 27.7, "label": "Place left hand in wound to widen opening"}
+{"episode_index": 151, "start_frame": 831, "end_frame": 1115, "start_timestamp": 27.7, "end_timestamp": 37.1667, "label": "Push needle through skin below incision with right needle holder"}
+{"episode_index": 151, "start_frame": 1115, "end_frame": 1181, "start_timestamp": 37.1667, "end_timestamp": 39.3667, "label": "Pull needle through skin with left holder"}
+{"episode_index": 151, "start_frame": 1181, "end_frame": 1390, "start_timestamp": 39.3667, "end_timestamp": 46.3333, "label": "Use left jaws to pull suture through until short tail is left"}
+{"episode_index": 151, "start_frame": 1390, "end_frame": 1473, "start_timestamp": 46.3333, "end_timestamp": 49.1, "label": "Pull tail slightly longer with right needle holder"}
+{"episode_index": 151, "start_frame": 1473, "end_frame": 1524, "start_timestamp": 49.1, "end_timestamp": 50.8, "label": "Set needle down with left jaws"}
+{"episode_index": 151, "start_frame": 1524, "end_frame": 1621, "start_timestamp": 50.8, "end_timestamp": 54.0333, "label": "Pick up thread with left jaws"}
+{"episode_index": 151, "start_frame": 1621, "end_frame": 1748, "start_timestamp": 54.0333, "end_timestamp": 58.2667, "label": "Regrasp thread with left hand"}
+{"episode_index": 151, "start_frame": 1748, "end_frame": 1869, "start_timestamp": 58.2667, "end_timestamp": 62.3, "label": "Create two loops counter-clockwise around right needle holder with left hand"}
+{"episode_index": 151, "start_frame": 1869, "end_frame": 1923, "start_timestamp": 62.3, "end_timestamp": 64.1, "label": "Grab suture tail with right jaws"}
+{"episode_index": 151, "start_frame": 1923, "end_frame": 2019, "start_timestamp": 64.1, "end_timestamp": 67.3, "label": "Pull tail downward through loops with right hand and pull up with left needle holder to tighten"}
+{"episode_index": 151, "start_frame": 2019, "end_frame": 2087, "start_timestamp": 67.3, "end_timestamp": 69.5667, "label": "Use left holder to create one loop clockwise around right jaws"}

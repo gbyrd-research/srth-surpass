@@ -1,0 +1,38 @@
+python src/instructor/train_daVinci.py \
+    --dataset_names base_chole_clipping_cutting base_chole_clipping_cutting_amos \
+    --ckpt_dir $YOUR_CKPT_PATH/hl/transformer_pretrained_no_global_averaging \
+    --gpu 1 \
+    --recovery_probability 0.85 \
+    --batch_size 16 \
+    --num_epochs 2000 \
+    --lr 4e-4 \
+    --min_lr 5e-5 \
+    --lr_cycle 50 \
+    --warmup_epochs 5 \
+    --weight_decay 0.05 \
+    --validation_interval 4 \
+    --prediction_offset 15 \
+    --history_len 4 \
+    --history_step_size 20 \
+    --one_hot_flag \
+    --early_stopping_interval 200 \
+    --seed 5 \
+    --load_best_ckpt_flag \
+    --plot_val_images_flag \
+    --max_num_images 2 \
+    --cameras_to_use left_img_dir \
+    --backbone_model swin-t \
+    --model_init_weights /cis/home/sschmi46/chole_ws/src/skay_jhu_private/model_ckpts/hl/direction_correction_0_1_update_pretraining/best_val_loss_epoch=406.ckpt \
+    --image_dim 224 224 \
+    --freeze_backbone_until none \
+    --multitask_loss_weight 0.4 \
+    --uniform_sampling_flag \
+    --extra_repeated_phase_last_frame_sampling_flag \
+    --extra_repeated_phase_last_frame_sampling_probability 0.15 \
+    --add_center_crop_view_flag \
+    --log_wandb \
+    --extra_corrections_sampling_flag \
+    --extra_corrections_sampling_probability 0.15 \
+    --temporal_mode transformer \
+    --dataset_mean_std_json_path $PATH_TO_DATASET/dataset_mean_std_image_step_size=15.json \
+    --val_split_number 0

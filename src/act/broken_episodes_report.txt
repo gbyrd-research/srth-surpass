@@ -1,0 +1,145 @@
+Checking 167 episodes in: /media/iulian/T7 Shield/Wound_Closure/Processing/tissue_1/1_wound_closure
+
+====================================================================================================
+
+✓ OK: 20260109-100934-579488
+  Image counts:
+    endo_psm1: 7385 images
+    endo_psm2: 7386 images
+    left_img_dir: 7994 images
+    right_img_dir: 7987 images
+  CSV timestamp range: 1767971374579186481 to 1767971674172186132 (299.6s duration)
+  Image timestamp ranges:
+    endo_psm1: 1767971374567957878 to 1767971674150158643 (299.6s duration)
+    endo_psm2: 1767971374574249267 to 1767971674152385473 (299.6s duration)
+    left_img_dir: 1767971374533691841 to 1767971674137476592 (299.6s duration)
+    right_img_dir: 1767971374533605096 to 1767971674145529229 (299.6s duration)
+
+✓ OK: 20260109-101636-346636
+  Image counts:
+    endo_psm1: 2221 images
+    endo_psm2: 2217 images
+    left_img_dir: 2446 images
+    right_img_dir: 2433 images
+  CSV timestamp range: 1767971796381550848 to 1767971890673107023 (94.3s duration)
+  Image timestamp ranges:
+    endo_psm1: 1767971796310049057 to 1767971890622211217 (94.3s duration)
+    endo_psm2: 1767971796354563951 to 1767971890628362894 (94.3s duration)
+    left_img_dir: 1767971796331773236 to 1767971890591813388 (94.3s duration)
+    right_img_dir: 1767971796299580263 to 1767971890595571737 (94.3s duration)
+
+✓ OK: 20260109-103426-360875
+  Image counts:
+    endo_psm1: 5111 images
+    endo_psm2: 5102 images
+    left_img_dir: 5486 images
+    right_img_dir: 5523 images
+  CSV timestamp range: 1767972866381588685 to 1767973076653300298 (210.3s duration)
+  Image timestamp ranges:
+    endo_psm1: 1767972866350372791 to 1767973076623197078 (210.3s duration)
+    endo_psm2: 1767972866354617595 to 1767973076625751733 (210.3s duration)
+    left_img_dir: 1767972866342435948 to 1767973076615517312 (210.3s duration)
+    right_img_dir: 1767972866341336413 to 1767973076650935505 (210.3s duration)
+
+✓ OK: 20260109-104122-328197
+  Image counts:
+    endo_psm1: 3780 images
+    endo_psm2: 3774 images
+    left_img_dir: 4040 images
+    right_img_dir: 4073 images
+  CSV timestamp range: 1767973282335274608 to 1767973453255531387 (170.9s duration)
+  Image timestamp ranges:
+    endo_psm1: 1767973282332389116 to 1767973453188390493 (170.9s duration)
+    endo_psm2: 1767973282297773361 to 1767973453192487001 (170.9s duration)
+    left_img_dir: 1767973282293677658 to 1767973453201933020 (170.9s duration)
+    right_img_dir: 1767973282303097275 to 1767973452401981529 (170.1s duration)
+
+✓ OK: 20260109-113413-949423
+  Image counts:
+    endo_psm1: 11314 images
+    endo_psm2: 11291 images
+    left_img_dir: 12037 images
+    right_img_dir: 12228 images
+  CSV timestamp range: 1767976453974097371 to 1767977005674645996 (551.7s duration)
+  Image timestamp ranges:
+    endo_psm1: 1767976453965717077 to 1767977005671451568 (551.7s duration)
+    endo_psm2: 1767976453969876050 to 1767977005674685955 (551.7s duration)
+    left_img_dir: 1767976453924962558 to 1767977005648785242 (551.7s duration)
+    right_img_dir: 1767976453936783171 to 1767977005654520401 (551.7s duration)
+
+✓ OK: 20260109-125518-198951
+  Image counts:
+    endo_psm1: 2059 images
+    endo_psm2: 2061 images
+    left_img_dir: 2201 images
+    right_img_dir: 2234 images
+  CSV timestamp range: 1767981318203972861 to 1767981400828850979 (82.6s duration)
+  Image timestamp ranges:
+    endo_psm1: 1767981318197628259 to 1767981400825810909 (82.6s duration)
+    endo_psm2: 1767981318161173820 to 1767981400789686441 (82.6s duration)
+    left_img_dir: 1767981318173497329 to 1767981400785071999 (82.6s duration)
+    right_img_dir: 1767981318171149575 to 1767981400784816822 (82.6s duration)
+
+❌ BROKEN: 20260109-130815-817334
+  Image counts:
+    endo_psm1: 1 images
+    endo_psm2: 1 images
+    left_img_dir: 15037 images
+    right_img_dir: 15021 images
+  CSV timestamp range: 1767982095820703522 to 1767982656184063007 (560.4s duration)
+  Image timestamp ranges:
+    endo_psm1: 1767981940927546977 to 1767981940927546977 (0.0s duration)
+    endo_psm2: 1767981940932907342 to 1767981940932907342 (0.0s duration)
+    left_img_dir: 1767982095796393906 to 1767982654012305699 (558.2s duration)
+    right_img_dir: 1767982095791312269 to 1767982654023017183 (558.2s duration)
+  Issues:
+    - endo_psm1 has only 1 images (likely incomplete recording)
+    - endo_psm1: Images end 154.9s BEFORE CSV starts (recording desync)
+    - endo_psm2 has only 1 images (likely incomplete recording)
+    - endo_psm2: Images end 154.9s BEFORE CSV starts (recording desync)
+
+❌ BROKEN: 20260109-154302-635158
+  Image counts:
+    endo_psm1: 1 images
+    endo_psm2: 1 images
+    left_img_dir: 12462 images
+    right_img_dir: 12476 images
+  CSV timestamp range: 1767991382689290409 to 1767991848829485526 (466.1s duration)
+  Image timestamp ranges:
+    endo_psm1: 1767981940927546977 to 1767981940927546977 (0.0s duration)
+    endo_psm2: 1767981940932907342 to 1767981940932907342 (0.0s duration)
+    left_img_dir: 1767991382619320423 to 1767991848388060095 (465.8s duration)
+    right_img_dir: 1767991382590984883 to 1767991848396462984 (465.8s duration)
+  Issues:
+    - endo_psm1 has only 1 images (likely incomplete recording)
+    - endo_psm1: Images end 9441.8s BEFORE CSV starts (recording desync)
+    - endo_psm2 has only 1 images (likely incomplete recording)
+    - endo_psm2: Images end 9441.8s BEFORE CSV starts (recording desync)
+
+❌ BROKEN: 20260109-155447-468480
+  Image counts:
+    endo_psm1: 1 images
+    endo_psm2: 1 images
+    left_img_dir: 13103 images
+    right_img_dir: 13153 images
+  CSV timestamp range: 1767992087515115633 to 1767992575828552966 (488.3s duration)
+  Image timestamp ranges:
+    endo_psm1: 1767981940927546977 to 1767981940927546977 (0.0s duration)
+    endo_psm2: 1767981940932907342 to 1767981940932907342 (0.0s duration)
+    left_img_dir: 1767992087433691811 to 1767992574557451888 (487.1s duration)
+    right_img_dir: 1767992087536534334 to 1767992575465290018 (487.9s duration)
+  Issues:
+    - endo_psm1 has only 1 images (likely incomplete recording)
+    - endo_psm1: Images end 10146.6s BEFORE CSV starts (recording desync)
+    - endo_psm2 has only 1 images (likely incomplete recording)
+    - endo_psm2: Images end 10146.6s BEFORE CSV starts (recording desync)
+Traceback (most recent call last):
+  File "/home/iulian/chole_ws/src/skay_jhu_private_new/src/act/check_broken_episodes.py", line 239, in <module>
+    main()
+  File "/home/iulian/chole_ws/src/skay_jhu_private_new/src/act/check_broken_episodes.py", line 180, in main
+    result = check_episode(episode_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/iulian/chole_ws/src/skay_jhu_private_new/src/act/check_broken_episodes.py", line 72, in check_episode
+    images = [f for f in os.listdir(camera_dir) if f.endswith(suffix)]
+                         ^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

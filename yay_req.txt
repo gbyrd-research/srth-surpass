@@ -1,0 +1,20 @@
+torch
+torchvision
+tqdm
+wandb
+ipdb
+numpy
+matplotlib
+imageio
+opencv-python
+
+# llm
+transformers
+timm
+
+# clip
+ftfy
+clip@git+https://github.com/openai/CLIP.git
+
+# instructor
+scikit-learn
