@@ -1,0 +1,9 @@
+# catkin_ws
+build
+devel
+logs
+.catkin_tools
+
+# data and checkpoints
+ckpt_srth_grasp_only
+raw_data

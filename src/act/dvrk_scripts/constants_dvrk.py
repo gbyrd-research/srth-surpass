@@ -168,7 +168,7 @@ def add_task_config_from_json(task_name, json_path, **kwargs):
 ### Task parameters
 # DATA_DIR = "/home/imerse/chole_ws/data"
 # DATA_DIR = os.getenv("PATH_TO_DATASET")
-DATA_DIR = "/home/gbyrd/SURPASS/srth-data"
+DATA_DIR = "/home/grayson/surpass/srth-surpass/raw_data"
 TASK_CONFIGS = {
     'invivo_test':{
         'dataset_dir': DATA_DIR + "/invivo_chole/",
@@ -198,7 +198,7 @@ TASK_CONFIGS = {
         },
 
     'surpass_grasp_only': {
-        'dataset_dir': DATA_DIR + "/Cholecystectomy_grasp_only_srth_format/",
+        'dataset_dir': DATA_DIR + "/Cholecystectomy_grasp_only/",
         'phantom': False,
         'use_auto_label': False,
         'no_qpos': False,     ## True when SRT, False when ACT

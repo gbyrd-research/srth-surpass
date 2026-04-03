@@ -36,7 +36,7 @@ matplotlib==3.10.1
 # menuinst @ file:///home/conda/feedstock_root/build_artifacts/menuinst_1725359038078/work
 numpy==2.2.3
 nvidia-htop==1.2.0
-opencv-python==4.11.0.86
+# opencv-python==4.11.0.86
 # packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1718189413536/work
 pillow==11.2.1
 # platformdirs @ file:///home/conda/feedstock_root/build_artifacts/platformdirs_1715777629804/work
