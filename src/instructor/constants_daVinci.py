@@ -2,11 +2,27 @@ import os
 
 ### Dataset parameters
 DATA_DIR = os.getenv("PATH_TO_DATASET")
+DATA_DIR = "/home/grayson/surpass/srth-surpass/raw_data_hl"
 
 INSTRUMENT_CLOSED_THRESHOLD = 0
 
 # NOTE: Choose the dataset name as the dataset dir folder name
 DATASET_CONFIGS = {
+    "surpass_cholecystectomy": {
+        "dataset_dir": os.path.join(DATA_DIR, "surpass_cholecystectomy"),
+        "num_episodes": 9, # And for validation doing num_episodes//2
+        "tissue_samples_to_exclude": [],
+        "tissue_samples_wrist_cameras_to_exclude": [],
+        "camera_names": ["endo_psm2", "left_img_dir", "right_img_dir", "endo_psm1"], 
+        "camera_file_suffixes": ["_psm2.jpg", "_left.jpg", "_right.jpg", "_psm1.jpg"],
+        "after_phase_offset": 0,
+        "before_phase_offset": 0, 
+        "tissue_samples_old_grab_pull_separation": [],
+        "correct_psm1_rotation_tissues": [],
+        "val_tissues": ([["tissue_2"]]),
+        "test_tissues": [],
+        "incomplete_demos_flag": False
+    },
     "base_chole_clipping_cutting": {
         "dataset_dir": os.path.join(DATA_DIR, "base_chole_clipping_cutting"),
         "num_episodes": 2500, # And for validation doing num_episodes//2

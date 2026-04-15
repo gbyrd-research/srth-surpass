@@ -67,7 +67,7 @@ def compute_mean_std_gpu(subdatasets, camera_type, batch_size=32, downsampling_r
                 print(f"Processing phase folder: {phase_folder} ({tissue_folder}, {subdataset})")
 
                 # Loop through demo folders
-                demo_folders = [demo_folder for demo_folder in os.listdir(phase_path) if os.path.isdir(os.path.join(phase_path, demo_folder)) and demo_folder[8] == "-"]
+                demo_folders = [demo_folder for demo_folder in os.listdir(phase_path) if os.path.isdir(os.path.join(phase_path, demo_folder))]
                 for demo_folder in demo_folders:
                     demo_path = os.path.join(phase_path, demo_folder)
 
@@ -153,10 +153,12 @@ def compute_mean_std_gpu(subdatasets, camera_type, batch_size=32, downsampling_r
     return all_tissues_mean.cpu().numpy(), all_tissues_std.cpu().numpy()
 
 # Example usage
-dataset_names = ["base_chole_clipping_cutting", "base_chole_clipping_cutting_amos"]  # List of subdataset folders
+# dataset_names = ["base_chole_clipping_cutting", "base_chole_clipping_cutting_amos"]  # List of subdataset folders
+dataset_names = ["surpass_cholecystectomy"]
 path_to_datasets = os.getenv("PATH_TO_DATASET")
+path_to_datasets = "/home/grayson/surpass/srth-surpass/raw_data_hl"
 dataset_paths = [os.path.join(path_to_datasets, name) for name in dataset_names]
-camera_type = "endo_psm2"  # Specify the camera type - ["endo_psm2", "left_img_dir", "right_img_dir", "endo_psm1"]
+camera_type = "left_img_dir"  # Specify the camera type - ["endo_psm2", "left_img_dir", "right_img_dir", "endo_psm1"]
 downsampling_resolution = (224, 224)  # Specify the downsampling resolution
 image_step_size = 5 # Take every nth image
 wrist_images_rel_width = 0.75  # Relative width of wrist images

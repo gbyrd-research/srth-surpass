@@ -271,7 +271,8 @@ class SequenceDataset(torch.utils.data.Dataset):
             self.tissue_phase_demo_dict[tissue_sample_name] = {}
             for phase_sample in phases_ordered:
                 files_in_phase_folder = os.listdir(os.path.join(tissue_sample_dir_path, phase_sample))
-                demo_samples = [demo_sample for demo_sample in files_in_phase_folder if demo_sample[8] == "-"]                
+                # demo_samples = [demo_sample for demo_sample in files_in_phase_folder if demo_sample[8] == "-"]  
+                demo_samples = files_in_phase_folder              
                 self.tissue_phase_demo_dict[tissue_sample_name][phase_sample] = demo_samples
                 # Add the length of the phase for current demo to phase_len_dict
                 for demo_sample in demo_samples:
@@ -1138,7 +1139,7 @@ class SequenceDataset(torch.utils.data.Dataset):
             phase_start_timesteps = [curr_ts]*(self.history_len+1)
             image_sequence = self.get_image_sequence(selected_tissue_sample, selected_phase_demo_dict, phase_start_timesteps) 
                 
-        else:            
+        else:
             # Select a random tissue sample to generate the episode from
             selected_tissue_sample = np.random.choice(list(self.tissue_phase_demo_dict.keys()))
             
@@ -1272,6 +1273,8 @@ class SequenceDataset(torch.utils.data.Dataset):
             # History information of the last six phases (with padding if needed)
             if "is_correction" in self.selected_multitasks:
                 is_correction = multitask_label_indices_dict["is_correction"] == "correction"
+            else:
+                is_correction = False
             if self.use_phase_history_flag:
                 phase_history = self.get_phase_history(selected_phase_demo_dict, sorted_phases, curr_ts, correction_flag=is_correction)
             else:

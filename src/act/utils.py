@@ -10,6 +10,7 @@ import cv2
 import json
 from torchvision import transforms
 import sys
+from torch.utils.data import Dataset
 path_to_yay_robot = os.getenv('PATH_TO_SKAY_ROBOT')
 
 if path_to_yay_robot:
@@ -334,6 +335,8 @@ def load_data_dvrk(
     # train_dataset = EpisodicDatasetDvrkGeneric(train_indices, dataset_path, camera_names, norm_stats, task_config)
     # val_dataset = EpisodicDatasetDvrkGeneric(val_indices, dataset_path, camera_names, norm_stats, task_config)
 
+    train_datasets[0]
+
     # Get task labels for all samples
     task_labels = train_datasets.sample_task_labels
     task_counts = Counter(task_labels)  # e.g., {'1': 500, '2': 200, '3': 500}
@@ -353,6 +356,21 @@ def load_data_dvrk(
     val_dataloader = DataLoader(val_datasets, batch_size=batch_size_train, shuffle=True, pin_memory=True, num_workers=16, prefetch_factor=4, persistent_workers=True)
 
     return train_dataloader, val_dataloader, norm_stats, train_datasets.is_sim
+
+def save_dataloader(dataloader, save_path):
+    all_batches = []
+
+    for batch_idx, batch in enumerate(dataloader):
+        # batch is typically a tuple of 5 tensors (already batched)
+        if isinstance(batch, (list, tuple)):
+            frozen = tuple(t.clone() for t in batch)
+        else:
+            raise ValueError(f"Unexpected batch type: {type(batch)}")
+
+        all_batches.append(frozen)
+
+    torch.save(all_batches, save_path)
+    print(f"Saved {len(all_batches)} batches to {save_path}")
 
 
 def load_data_dvrk_multi_dataset(

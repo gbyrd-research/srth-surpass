@@ -1,12 +1,12 @@
 Create a conda environment with ros1 noetic installed:
 
 ```bash
-conda create -n ros_env -c conda-forge -c robostack-noetic \
+conda create -n srth-old -c conda-forge -c robostack-noetic \
     python=3.11 \
     ros-noetic-desktop
 conda activate ros_env
 conda config --env --add channels robostack-noetic
-conda install -c conda-forge ros-dev-tools \
+mamba install -c conda-forge ros-dev-tools \
     ros-noetic-actionlib \
     ros-noetic-camera-calibration \
     ros-noetic-camera-calibration-parsers \

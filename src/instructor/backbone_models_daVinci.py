@@ -20,7 +20,6 @@ if path_to_yay_robot:
     sys.path.append(os.path.join(path_to_yay_robot, 'src'))
 else:
     raise EnvironmentError("Environment variable PATH_TO_YAY_ROBOT is not set")
-from instructor.submodules.gsvit_submodule.gsvit_ae_model import EfficientViTAutoEncoder
 
 # --------------------------- Model init functions ----------------------------
   
@@ -83,7 +82,17 @@ def load_swin_fe(model_variant, model_init_weights, device, num_input_channels=3
     return model, num_features
   
 def load_gsvit_fe(model_init_weights, device):
-    
+    try:
+        from instructor.submodules.gsvit_submodule.gsvit_ae_model import EfficientViTAutoEncoder
+    except ModuleNotFoundError as exc:
+        raise ModuleNotFoundError(
+            "GSViT source is missing. Expected vendored code under "
+            "'src/instructor/submodules/gsvit_submodule/gsvit'. "
+            "If you do not intend to use the 'gsvit' backbone, choose a different "
+            "backbone_model. If you do intend to use it, add or initialize the "
+            "missing GSViT submodule/code."
+        ) from exc
+
     # Load the EfficientViT model as feature extractor
     model = EfficientViTAutoEncoder()
 

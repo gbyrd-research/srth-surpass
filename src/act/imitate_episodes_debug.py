@@ -30,7 +30,6 @@ from copy import deepcopy
 from utils import load_merged_data, load_data_dvrk, load_data_dvrk_multi_dataset, load_mid_level_data  # data functions
 from utils import sample_box_pose, sample_insertion_pose  # robot functions
 from utils import compute_dict_mean, set_seed, detach_dict  # helper functions
-from utils import save_dataloader
 from policy import ACTPolicy, CNNMLPPolicy, DiffusionPolicy, DiffusionPolicyNoSpatialSoftmax, SRTPolicy
 from aloha_pro.aloha_scripts.utils import (
     initialize_model_and_tokenizer,
@@ -173,42 +172,6 @@ def main(args):
     hl_margin = args["hl_margin"]
     policy_level = args["policy_level"]
 
-    # Set up wandb
-    if log_wandb:
-        if is_eval:
-            # run_name += ".eval"
-            log_wandb = False
-        else:
-            run_name = ckpt_dir.split("/")[-1] + f".{args['seed']}"
-            wandb_run_id_path = os.path.join(ckpt_dir, "wandb_run_id.txt")
-            # check if wandb run exists
-            if os.path.exists(wandb_run_id_path):
-                with open(wandb_run_id_path, "r") as f:
-                    saved_run_id = f.read().strip()
-                wandb.init(
-                    project="yay-surgical-robot",
-                    entity=os.getenv("WANDB_ENTITY"),
-                    name=run_name,
-                    id=saved_run_id,
-                    resume="allow",
-                )
-            else:
-                wandb.init(
-                    project="yay-surgical-robot",
-                    entity=os.getenv("WANDB_ENTITY"),
-                    name=run_name,
-                    config=args,
-                    resume="allow",
-                )
-                # Ensure the directory exists before trying to open the file
-                os.makedirs(os.path.dirname(wandb_run_id_path), exist_ok=True)
-                with open(wandb_run_id_path, "w") as f:
-                    f.write(wandb.run.id)
-
-    if args["gpu"] is not None and not multi_gpu:
-        os.environ["CUDA_VISIBLE_DEVICES"] = f"{args['gpu']}"
-        assert torch.cuda.is_available()
-
     # get task parameters
     dataset_dirs = []
     num_episodes_list = []
@@ -348,102 +311,66 @@ def main(args):
         "no_qpos": no_qpos,
     }
 
-    if is_eval:
-        print(f"{CKPT=}")
-        ckpt_names = (
-            [f"policy_last.ckpt"] if CKPT == 0 else [f"policy_epoch_{CKPT}_seed_0.ckpt"]
-        )
-        results = []
-        for ckpt_name in ckpt_names:
-            success_rate, avg_return = eval_bc(
-                config, ckpt_name, save_episode=True, dataset_dirs=dataset_dirs
-            )
-            results.append([ckpt_name, success_rate, avg_return])
+    train_dataloader, val_dataloader, stats, _ = load_data_dvrk(
+        dataset_dirs[0],
+        num_episodes_list[0],
+        camera_names,
+        batch_size_train,
+        batch_size_val,
+        task_configs_list[0],
+        chunk_size=args["chunk_size"],
+        use_language=use_language
+    )
 
-        for ckpt_name, success_rate, avg_return in results:
-            print(f"{ckpt_name}: {success_rate=} {avg_return=}")
-        print()
-        exit()
+    # set_seed(0)
 
-    # train_dataloader, stats, _ = load_merged_data(
-    #     dataset_dirs,
-    #     num_episodes_list,
-    #     camera_names,
-    #     batch_size_train,
-    #     max_len=max_skill_len,
-    #     command_list=commands,
-    #     use_language=use_language,
-    #     language_encoder=language_encoder,
-    #     policy_class=policy_class,
-    # )
-
-    # # save dataset stats
-    # if not os.path.isdir(ckpt_dir):
-    #     os.makedirs(ckpt_dir)
-    # stats_path = os.path.join(ckpt_dir, f"dataset_stats.pkl")
-    # with open(stats_path, "wb") as f:
-    #     pickle.dump(stats, f)
-
-    # train_bc(train_dataloader, config)
-
-    ### load dvrk data to train bc
-    if policy_level == "low":
-        print("\n-----------Training low-level policy-----------\n")
-        
-        # Check if we have multiple datasets for co-training
-        if len(dataset_dirs) > 1:
-            print(f"\n=== Multi-dataset training with {len(dataset_dirs)} datasets ===")
-            train_dataloader, val_dataloader, stats, _ = load_data_dvrk_multi_dataset(
-                dataset_dirs,
-                num_episodes_list,
-                camera_names,
-                batch_size_train,
-                batch_size_val,
-                task_configs_list,
-                chunk_size=args["chunk_size"],
-                use_language=use_language,
-                dataset_weights=args.get("dataset_weights")  # Optional custom weights
-            )
-        else:
-            print(f"\n=== Single-dataset training ===")
-            train_dataloader, val_dataloader, stats, _ = load_data_dvrk(
-                dataset_dirs[0],
-                num_episodes_list[0],
-                camera_names,
-                batch_size_train,
-                batch_size_val,
-                task_configs_list[0],
-                chunk_size=args["chunk_size"],
-                use_language=use_language
-            )
-        
-    elif policy_level == "mid":
-        print("\n-----------Training mid-level policy-----------\n")
-        train_dataloader, stats, _ = load_mid_level_data(
-            dataset_dirs[0],
-            num_episodes_list[0], 
-            camera_names, 
-            batch_size_train, 
-            batch_size_val, 
-            task_config,
-            chunk_size=args["chunk_size"],
-            use_language=use_language)
+    policy = make_policy(policy_class, policy_config)
+    optimizer = make_optimizer(policy_class, policy)
+    scheduler = make_scheduler(optimizer, num_epochs)
     
-    # save dataset stats
-    if not os.path.isdir(ckpt_dir):
-        os.makedirs(ckpt_dir)
-    stats_path = os.path.join(ckpt_dir, f"dataset_stats.pkl")
-    with open(stats_path, "wb") as f:
-        pickle.dump(stats, f)
+    start_epoch = 0
+    train_history = list()
+    for epoch in range(num_epochs):
+        policy.train()
+        optimizer.zero_grad()
+        for batch_idx, data in enumerate(train_dataloader):
+            forward_dict = forward_pass(data, policy, no_qpos=no_qpos)
+            # backward
+            loss = forward_dict["loss"]
+            loss.backward()
+            optimizer.step()
+            optimizer.zero_grad()
 
-    # train_bc(train_dataloader, config)
-    best_ckpt_info = train_bc(train_dataloader, val_dataloader, save_frequnecy, config)
-    best_epoch, min_val_loss, best_state_dict = best_ckpt_info
+            train_history.append(detach_dict(forward_dict))
 
-    # save best checkpoint
-    ckpt_path = os.path.join(ckpt_dir, f'policy_best.ckpt')
-    torch.save(best_state_dict, ckpt_path)
-    print(f'Best ckpt, val loss {min_val_loss:.6f} @ epoch{best_epoch}')
+        if policy_class != "Diffusion":
+            scheduler.step()
+        e = epoch - start_epoch
+        epoch_summary = compute_dict_mean(
+            train_history[(batch_idx + 1) * e : (batch_idx + 1) * (e + 1)]
+        )
+        epoch_train_loss = epoch_summary["loss"]
+        print(f"Train loss: {epoch_train_loss:.5f}")
+        epoch_summary["lr"] = np.array(scheduler.get_last_lr()[0])
+        summary_string = ""
+        for k, v in epoch_summary.items():
+            summary_string += f"{k}: {v.item():.5f} "
+        print(summary_string)
+        if log_wandb:
+            epoch_summary_train = {f"train/{k}": v for k, v in epoch_summary.items()}
+            wandb.log(epoch_summary_train, step=epoch)
+
+
+    
+
+    # # train_bc(train_dataloader, config)
+    # best_ckpt_info = train_bc(train_dataloader, val_dataloader, save_frequnecy, config)
+    # best_epoch, min_val_loss, best_state_dict = best_ckpt_info
+
+    # # save best checkpoint
+    # ckpt_path = os.path.join(ckpt_dir, f'policy_best.ckpt')
+    # torch.save(best_state_dict, ckpt_path)
+    # print(f'Best ckpt, val loss {min_val_loss:.6f} @ epoch{best_epoch}')
 
 
 def make_policy(policy_class, policy_config):
@@ -567,7 +494,7 @@ def eval_bc(config, ckpt_name, save_episode=True, dataset_dirs=None):
     option = 0
     language_correction = False
 
-    set_seed(1000)
+    set_seed(1)
     ckpt_dir = config["ckpt_dir"]
     state_dim = config["state_dim"]
     real_robot = config["real_robot"]
@@ -1030,18 +957,9 @@ def create_ema(nets):
     model=nets)
     return ema
 
-class FrozenDataLoader:
-    def __init__(self, path, map_location="cpu"):
-        self.batches = torch.load(path, map_location=map_location)
-
-    def __iter__(self):
-        for batch in self.batches:
-            yield batch
-
-    def __len__(self):
-        return len(self.batches)
 
 def train_bc(train_dataloader, val_dataloader, save_frequnecy, config):
+
     num_epochs = config["num_epochs"]
     ckpt_dir = config["ckpt_dir"]
     seed = config["seed"]
@@ -1052,6 +970,7 @@ def train_bc(train_dataloader, val_dataloader, save_frequnecy, config):
     no_qpos = config["no_qpos"]
 
     set_seed(seed)
+    set_seed(1)
 
     policy = make_policy(policy_class, policy_config)
 
@@ -1126,6 +1045,29 @@ def train_bc(train_dataloader, val_dataloader, save_frequnecy, config):
     validation_history = []
     min_val_loss = np.inf
     best_ckpt_info = None
+
+    # policy.train()
+    # optimizer.zero_grad()
+    # for batch_idx, data in enumerate(train_dataloader):
+    #     forward_dict = forward_pass(data, policy, no_qpos=no_qpos)
+    #     # backward
+    #     loss = forward_dict["loss"]
+    #     loss.backward()
+    #     optimizer.step()
+    #     optimizer.zero_grad()
+
+    #     train_history.append(detach_dict(forward_dict))
+    #     if policy_class == "Diffusion":
+    #         scheduler.step()
+    #         ema.step(policy.nets)
+
+    # if policy_class != "Diffusion":
+    #     scheduler.step()
+
+
+
+
+
 
     for epoch in tqdm(range(start_epoch, num_epochs)):
         print(f"\nEpoch {epoch}")

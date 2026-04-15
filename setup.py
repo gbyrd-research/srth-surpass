@@ -1,7 +1,6 @@
-import os
 import pathlib
 import pkg_resources
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 
 
 PKG_NAME = "yay_robot_jhu"
@@ -39,11 +38,26 @@ setup(
     long_description_content_type="text/markdown",
     keywords=["Deep Learning", "Machine Learning"],
     license="MIT License",
-    packages=find_packages(include=f"{PKG_NAME}.*"),
+    package_dir={"": "src"},
+    packages=find_namespace_packages(
+        where="src",
+        include=[
+            "act",
+            "act.*",
+            "aloha_pro",
+            "aloha_pro.*",
+            "auto_label",
+            "auto_label.*",
+            "common",
+            "common.*",
+            "instructor",
+            "instructor.*",
+        ],
+    ),
     include_package_data=True,
     zip_safe=False,
-    install_requires=_read_install_requires(),
-    extras_require=_fill_extras(EXTRAS),
+    # install_requires=_read_install_requires(),
+    # extras_require=_fill_extras(EXTRAS),
     python_requires=">=3.6",
     classifiers=[
         "Development Status :: 5 - Production/Stable",

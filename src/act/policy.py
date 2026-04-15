@@ -78,7 +78,9 @@ class ACTPolicy(nn.Module):
         normalize = transforms.Normalize(
             mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]
         )
+        # print(image.sum())
         image = normalize(image)
+        # print(image.sum())
         if actions is not None:  # training time
             actions = actions[:, : self.num_queries]
             is_pad = is_pad[:, : self.num_queries]
@@ -91,6 +93,9 @@ class ACTPolicy(nn.Module):
                 is_pad,
                 command_embedding=command_embedding,
             )
+            # print(a_hat)
+            # print(mu)
+            # print(logvar)
             total_kld, dim_wise_kld, mean_kld = kl_divergence(mu, logvar)
             loss_dict = dict()
             all_l1 = F.l1_loss(actions, a_hat, reduction="none")

@@ -88,3 +88,5 @@ diffusers
 h5py
 albumentations
 IPython
+clip@git+https://github.com/openai/CLIP.git
+timm

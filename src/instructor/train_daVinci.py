@@ -118,6 +118,8 @@ def train(model, dataloader, optimizer, criterion, multitask_criterion, device, 
                 log_combined_image(images[input_idx], gt, pred, save_path=save_path, pred_prob=pred_prob, multitask_gt=multitask_gt, multitask_preds=multitask_preds, multitask_probs=multitask_probs, 
                                    psm2_psm1_jaw_values=curr_psm2_psm1_jaw_values, phase_history=curr_phase_history)
                 
+                print(gt == pred)
+
                 if args.log_wandb:
                     wandb.log({f"Training Image {saved_img_cnt}": wandb.Image(save_path, caption=f"Epoch {current_epoch}, Batch {batch_idx}, Image {input_idx}")})
 
@@ -254,14 +256,14 @@ def test(model, dataloader, split_name, device, current_epoch, one_hot_flag, ckp
                                     incorrect_img_cnt=incorrect_img_cnt_phase, device=device)
 
             # Plot correct and incorrect is_correction predictions inputs for current batch
-            if plot_images_flag and (incorrect_img_cnt_correction < max_num_images or correct_img_cnt_correction < max_num_images):
-                rnd_indices = list(torch.randperm(len(images))) # Randomly shuffle the indices - to get random images
-                plot_images_for_task(images, multitask_logits_dict['is_correction'], all_multitask_gt_labels_dict['is_correction'], 
-                                    all_multitask_preds_dict['is_correction'], ckpt_dir, current_epoch, batch_idx, rnd_indices, 
-                                    multitask_label_indices_dict, multitask_logits_dict, psm2_psm1_jaw_values, phase_history, 
-                                    task_name="is_correction", model=model, plot_images_flag=plot_images_flag, 
-                                    max_num_images=max_num_images, args=args, correct_img_cnt=correct_img_cnt_correction, 
-                                    incorrect_img_cnt=incorrect_img_cnt_correction, device=device)
+            # if plot_images_flag and (incorrect_img_cnt_correction < max_num_images or correct_img_cnt_correction < max_num_images):
+            #     rnd_indices = list(torch.randperm(len(images))) # Randomly shuffle the indices - to get random images
+            #     plot_images_for_task(images, multitask_logits_dict['is_correction'], all_multitask_gt_labels_dict['is_correction'], 
+            #                         all_multitask_preds_dict['is_correction'], ckpt_dir, current_epoch, batch_idx, rnd_indices, 
+            #                         multitask_label_indices_dict, multitask_logits_dict, psm2_psm1_jaw_values, phase_history, 
+            #                         task_name="is_correction", model=model, plot_images_flag=plot_images_flag, 
+            #                         max_num_images=max_num_images, args=args, correct_img_cnt=correct_img_cnt_correction, 
+            #                         incorrect_img_cnt=incorrect_img_cnt_correction, device=device)
                                
     # Visualize embeddings
     # TODO: Fix if required
@@ -283,13 +285,13 @@ def test(model, dataloader, split_name, device, current_epoch, one_hot_flag, ckp
     log_confusion_matrix(task_name, all_commands_gt, all_decoded_texts, candidate_texts, split_name, current_epoch, save_path, log_wandb_flag)
     
     # Save confusion matrix for corrections and moving direction
-    for multitask in ["is_correction", "dominant_moving_direction"]:
-        conf_matrix_multitask_folder_path = os.path.join(conf_matrix_folder_path, multitask)
-        if not os.path.exists(conf_matrix_multitask_folder_path):
-            os.makedirs(conf_matrix_multitask_folder_path, exist_ok=True)
-        save_path = os.path.join(conf_matrix_multitask_folder_path, f"{split_name}_confusion_matrix_{multitask}_epoch_{current_epoch}.png")
-        multitask_possible_labels = SequenceDataset.get_all_multitask_labels(multitask)
-        log_confusion_matrix(multitask, all_multitask_gt_labels_dict[multitask], all_multitask_preds_dict[multitask], multitask_possible_labels, split_name, current_epoch, save_path, log_wandb_flag)    
+    # for multitask in ["is_correction", "dominant_moving_direction"]:
+    #     conf_matrix_multitask_folder_path = os.path.join(conf_matrix_folder_path, multitask)
+    #     if not os.path.exists(conf_matrix_multitask_folder_path):
+    #         os.makedirs(conf_matrix_multitask_folder_path, exist_ok=True)
+    #     save_path = os.path.join(conf_matrix_multitask_folder_path, f"{split_name}_confusion_matrix_{multitask}_epoch_{current_epoch}.png")
+    #     multitask_possible_labels = SequenceDataset.get_all_multitask_labels(multitask)
+    #     log_confusion_matrix(multitask, all_multitask_gt_labels_dict[multitask], all_multitask_preds_dict[multitask], multitask_possible_labels, split_name, current_epoch, save_path, log_wandb_flag)    
     
     # Compute metrics 
     logger.info("")
@@ -374,14 +376,18 @@ def compute_metrics(current_epoch, all_commands_gt, all_decoded_texts, all_comma
     all_decoded_texts_filtered = [pred for pred, filter_val in zip(all_decoded_texts, transition_filter) if filter_val]
     
     # Compute the success rate -> accuracy
-    accuracy_curr_epoch_transitions = accuracy_score(all_commands_gt_filtered, all_decoded_texts_filtered)
-    if args.log_wandb:
-        wandb.log({"Accuracy (at transitions)": accuracy_curr_epoch_transitions})
+    if len(all_commands_gt_filtered) > 0:
+        accuracy_curr_epoch_transitions = accuracy_score(all_commands_gt_filtered, all_decoded_texts_filtered)
+        if args.log_wandb:
+            wandb.log({"Accuracy (at transitions)": accuracy_curr_epoch_transitions})
     
-    # Compute the (macro) F1 score
-    f1_score_curr_epoch_transitions = f1_score(all_commands_gt_filtered, all_decoded_texts_filtered, average='macro')
-    if args.log_wandb:
-        wandb.log({"F1 Score (at transitions)": f1_score_curr_epoch_transitions})
+        # Compute the (macro) F1 score
+        f1_score_curr_epoch_transitions = f1_score(all_commands_gt_filtered, all_decoded_texts_filtered, average='macro')
+        if args.log_wandb:
+            wandb.log({"F1 Score (at transitions)": f1_score_curr_epoch_transitions})
+    else:
+        accuracy_curr_epoch_transitions = 0
+        f1_score_curr_epoch_transitions = 0
 
     logger.info(f"Epoch {current_epoch}: Accuracy (at transitions) = {accuracy_curr_epoch_transitions * 100:.2f}% - F1 Score (at transitions) = {f1_score_curr_epoch_transitions * 100:.2f}%\n")
 
@@ -787,7 +793,8 @@ if __name__ == "__main__":
     parser.add_argument('--wrist_images_rel_width', action='store', type=float, help='wrist_images_rel_width', default=0.75)
     parser.add_argument('--llava_anyres_rel_width', action='store', type=float, help='llava_anyres_rel_width', default=0.5)
     # ---
-    default_selected_multitasks = SequenceDataset.get_all_multitask_names()
+    # default_selected_multitasks = SequenceDataset.get_all_multitask_names()
+    default_selected_multitasks = []
     parser.add_argument('--selected_multitasks', nargs='*', type=str, help='List of multitasks to use', default=default_selected_multitasks)
     parser.add_argument('--multitask_loss_weight', action='store', type=float, help='multitask_loss_weight', default=0.2)
     parser.add_argument('--use_phase_history_for_moving_direction_and_corr_pred_flag', action='store_true', help='Use the phase history for the moving direction') # TODO: To be removed

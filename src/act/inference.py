@@ -3,44 +3,26 @@
 import sys
 sys.path.append("$PATH_TO_YAY_ROBOT/src")  # to import aloha
 import torch
-import numpy as np
-import os
 import pickle
-import argparse
-import wandb
-import cv2
-import math
 import threading
-import time
-import signal
-import matplotlib.pyplot as plt
-from tqdm import tqdm
-from einops import rearrange
-from torchvision import transforms
-from collections import deque
 from queue import Queue
-from torch.optim.lr_scheduler import LambdaLR
-from diffusers.training_utils import EMAModel
-from diffusers.optimization import get_scheduler
 
 
 from copy import deepcopy
 
 ## TODO: merge load_merged_data and load_data_dvrk
-from utils import load_merged_data, load_data_dvrk, load_data_dvrk_multi_dataset, load_mid_level_data  # data functions
-from utils import sample_box_pose, sample_insertion_pose  # robot functions
-from utils import compute_dict_mean, set_seed, detach_dict  # helper functions
-from policy import ACTPolicy, CNNMLPPolicy, DiffusionPolicy, DiffusionPolicyNoSpatialSoftmax, SRTPolicy
+from utils import load_data_dvrk
+from policy import ACTPolicy
 from aloha_pro.aloha_scripts.utils import (
     initialize_model_and_tokenizer,
-    encode_text,
-    crop_resize,
-    is_multi_gpu_checkpoint,
-    modify_real_time,
-    visualize_language_correction,
-    create_dataset_path,
-    memory_monitor,
-    save_trajectory,
+    # encode_text,
+    # crop_resize,
+    # is_multi_gpu_checkpoint,
+    # modify_real_time,
+    # visualize_language_correction,
+    # create_dataset_path,
+    # memory_monitor,
+    # save_trajectory,
 )
 # from instructor.train import build_instructor
 

@@ -202,7 +202,7 @@ TASK_CONFIGS = {
         'phantom': False,
         'use_auto_label': False,
         'no_qpos': False,     ## True when SRT, False when ACT
-        'num_episodes': 128,
+        'num_episodes': 100,
         'num_episodes_val': 28,
         'tissue_samples_ids': [1],
         'tissue_samples_ids_val': [1],
