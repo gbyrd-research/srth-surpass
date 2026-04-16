@@ -236,11 +236,12 @@ def compute_diffs(ids, data_dir, chunk_size=100, phantoms=False):
 def generate_task_config():
 
     #ids = [5]
-    ids = [1, 2, 3]
+    ids = [1] #, 2, 3]
     #ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-    data_dir = "/home/iulian/chole_ws/data/cnh_exvivo_chole"
+    # data_dir = "/home/iulian/chole_ws/data/cnh_exvivo_chole"
     # data_dir = "/home/iulian/chole_ws/data/Xinhao"
     # data_dir = "/home/iulian/chole_ws/data/Jesse/"
+    data_dir = "/home/grayson/surpass/srth-surpass/raw_data/Cholecystectomy_grasp_only"
 
     
     mean, std, min, max = compute_diffs(ids, data_dir)

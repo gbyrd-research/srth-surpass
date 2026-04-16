@@ -1,3 +1,45 @@
+# DEBUG INFERENCE BRANCH
+
+This branch was used to verify that the refactored code performs the same as the old code. This is the old code.
+
+To determine if the performance was the same, we conducted the following experiment:
+
+1. Train a model on the same, grasp only dataset using both the old and refactored code.
+2. Create a deterministic dataset using this repository by running the `src/srth_new/low_level_policy/train_debug_collect_dataset.py` file. You must provide the checkpoint to your trained model using this repository:
+
+```bash
+train.resume_checkpoint=/home/grayson/surpass/srth-new/saved_runs/new_compare_grasp_only_dataset/checkpoints/train_step_3950.ckpt
+```
+3. This will create a deterministic dataset where each sample contains:
+
+  1. Images
+  2. Qpos
+  3. Ground Truth Actions
+  4. Padding
+  5. Command Text
+  6. Predicted Actions from the refactored model
+
+4. Next, copy the root location of that dataset and run the code in the old repository (srth-surpass) using the below file and example arguments:
+
+```bash
+python src/act/inference_debug.py \
+  --ckpt_dir /home/grayson/surpass/srth-surpass/src/act/ckpt_dir/surpass_grasp_only/policy_epoch_4000_seed_0.ckpt \
+  --policy_class ACT \
+  --task_name surpass_grasp_only \
+  --seed 42 \
+  --num_epochs 20000 \
+  --root_dir /home/grayson/surpass/srth-new/outputs/low_level_policy/train/2026-04-16/10-33-07/deterministic_comparison_dataset
+```
+
+5. This will print out the total loss for the training and validation splits of the deterministic dataset for both the new and the old code. If both repositories are similar in performance, that means the refactor is likely to be successful and correspondent to the old code. For example, here is our output from when we ran the experiment:
+
+```bash
+Comparing split: val
+val raw action debug - | NEW: First Pred: 0.011569 Total: 0.722174 | OLD: First Pred: 0.020387 Total: 0.800820 | COMPARE: First Pred: 0.009975 Total: 0.239514
+```
+
+The NEW and OLD are very similar, giving us strong confidence that the refactor was completed successfully.
+
 # SRT-H (Surgical Robot Transformer - Hierarchy)
 
 

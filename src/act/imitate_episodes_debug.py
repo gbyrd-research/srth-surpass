@@ -1,5 +1,3 @@
-
-
 import sys
 sys.path.append("$PATH_TO_YAY_ROBOT/src")  # to import aloha
 import torch
@@ -7,12 +5,16 @@ import numpy as np
 import os
 import pickle
 import argparse
+import json
 import wandb
 import cv2
 import math
 import threading
 import time
 import signal
+import random
+from pathlib import Path
+from typing import Any
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from einops import rearrange
@@ -30,7 +32,10 @@ from copy import deepcopy
 from utils import load_merged_data, load_data_dvrk, load_data_dvrk_multi_dataset, load_mid_level_data  # data functions
 from utils import sample_box_pose, sample_insertion_pose  # robot functions
 from utils import compute_dict_mean, set_seed, detach_dict  # helper functions
+from utils import save_dataloader
 from policy import ACTPolicy, CNNMLPPolicy, DiffusionPolicy, DiffusionPolicyNoSpatialSoftmax, SRTPolicy
+from generic_dataset_invivo import EpisodicDatasetDvrkGeneric
+from auto_label_func import get_auto_label
 from aloha_pro.aloha_scripts.utils import (
     initialize_model_and_tokenizer,
     encode_text,
@@ -143,7 +148,451 @@ def generate_command_embedding(
     return command_embedding
 
 
+TOY_DATASET_DIRNAME = "deterministic_toy_dataset"
+TOY_DATASET_MANIFEST = "manifest.json"
+TOY_DATASET_MAX_HORIZON = 400
+
+
+def _encode_image_for_storage(image_data: torch.Tensor) -> torch.Tensor:
+    return torch.clamp((image_data.detach().cpu() * 255.0).round(), 0, 255).to(torch.uint8)
+
+
+class DeterministicToyCaptureDataset(EpisodicDatasetDvrkGeneric):
+    """Deterministic wrapper around the training dataset for toy-set capture."""
+
+    def __init__(
+        self,
+        *args,
+        capture_horizon: int,
+        base_seed: int,
+        split_name: str,
+        task_name: str,
+        **kwargs,
+    ) -> None:
+        super().__init__(*args, **kwargs)
+        self.capture_horizon = min(int(capture_horizon), TOY_DATASET_MAX_HORIZON)
+        self.base_seed = int(base_seed)
+        self.split_name = split_name
+        self.task_name = task_name
+
+    def _sample_seed(self, index: int, retry_attempt: int = 0) -> int:
+        split_offset = 0 if self.split_name == "train" else 1_000_000
+        return self.base_seed + split_offset + index + retry_attempt * 100_000
+
+    def _resolve_command_text(
+        self,
+        tissue_sample: str,
+        phase: str,
+        sample: str,
+        selected_csv,
+        start_ts: int,
+    ) -> str:
+        base_phase = phase[:-9] if phase.endswith("_recovery") else phase
+        directional_label = None
+
+        if self.is_recovery_episode(tissue_sample, phase, sample):
+            directional_label = self._safe_auto_label(selected_csv, start_ts)
+
+        if self.use_auto_label:
+            phase_dict = self.command_embeddings_dict.get(base_phase)
+            if not isinstance(phase_dict, dict):
+                raise ValueError(f"Expected auto-label dict for phase '{base_phase}', got {type(phase_dict)}")
+            command_tuple = phase_dict.get(directional_label, phase_dict.get("do not move"))
+        else:
+            command_tuple = self.command_embeddings_dict.get(base_phase)
+
+        if isinstance(command_tuple, (tuple, list)) and len(command_tuple) == 2:
+            return str(command_tuple[0])
+
+        return " ".join(base_phase.split("_")[1:])
+
+    @staticmethod
+    def _safe_auto_label(selected_csv, start_ts: int) -> str | None:
+        try:
+            return get_auto_label(selected_csv, start_ts)
+        except Exception:
+            return None
+
+    def get_sample_payload(self, index: int) -> dict[str, Any]:
+        max_retries = 5
+
+        for retry_attempt in range(max_retries):
+            try:
+                sample_seed = self._sample_seed(index, retry_attempt)
+                set_seed(sample_seed)
+                random.seed(sample_seed)
+                np.random.seed(sample_seed)
+                torch.manual_seed(sample_seed)
+
+                episode_id = int(self.episode_ids[index])
+                if episode_id < self.num_samples:
+                    tissue_sample, phase, sample = self.all_samples[episode_id]
+                else:
+                    tissue_sample, phase, sample = self.all_samples[episode_id % self.num_samples]
+
+                dataset_path = os.path.join(self.dataset_dir, tissue_sample, phase, sample)
+                if not os.path.isdir(dataset_path):
+                    raise ValueError(f"Expected directory but got: {dataset_path}")
+
+                csv_path = os.path.join(
+                    dataset_path,
+                    "ee_estimate.csv" if self.estimation else "ee_csv.csv",
+                )
+                episode_key = f"{tissue_sample}/{phase}/{sample}"
+                camera_csvs = self.load_camera_specific_csv(csv_path, episode_key)
+
+                available_cameras = [
+                    cam for cam in ["left", "right", "psm1", "psm2"] if len(camera_csvs[cam]) > 0
+                ]
+                if not available_cameras:
+                    raise ValueError(f"No camera data available in {csv_path}")
+
+                selected_camera = np.random.choice(available_cameras)
+                selected_csv = camera_csvs[selected_camera]
+                has_timestamp = "timestamp" in selected_csv.columns
+                csv_timestamps = (
+                    selected_csv["timestamp"].values
+                    if has_timestamp
+                    else np.arange(len(selected_csv))
+                )
+
+                episode_len = len(selected_csv)
+                start_idx = int(np.random.choice(episode_len))
+                start_ts = start_idx
+
+                if (
+                    phase.startswith("8_go_to_the_cutting_position_left_tube")
+                    or phase.startswith("16_go_to_the_cutting_position_right_tube")
+                ) and start_idx >= episode_len - self.cutting_action_pad_size:
+                    csv_row_idx = episode_len - self.cutting_action_pad_size - 1
+                else:
+                    csv_row_idx = start_idx
+
+                target_timestamp = csv_timestamps[csv_row_idx]
+
+                camera_source_map = {
+                    "left": ("left", "_left.jpg", "left_img_dir"),
+                    "right": ("right", "_right.jpg", "right_img_dir"),
+                    "left_wrist": ("psm1", "_psm1.jpg", "endo_psm1"),
+                    "right_wrist": ("psm2", "_psm2.jpg", "endo_psm2"),
+                }
+
+                img_dict_raw = {}
+                for cam_name in self.camera_names:
+                    source, suffix, subdir = camera_source_map[cam_name]
+                    cam_csv = camera_csvs[source]
+                    if len(cam_csv) == 0:
+                        raise FileNotFoundError(f"No {source} camera data in CSV")
+
+                    if has_timestamp:
+                        time_diffs = np.abs(cam_csv["timestamp"].values - target_timestamp)
+                        closest_idx = int(np.argmin(time_diffs))
+                        image_timestamp = cam_csv["timestamp"].iloc[closest_idx]
+                    else:
+                        closest_idx = csv_row_idx if csv_row_idx < len(cam_csv) else len(cam_csv) - 1
+                        image_timestamp = target_timestamp
+
+                    camera_dir = os.path.join(dataset_path, subdir)
+                    if not os.path.exists(camera_dir):
+                        raise FileNotFoundError(f"Camera directory not found: {camera_dir}")
+
+                    sample_files = [f for f in os.listdir(camera_dir) if f.endswith(suffix)][:5]
+                    images_are_frame_indexed = any(f.startswith("frame") for f in sample_files) if sample_files else False
+
+                    if has_timestamp and not images_are_frame_indexed:
+                        image_filename = f"{image_timestamp}{suffix}"
+                        image_path = os.path.join(camera_dir, image_filename)
+                        img = cv2.imread(image_path)
+                        if img is None:
+                            fallback_filename, _ = self.find_closest_available_image(
+                                image_timestamp,
+                                camera_dir,
+                                suffix,
+                            )
+                            if fallback_filename is None:
+                                raise FileNotFoundError(
+                                    f"Image not found at: {image_path} and no fallback was found."
+                                )
+                            img = cv2.imread(os.path.join(camera_dir, fallback_filename))
+                    else:
+                        frame_filename = f"frame{closest_idx:06d}{suffix}"
+                        frame_path = os.path.join(camera_dir, frame_filename)
+                        img = cv2.imread(frame_path)
+                        if img is None:
+                            fallback_filename, _ = self.find_closest_available_image(
+                                closest_idx,
+                                camera_dir,
+                                suffix,
+                            )
+                            if fallback_filename is None:
+                                raise FileNotFoundError(
+                                    f"No images found for camera {cam_name} at index {closest_idx}."
+                                )
+                            img = cv2.imread(os.path.join(camera_dir, fallback_filename))
+
+                    if img is None:
+                        raise FileNotFoundError(f"Failed to load image for {cam_name} in {camera_dir}")
+                    img_dict_raw[cam_name] = img
+
+                img_dict = {k: self.preprocess_img(v, start_ts) for k, v in img_dict_raw.items()}
+                phase_config = self.phase_wrist_configs.get(phase, None)
+                tfmed = self.transforms(img_dict, episode_path=dataset_path, phase_config=phase_config)
+                image_data = np.stack([tfmed[k] for k in sorted(tfmed.keys())], axis=0)
+                image_data = torch.from_numpy(image_data).float() / 255.0
+
+                qpos_psm1 = selected_csv[self.header_name_actions_psm1].iloc[start_ts, :].to_numpy(dtype=np.float32)
+                action_psm1 = selected_csv[self.header_name_actions_psm1].iloc[
+                    start_ts : start_ts + self.capture_horizon
+                ].to_numpy(dtype=np.float32)
+                qpos_psm2 = selected_csv[self.header_name_actions_psm2].iloc[start_ts, :].to_numpy(dtype=np.float32)
+                action_psm2 = selected_csv[self.header_name_actions_psm2].iloc[
+                    start_ts : start_ts + self.capture_horizon
+                ].to_numpy(dtype=np.float32)
+
+                if self.action_mode == "hybrid":
+                    diff_psm1 = self.compute_diff_actions(qpos_psm1, action_psm1)
+                    diff_psm2 = self.compute_diff_actions(qpos_psm2, action_psm2)
+                elif self.action_mode == "ego":
+                    diff_psm1 = self.compute_relative_actions_in_SE3(qpos_psm1, action_psm1)
+                    diff_psm2 = self.compute_relative_actions_in_SE3(qpos_psm2, action_psm2)
+                elif self.action_mode == "relative_endoscope":
+                    diff_psm1 = self.compute_diff_actions_relative_endoscope(qpos_psm1, action_psm1)
+                    diff_psm2 = self.compute_diff_actions_relative_endoscope(qpos_psm2, action_psm2)
+                else:
+                    raise NotImplementedError(f"Unsupported action_mode: {self.action_mode}")
+
+                normalized_action = np.column_stack((diff_psm1, diff_psm2)).astype(np.float32)
+                if self.norm_scheme == "min_max":
+                    normalized_action = self.min_max_scale_positions_only(normalized_action)
+                elif self.norm_scheme == "std":
+                    normalized_action = self.standardize_positions_only(normalized_action)
+                else:
+                    raise NotImplementedError(f"Unsupported norm_scheme: {self.norm_scheme}")
+
+                raw_action = np.column_stack((action_psm1, action_psm2)).astype(np.float32)
+                current_pose = np.concatenate((qpos_psm1, qpos_psm2), axis=0).astype(np.float32)
+
+                action_len = min(episode_len - start_ts, self.capture_horizon)
+                padded_raw_action = np.zeros((self.capture_horizon, 16), dtype=np.float32)
+                padded_raw_action[:action_len] = raw_action[:action_len]
+
+                padded_normalized_action = np.zeros((self.capture_horizon, 20), dtype=np.float32)
+                padded_normalized_action[:action_len] = normalized_action[:action_len]
+
+                is_pad = np.ones(self.capture_horizon, dtype=bool)
+                is_pad[:action_len] = False
+
+                command_text = self._resolve_command_text(
+                    tissue_sample,
+                    phase,
+                    sample,
+                    selected_csv,
+                    start_ts,
+                )
+
+                return {
+                    "image_data": image_data,
+                    "current_pose_data": torch.from_numpy(current_pose),
+                    "raw_action_data": torch.from_numpy(padded_raw_action),
+                    "is_pad": torch.from_numpy(is_pad),
+                    "command_text": command_text,
+                    "normalized_action_data": torch.from_numpy(padded_normalized_action),
+                    "task_name": self.task_name,
+                    "tissue_sample": tissue_sample,
+                    "phase": phase,
+                    "sample_name": sample,
+                    "selected_camera": str(selected_camera),
+                    "start_timestep": int(start_ts),
+                    "seed": int(sample_seed),
+                }
+            except FileNotFoundError as error:
+                if retry_attempt < max_retries - 1:
+                    continue
+                raise error
+
+        raise RuntimeError(f"Failed to load deterministic sample at index {index}")
+
+
+def _build_toy_export_datasets(args: dict[str, Any]) -> tuple[list[DeterministicToyCaptureDataset], list[DeterministicToyCaptureDataset]]:
+    if args["policy_level"] != "low":
+        raise NotImplementedError("Toy dataset export is currently implemented for low-level policies only.")
+
+    from dvrk_scripts.constants_dvrk import TASK_CONFIGS
+
+    set_seed(args["seed"])
+
+    capture_horizon = args["chunk_size"] if args["chunk_size"] is not None else 60
+    train_datasets: list[DeterministicToyCaptureDataset] = []
+    val_datasets: list[DeterministicToyCaptureDataset] = []
+
+    for task_idx, task_name in enumerate(args["task_name"]):
+        task_config = TASK_CONFIGS[task_name]
+        camera_names = task_config["camera_names"]
+        camera_file_suffixes = task_config["camera_file_suffixes"]
+
+        train_indices = np.random.permutation(task_config["num_episodes"])
+        val_indices = np.random.permutation(task_config["num_episodes_val"])
+
+        common_kwargs = {
+            "dataset_dir": task_config["dataset_dir"],
+            "camera_names": camera_names,
+            "camera_file_suffixes": camera_file_suffixes,
+            "task_config": task_config,
+            "chunk_size": capture_horizon,
+            "use_language": True,
+            "language_encoder": args["language_encoder"],
+            "capture_horizon": capture_horizon,
+            "task_name": task_name,
+        }
+
+        train_datasets.append(
+            DeterministicToyCaptureDataset(
+                episode_ids=train_indices,
+                tissue_sample_ids=task_config["tissue_samples_ids"],
+                base_seed=args["seed"] + task_idx * 10_000,
+                split_name="train",
+                **common_kwargs,
+            )
+        )
+
+        if task_config["num_episodes_val"] > 0 and len(task_config["tissue_samples_ids_val"]) > 0:
+            val_datasets.append(
+                DeterministicToyCaptureDataset(
+                    episode_ids=val_indices,
+                    tissue_sample_ids=task_config["tissue_samples_ids_val"],
+                    base_seed=args["seed"] + task_idx * 10_000,
+                    split_name="val",
+                    **common_kwargs,
+                )
+            )
+
+    return train_datasets, val_datasets
+
+
+def _capture_toy_split(
+    root_dir: Path,
+    split_name: str,
+    datasets: list[DeterministicToyCaptureDataset],
+    max_samples: int,
+) -> list[dict[str, Any]]:
+    split_entries: list[dict[str, Any]] = []
+    split_dir = root_dir / split_name
+    split_dir.mkdir(parents=True, exist_ok=True)
+
+    sample_counter = 0
+    for dataset_idx, dataset in enumerate(datasets):
+        for local_index in range(len(dataset)):
+            if sample_counter >= max_samples:
+                return split_entries
+
+            sample = dataset.get_sample_payload(local_index)
+            sample_path = split_dir / f"sample_{sample_counter:06d}.pt"
+            payload = {
+                "image_data": _encode_image_for_storage(sample["image_data"]),
+                "current_pose_data": sample["current_pose_data"].cpu(),
+                "raw_action_data": sample["raw_action_data"].cpu(),
+                "is_pad": sample["is_pad"].cpu(),
+                "command_text": sample["command_text"],
+                "normalized_action_data": sample["normalized_action_data"].cpu(),
+                "task_name": sample["task_name"],
+                "tissue_sample": sample["tissue_sample"],
+                "phase": sample["phase"],
+                "sample_name": sample["sample_name"],
+                "selected_camera": sample["selected_camera"],
+                "start_timestep": sample["start_timestep"],
+                "seed": sample["seed"],
+                "split": split_name,
+                "dataset_position": int(local_index),
+            }
+            torch.save(payload, sample_path)
+
+            valid_steps = int((~payload["is_pad"]).sum().item())
+            split_entries.append(
+                {
+                    "relative_path": str(sample_path.relative_to(root_dir)),
+                    "task_name": sample["task_name"],
+                    "dataset_index": int(dataset_idx),
+                    "dataset_position": int(local_index),
+                    "seed": sample["seed"],
+                    "command_text": sample["command_text"],
+                    "selected_camera": sample["selected_camera"],
+                    "start_timestep": sample["start_timestep"],
+                    "num_valid_steps": valid_steps,
+                    "phase": sample["phase"],
+                    "sample_name": sample["sample_name"],
+                }
+            )
+            sample_counter += 1
+
+    return split_entries
+
+
+def export_deterministic_toy_dataset(args: dict[str, Any]) -> Path:
+    output_dir = (
+        Path(args["toy_output_dir"]).expanduser().resolve()
+        if args["toy_output_dir"]
+        else Path(args["ckpt_dir"]).expanduser().resolve() / TOY_DATASET_DIRNAME
+    )
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    train_datasets, val_datasets = _build_toy_export_datasets(args)
+    train_entries = _capture_toy_split(
+        output_dir,
+        "train",
+        train_datasets,
+        max_samples=args["toy_train_samples"],
+    )
+    val_entries = _capture_toy_split(
+        output_dir,
+        "val",
+        val_datasets,
+        max_samples=args["toy_val_samples"],
+    )
+
+    manifest = {
+        "dataset_type": "deterministic_toy_dataset",
+        "created_from": "src/act/imitate_episodes_debug.py",
+        "task_names": list(args["task_name"]),
+        "seed": int(args["seed"]),
+        "capture_horizon": int(args["chunk_size"] if args["chunk_size"] is not None else 60),
+        "requested_counts": {
+            "train": int(args["toy_train_samples"]),
+            "val": int(args["toy_val_samples"]),
+        },
+        "actual_counts": {
+            "train": len(train_entries),
+            "val": len(val_entries),
+        },
+        "fields": [
+            "image_data",
+            "current_pose_data",
+            "raw_action_data",
+            "is_pad",
+            "command_text",
+            "normalized_action_data",
+        ],
+        "splits": {
+            "train": train_entries,
+            "val": val_entries,
+        },
+    }
+
+    manifest_path = output_dir / TOY_DATASET_MANIFEST
+    manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+
+    print(
+        f"Saved deterministic toy dataset to {output_dir} "
+        f"(train={len(train_entries)}, val={len(val_entries)})"
+    )
+    return output_dir
+
+
 def main(args):
+    if args.get("create_toy_dataset"):
+        set_seed(args["seed"])
+        export_deterministic_toy_dataset(args)
+        return
+
     set_seed(1)
 
     signal.signal(signal.SIGINT, signal_handler)
@@ -171,6 +620,42 @@ def main(args):
     history_step_size = args["history_step_size"]
     hl_margin = args["hl_margin"]
     policy_level = args["policy_level"]
+
+    # Set up wandb
+    if log_wandb:
+        if is_eval:
+            # run_name += ".eval"
+            log_wandb = False
+        else:
+            run_name = ckpt_dir.split("/")[-1] + f".{args['seed']}"
+            wandb_run_id_path = os.path.join(ckpt_dir, "wandb_run_id.txt")
+            # check if wandb run exists
+            if os.path.exists(wandb_run_id_path):
+                with open(wandb_run_id_path, "r") as f:
+                    saved_run_id = f.read().strip()
+                wandb.init(
+                    project="yay-surgical-robot",
+                    entity=os.getenv("WANDB_ENTITY"),
+                    name=run_name,
+                    id=saved_run_id,
+                    resume="allow",
+                )
+            else:
+                wandb.init(
+                    project="yay-surgical-robot",
+                    entity=os.getenv("WANDB_ENTITY"),
+                    name=run_name,
+                    config=args,
+                    resume="allow",
+                )
+                # Ensure the directory exists before trying to open the file
+                os.makedirs(os.path.dirname(wandb_run_id_path), exist_ok=True)
+                with open(wandb_run_id_path, "w") as f:
+                    f.write(wandb.run.id)
+
+    if args["gpu"] is not None and not multi_gpu:
+        os.environ["CUDA_VISIBLE_DEVICES"] = f"{args['gpu']}"
+        assert torch.cuda.is_available()
 
     # get task parameters
     dataset_dirs = []
@@ -311,66 +796,102 @@ def main(args):
         "no_qpos": no_qpos,
     }
 
-    train_dataloader, val_dataloader, stats, _ = load_data_dvrk(
-        dataset_dirs[0],
-        num_episodes_list[0],
-        camera_names,
-        batch_size_train,
-        batch_size_val,
-        task_configs_list[0],
-        chunk_size=args["chunk_size"],
-        use_language=use_language
-    )
-
-    # set_seed(0)
-
-    policy = make_policy(policy_class, policy_config)
-    optimizer = make_optimizer(policy_class, policy)
-    scheduler = make_scheduler(optimizer, num_epochs)
-    
-    start_epoch = 0
-    train_history = list()
-    for epoch in range(num_epochs):
-        policy.train()
-        optimizer.zero_grad()
-        for batch_idx, data in enumerate(train_dataloader):
-            forward_dict = forward_pass(data, policy, no_qpos=no_qpos)
-            # backward
-            loss = forward_dict["loss"]
-            loss.backward()
-            optimizer.step()
-            optimizer.zero_grad()
-
-            train_history.append(detach_dict(forward_dict))
-
-        if policy_class != "Diffusion":
-            scheduler.step()
-        e = epoch - start_epoch
-        epoch_summary = compute_dict_mean(
-            train_history[(batch_idx + 1) * e : (batch_idx + 1) * (e + 1)]
+    if is_eval:
+        print(f"{CKPT=}")
+        ckpt_names = (
+            [f"policy_last.ckpt"] if CKPT == 0 else [f"policy_epoch_{CKPT}_seed_0.ckpt"]
         )
-        epoch_train_loss = epoch_summary["loss"]
-        print(f"Train loss: {epoch_train_loss:.5f}")
-        epoch_summary["lr"] = np.array(scheduler.get_last_lr()[0])
-        summary_string = ""
-        for k, v in epoch_summary.items():
-            summary_string += f"{k}: {v.item():.5f} "
-        print(summary_string)
-        if log_wandb:
-            epoch_summary_train = {f"train/{k}": v for k, v in epoch_summary.items()}
-            wandb.log(epoch_summary_train, step=epoch)
+        results = []
+        for ckpt_name in ckpt_names:
+            success_rate, avg_return = eval_bc(
+                config, ckpt_name, save_episode=True, dataset_dirs=dataset_dirs
+            )
+            results.append([ckpt_name, success_rate, avg_return])
 
+        for ckpt_name, success_rate, avg_return in results:
+            print(f"{ckpt_name}: {success_rate=} {avg_return=}")
+        print()
+        exit()
 
+    # train_dataloader, stats, _ = load_merged_data(
+    #     dataset_dirs,
+    #     num_episodes_list,
+    #     camera_names,
+    #     batch_size_train,
+    #     max_len=max_skill_len,
+    #     command_list=commands,
+    #     use_language=use_language,
+    #     language_encoder=language_encoder,
+    #     policy_class=policy_class,
+    # )
+
+    # # save dataset stats
+    # if not os.path.isdir(ckpt_dir):
+    #     os.makedirs(ckpt_dir)
+    # stats_path = os.path.join(ckpt_dir, f"dataset_stats.pkl")
+    # with open(stats_path, "wb") as f:
+    #     pickle.dump(stats, f)
+
+    # train_bc(train_dataloader, config)
+
+    ### load dvrk data to train bc
+    if policy_level == "low":
+        print("\n-----------Training low-level policy-----------\n")
+        
+        # Check if we have multiple datasets for co-training
+        if len(dataset_dirs) > 1:
+            print(f"\n=== Multi-dataset training with {len(dataset_dirs)} datasets ===")
+            train_dataloader, val_dataloader, stats, _ = load_data_dvrk_multi_dataset(
+                dataset_dirs,
+                num_episodes_list,
+                camera_names,
+                batch_size_train,
+                batch_size_val,
+                task_configs_list,
+                chunk_size=args["chunk_size"],
+                use_language=use_language,
+                dataset_weights=args.get("dataset_weights")  # Optional custom weights
+            )
+        else:
+            print(f"\n=== Single-dataset training ===")
+            train_dataloader, val_dataloader, stats, _ = load_data_dvrk(
+                dataset_dirs[0],
+                num_episodes_list[0],
+                camera_names,
+                batch_size_train,
+                batch_size_val,
+                task_configs_list[0],
+                chunk_size=args["chunk_size"],
+                use_language=use_language
+            )
+        
+    elif policy_level == "mid":
+        print("\n-----------Training mid-level policy-----------\n")
+        train_dataloader, stats, _ = load_mid_level_data(
+            dataset_dirs[0],
+            num_episodes_list[0], 
+            camera_names, 
+            batch_size_train, 
+            batch_size_val, 
+            task_config,
+            chunk_size=args["chunk_size"],
+            use_language=use_language)
     
+    # save dataset stats
+    if not os.path.isdir(ckpt_dir):
+        os.makedirs(ckpt_dir)
+    stats_path = os.path.join(ckpt_dir, f"dataset_stats.pkl")
+    with open(stats_path, "wb") as f:
+        pickle.dump(stats, f)
 
-    # # train_bc(train_dataloader, config)
-    # best_ckpt_info = train_bc(train_dataloader, val_dataloader, save_frequnecy, config)
-    # best_epoch, min_val_loss, best_state_dict = best_ckpt_info
+    # train_bc(train_dataloader, config)
+    best_ckpt_info = train_bc(train_dataloader, val_dataloader, save_frequnecy, config)
+    best_epoch, min_val_loss, best_state_dict = best_ckpt_info
 
-    # # save best checkpoint
-    # ckpt_path = os.path.join(ckpt_dir, f'policy_best.ckpt')
-    # torch.save(best_state_dict, ckpt_path)
-    # print(f'Best ckpt, val loss {min_val_loss:.6f} @ epoch{best_epoch}')
+    # save best checkpoint
+    ckpt_path = os.path.join(ckpt_dir, f'policy_best.ckpt')
+    torch.save(best_state_dict, ckpt_path)
+    print(f'Best ckpt, val loss {min_val_loss:.6f} @ epoch{best_epoch}')
 
 
 def make_policy(policy_class, policy_config):
@@ -494,7 +1015,7 @@ def eval_bc(config, ckpt_name, save_episode=True, dataset_dirs=None):
     option = 0
     language_correction = False
 
-    set_seed(1)
+    set_seed(1000)
     ckpt_dir = config["ckpt_dir"]
     state_dim = config["state_dim"]
     real_robot = config["real_robot"]
@@ -957,9 +1478,18 @@ def create_ema(nets):
     model=nets)
     return ema
 
+class FrozenDataLoader:
+    def __init__(self, path, map_location="cpu"):
+        self.batches = torch.load(path, map_location=map_location)
+
+    def __iter__(self):
+        for batch in self.batches:
+            yield batch
+
+    def __len__(self):
+        return len(self.batches)
 
 def train_bc(train_dataloader, val_dataloader, save_frequnecy, config):
-
     num_epochs = config["num_epochs"]
     ckpt_dir = config["ckpt_dir"]
     seed = config["seed"]
@@ -970,7 +1500,6 @@ def train_bc(train_dataloader, val_dataloader, save_frequnecy, config):
     no_qpos = config["no_qpos"]
 
     set_seed(seed)
-    set_seed(1)
 
     policy = make_policy(policy_class, policy_config)
 
@@ -1045,29 +1574,6 @@ def train_bc(train_dataloader, val_dataloader, save_frequnecy, config):
     validation_history = []
     min_val_loss = np.inf
     best_ckpt_info = None
-
-    # policy.train()
-    # optimizer.zero_grad()
-    # for batch_idx, data in enumerate(train_dataloader):
-    #     forward_dict = forward_pass(data, policy, no_qpos=no_qpos)
-    #     # backward
-    #     loss = forward_dict["loss"]
-    #     loss.backward()
-    #     optimizer.step()
-    #     optimizer.zero_grad()
-
-    #     train_history.append(detach_dict(forward_dict))
-    #     if policy_class == "Diffusion":
-    #         scheduler.step()
-    #         ema.step(policy.nets)
-
-    # if policy_class != "Diffusion":
-    #     scheduler.step()
-
-
-
-
-
 
     for epoch in tqdm(range(start_epoch, num_epochs)):
         print(f"\nEpoch {epoch}")
@@ -1244,5 +1750,9 @@ if __name__ == "__main__":
     parser.add_argument('--history_step_size', action='store', type=int, help='history_step_size', default=50)
     parser.add_argument('--hl_margin', action='store', type=int, help='the number of timesteps to record before and after language correction', default=100)
     parser.add_argument('--dataset_weights', nargs='+', type=float, help='Optional weights for each dataset (for multi-dataset training). Should match number of task_names.', required=False, default=None)
+    parser.add_argument('--create_toy_dataset', action='store_true', help='Export a deterministic toy dataset instead of training.')
+    parser.add_argument('--toy_output_dir', action='store', type=str, default=None, help='Optional output directory for the deterministic toy dataset.')
+    parser.add_argument('--toy_train_samples', action='store', type=int, default=100, help='Number of deterministic train samples to export.')
+    parser.add_argument('--toy_val_samples', action='store', type=int, default=20, help='Number of deterministic val samples to export.')
 
     main(vars(parser.parse_args()))
